@@ -139,6 +139,11 @@ test.addTest('Week range limit', [
 		[ '2013.01.07 00:00', '2014.01.01 00:00' ],
 	], 1000 * 60 * 60 * 24 * 724, false);
 
+test.addTest('Week range', [
+		'week 4-16',
+	], '2012.01.01 0:00', '2019.01.01 0:00', [
+	], 1000 * 60 * 60 * 24 * 724, false);
+
 test.addTest('Monthday ranges', [
 		'Jan 23-31 00:00-24:00; Feb 1-12 00:00-24:00',
 		'Jan 23-Feb 12 00:00-24:00',
