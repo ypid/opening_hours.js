@@ -17,6 +17,25 @@
      * Fixed spacing in parenthesis:
      * :%s/\[\zs\([^ ]\)/ \1/e | %s/\([^ ]\)\]/\1 \]/e | %s/,\([^ ]\)/, \1/e
      */
+    var holiday_definitions_PH_de = { // https://de.wikipedia.org/wiki/Feiertage_in_Deutschland
+        'Neujahrstag'               : [  1,  1 ], // month 1, day 1, whole Germany
+        'Heilige Drei Könige'       : [  1,  6, [ 'Baden-Württemberg', 'Bayern', 'Sachsen-Anhalt'] ], // only in the specified states
+        'Tag der Arbeit'            : [  5,  1 ], // whole Germany
+        'Karfreitag'                : [ 'easter', -2 ], // two days before easter
+        'Ostersonntag'              : [ 'easter',  0, [ 'Brandenburg'] ],
+        'Ostermontag'               : [ 'easter',  1 ],
+        'Christi Himmelfahrt'       : [ 'easter', 39 ],
+        'Pfingstsonntag'            : [ 'easter', 49, [ 'Brandenburg'] ],
+        'Pfingstmontag'             : [ 'easter', 50 ],
+        'Fronleichnam'              : [ 'easter', 60, [ 'Baden-Württemberg', 'Bayern', 'Hessen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland' ] ],
+        'Mariä Himmelfahrt'         : [  8, 15, [ 'Saarland'] ],
+        'Tag der Deutschen Einheit' : [ 10,  3 ],
+        'Reformationstag'           : [ 10, 31, [ 'Brandenburg', 'Mecklenburg-Vorpommern', 'Sachsen', 'Sachsen-Anhalt', 'Thüringen'] ],
+        'Allerheiligen'             : [ 11,  1, [ 'Baden-Württemberg', 'Bayern', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland' ] ],
+        '1. Weihnachtstag'          : [ 12, 25 ],
+        '2. Weihnachtstag'          : [ 12, 26 ],
+        // 'Silvester'              : [ 12, 31 ], // for testing
+    };
     var holiday_definitions = {
         'fr': { // {{{
             'PH': { // https://fr.wikipedia.org/wiki/F%C3%AAtes_et_jours_f%C3%A9ri%C3%A9s_en_France
@@ -45,25 +64,7 @@
             },
         }, // }}}
         'de': { // {{{
-            'PH': { // https://de.wikipedia.org/wiki/Feiertage_in_Deutschland
-                'Neujahrstag'               : [  1,  1 ], // month 1, day 1, whole Germany
-                'Heilige Drei Könige'       : [  1,  6, [ 'Baden-Württemberg', 'Bayern', 'Sachsen-Anhalt'] ], // only in the specified states
-                'Tag der Arbeit'            : [  5,  1 ], // whole Germany
-                'Karfreitag'                : [ 'easter', -2 ], // two days before easter
-                'Ostersonntag'              : [ 'easter',  0, [ 'Brandenburg'] ],
-                'Ostermontag'               : [ 'easter',  1 ],
-                'Christi Himmelfahrt'       : [ 'easter', 39 ],
-                'Pfingstsonntag'            : [ 'easter', 49, [ 'Brandenburg'] ],
-                'Pfingstmontag'             : [ 'easter', 50 ],
-                'Fronleichnam'              : [ 'easter', 60, [ 'Baden-Württemberg', 'Bayern', 'Hessen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland' ] ],
-                'Mariä Himmelfahrt'         : [  8, 15, [ 'Saarland'] ],
-                'Tag der Deutschen Einheit' : [ 10,  3 ],
-                'Reformationstag'           : [ 10, 31, [ 'Brandenburg', 'Mecklenburg-Vorpommern', 'Sachsen', 'Sachsen-Anhalt', 'Thüringen'] ],
-                'Allerheiligen'             : [ 11,  1, [ 'Baden-Württemberg', 'Bayern', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland' ] ],
-                '1. Weihnachtstag'          : [ 12, 25 ],
-                '2. Weihnachtstag'          : [ 12, 26 ],
-                // 'Silvester'              : [ 12, 31 ], // for testing
-            },
+            'PH': holiday_definitions_PH_de,
             'Baden-Württemberg': { // does only apply in Baden-Württemberg
                 // This more specific rule set overwrites the country wide one (they are just ignored).
                 // You may use this instead of the country wide with some
