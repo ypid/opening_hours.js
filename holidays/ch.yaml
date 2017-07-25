@@ -1,0 +1,21 @@
+---
+
+_nominatim_url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat=46.799558&lon=8.235897&zoom=9&addressdetails=1&accept-language=de,en'
+
+PH:  # https://de.wikipedia.org/wiki/Feiertage_in_der_Schweiz
+  'Neujahrstag': [1, 1]
+  'Berchtoldstag': [1, 2, [KantonZürich, Kanton Bern, Kanton Luzern, Kanton Obwalden, Kanton Glarus, Kanton Zug, Kanton Freiburg, Kanton Solothurn, Kanton Schaffhausen, Kanton Graubünden, Kanton Aargau, Kanton Thurgau, Kanton Waadt, Kanton Neuenburg, Kanton Genf, Kanton Jura]]
+  'Heilige Drei Könige': [1, 6, [Kanton Uri, Kanton Schwyz, Kanton Graubünden, Kanton Tessin]]
+  'Josefstag': [3, 19, [Kanton Luzern, Kanton Uri, Kanton Schwyz, Kanton Nidwalden, Kanton Zug, Kanton Graubünden, Kanton Tessin, Kanton Wallis]]
+  'Karfreitag': [easter, -2, [Kanton Zürich, Kanton Bern, Kanton Luzern, Kanton Uri, Kanton Schwyz, Kanton Obwalden, Kanton Nidwalden, Kanton Glarus, Kanton Zug, Kanton Freiburg, Kanton Solothurn, Kanton Basel-Stadt, Kanton Basel-Landschaft, Kanton Schaffhausen, Kanton Appenzell Ausserrhoden, Kanton Appenzell Innerrhoden, Kanton St. Gallen, Kanton Graubünden, Kanton Aargau, Kanton Thurgau, Kanton Waadt, Kanton Neuenburg, Kanton Genf, Kanton Jura]]
+  'Ostermontag': [easter, 1, [Kanton Zürich, Kanton Bern, Kanton Luzern, Kanton Uri, Kanton Schwyz, Kanton Obwalden, Kanton Nidwalden, Kanton Glarus, Kanton Zug, Kanton Freiburg, Kanton Solothurn, Kanton Basel-Stadt, Kanton Basel-Landschaft, Kanton Schaffhausen, Kanton Appenzell Ausserrhoden, Kanton Appenzell Innerrhoden, Kanton St. Gallen, Kanton Graubünden, Kanton Aargau, Kanton Thurgau, Kanton Tessin, Kanton Waadt, Kanton Neuenburg, Kanton Genf, Kanton Jura]]
+  'Tag der Arbeit': [5, 1, [Kanton Zürich, Kanton Freiburg, Kanton Solothurn, Kanton Basel-Stadt, Kanton Basel-Landschaft, Kanton Schaffhausen, Kanton Aargau, Kanton Thurgau, Kanton Tessin, Kanton Neuenburg, Kanton Jura]]
+  'Auffahrt': [easter, 39]
+  'Pfingstmontag': [easter, 50, [Kanton Zürich, Kanton Bern, Kanton Luzern, Kanton Uri, Kanton Schwyz, Kanton Obwalden, Kanton Nidwalden, Kanton Glarus, Kanton Zug, Kanton Freiburg, Kanton Solothurn, Kanton Basel-Stadt, Kanton Basel-Landschaft, Kanton Schaffhausen, Kanton Appenzell Ausserrhoden, Kanton Appenzell Innerrhoden, Kanton St. Gallen, Kanton Graubünden, Kanton Aargau, Kanton Thurgau, Kanton Tessin, Kanton Waadt, Kanton Neuenburg, Kanton Genf, Kanton Jura]]
+  'Fronleichnam': [easter, 60, [Kanton Luzern, Kanton Uri, Kanton Schwyz, Kanton Obwalden, Kanton Nidwalden, Kanton Zug, Kanton Freiburg, Kanton Solothurn, Kanton Basel-Landschaft, Kanton Appenzell Innerrhoden, Kanton Graubünden, Kanton Aargau, Kanton Tessin, Kanton Wallis, Kanton Neuenburg, Kanton Jura]]
+  'Bundesfeier': [8, 1]
+  'Mariä Himmelfahrt': [8, 15, [Luzern, Uri, Schwyz, Obwalden, Nidwalden, Zug, Freiburg, Solothurn, Basel-Landschaft, Appenzell Innerrhoden, Graubünden, Aargau, Tessin, Wallis, Jura]]
+  'Allerheiligen': [11, 1, [Luzern, Uri, Schwyz, Obwalden, Nidwalden, Glarus, Zug, Freiburg, Solothurn, Appenzell Innerrhoden, St. Gallen, Graubünden, Aargau, Tessin, Wallis, Jura]]
+  'Mariä Empfängnis': [12, 8, [Luzern, Uri, Schwyz, Obwalden, Nidwalden, Zug, Freiburg, Solothurn, Appenzell Innerrhoden, Graubünden, Aargau, Tessin, Wallis]]
+  'Weihnachtstag': [12, 25]
+  'Stephanstag': [12, 26, [Zürich, Bern, Luzern, Uri, Schwyz, Obwalden, Nidwalden, Glarus, Zug, Freiburg, Solothurn, Basel-Stadt, Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden, Appenzell Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau, Tessin]]
