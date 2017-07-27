@@ -95,6 +95,8 @@ The dictionary of the country either consists of `PH`, `SH` or the value of `add
 
 Note that the data format versions below 2.2.0 used JSON as data serialization language. The data structure remains the same as 2.1.0 however.
 
+Note that when adding new files below `./holidays/` those file will need to be added to `./holidays/index.js` so that opening_hours.js actually uses them.
+
 ### Holiday definition format: PH
 
 Now lets look at the public holiday (`PH`) definition in more detail. Each `PH` definition consists of an array of dictionaries for each holiday.
