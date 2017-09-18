@@ -24,3 +24,7 @@ PH:  # https://de.wikipedia.org/wiki/Feiertage_in_der_Schweiz
   'Weihnachtstag/Noël/Natale': [12, 25]
   'Stephanstag/Saint-Etienne/Santo Stefano': [12, 26, [Zürich, Bern, Luzern, Uri, Schwyz, Obwalden, Nidwalden, Glarus, Zug, Fribourg - Freiburg, Solothurn, Basel-Stadt, Basel-Landschaft, Schaffhausen, Appenzell Ausserrhoden, Appenzell Innerrhoden, St. Gallen, Graubünden, Aargau, Thurgau, Ticino]]
   'Restauration de la République': [12, 31, [Genève]]
+
+Zürich:
+  _state_code: zh
+  _nominatim_url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat=47.3755&lon=8.5412&zoom=9&addressdetails=1&accept-language=de,fr,it,rm'
