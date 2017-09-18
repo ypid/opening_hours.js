@@ -1,6 +1,6 @@
 ---
 
-_nominatim_url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat=46.799558&lon=8.235897&zoom=9&addressdetails=1&accept-language=de,en'
+_nominatim_url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat=46.799558&lon=8.235897&zoom=9&addressdetails=1&accept-language=de,fr,it,rm'
 
 PH:  # https://de.wikipedia.org/wiki/Feiertage_in_der_Schweiz
   'Neujahrstag/Nouvel an/Capo d''anno': [1, 1]
