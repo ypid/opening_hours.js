@@ -4,7 +4,6 @@ var OpeningHoursTable = {
     // In English. Localization is done somewhere else (above).
     months:   ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'],
     weekdays: ['su','mo','tu','we','th','fr','sa'],
-    // console.log(moment.weekdaysMin().map(function(weekday) { return weekday.toLowerCase() }));
 
     formatdate: function (now, nextchange, from) {
         var now_daystart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -39,9 +38,9 @@ var OpeningHoursTable = {
             atday = i18n.t('words.tomorrow');
         else if (from ? (nextdays < 7) : (nextdays <= 7))
             atday = i18n.t('words.on weekday') + i18n.t('weekdays.word next.' + this.weekdays[nextchange.getDay()])
-                +' '+ moment.weekdays(nextchange.getDay());
+                +' '+ nextchange.toLocaleString(i18n.lng(), {weekday: 'long'});
 
-        var month_name = moment.months(nextchange.getMonth());
+        var month_name = nextchange.toLocaleString(i18n.lng(), {month: 'long'});
         var month_name_match = month_name.match(/\(([^|]+?)\|.*\)/);
         if (month_name_match && typeof month_name_match[1] === 'string') {
             /* The language has multiple words for the month (nominative, subjective).
@@ -76,11 +75,11 @@ var OpeningHoursTable = {
     },
 
     printDate: function (date) {
-            return moment(date).format('MMM D, dd');
+            return date.toLocaleDateString(i18n.lng());
     },
 
     printTime: function (date) {
-            return moment(date).format('HH:mm');
+            return date.toLocaleTimeString(i18n.lng());
     },
 
     drawTable: function (it, date_today, has_next_change) {

@@ -6,7 +6,6 @@ import * as holiday_definitions from './holidays/index';
 import word_error_correction from './locales/word_error_correction.yaml';
 import lang from './locales/lang.yaml';
 
-import moment from 'moment';
 import SunCalc from 'suncalc';
 import i18n from './locales/core';
 
@@ -65,7 +64,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
         'leave_weekday_sep_one_day_betw': true, // use the separator (either "," or "-" which is used to separate days which follow to each other like Sa,Su or Su-Mo
         'sep_one_day_between': ',',      // separator which should be used
         'zero_pad_month_and_week_numbers': true, // Format week (e.g. `week 01`) and month day numbers (e.g. `Jan 01`) with "%02d".
-        'locale': 'en',                  // use local language (needs moment.js / i18n.js)
+        'locale': 'en',                  // use local language (needs i18n.js)
     };
 
     var osm_tag_defaults = {
@@ -1171,28 +1170,16 @@ export default function(value, nominatim_object, optional_conf_parm) {
             }
         });
 
-        if (typeof moment !== 'undefined' && typeof user_conf['locale'] === 'string' && user_conf['locale'] !== 'en') {
-            // FIXME: Does not work?
-            // var moment_localized = moment();
-            // moment_localized.locale('en');
-
-            var global_locale = moment.locale();
-            // build translation arrays from moment
-            moment.locale('en');
-            var weekdays_en = moment.weekdaysMin();
-            // monthShort would not return what we like
-            var months_en = moment.months().map(function (month) {
-                return month.substr(0,3);
-            });
-            // FIXME: Does not work in Firefox?
-            moment.locale(user_conf['locale']);
-            var weekdays_local = moment.weekdaysMin();
-            var months_local = moment.months().map(function (month) {
-                return month.substr(0,3);
-            });
-            // console.log(months_local);
-            moment.locale(global_locale);
-        }
+        // use months, weekdays for locales 'en' and 'all'
+        // otherwise use Date.toLocaleString, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+        var _is_en_or_all = user_conf['locale'] === 'en' || user_conf['locale'] === 'all';
+        var months_local = _is_en_or_all ? months : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(function(month) {
+            return new Date(2018, month - 1, 1).toLocaleString(user_conf['locale'], {month: 'short'});
+        });
+        var weekdays_local = _is_en_or_all ? weekdays : [1, 2, 3, 4, 5, 6, 7].map(function(weekday) {
+            // 2017-01-01 is Sunday
+            return new Date(2017, 0, weekday).toLocaleString(user_conf['locale'], {weekday: 'short'});
+        });
 
         for (var nrule = 0; nrule < new_tokens.length; nrule++) {
             if (new_tokens[nrule][0].length === 0) continue;
@@ -1270,11 +1257,11 @@ export default function(value, nominatim_object, optional_conf_parm) {
                 for (var i = 0; i < prettified_group_value.length; i++) {
                     var type = prettified_group_value[i][0][2];
                     if (type === 'weekday') {
-                        weekdays_en.forEach(function (weekday, key) {
+                        weekdays.forEach(function (weekday, key) {
                             prettified_group_value[i][1] = prettified_group_value[i][1].replace(new RegExp(weekday, 'g'), weekdays_local[key]);
                         });
                     } else if (type === 'month') {
-                        months_en.forEach(function (month, key) {
+                        months.forEach(function (month, key) {
                             prettified_group_value[i][1] = prettified_group_value[i][1].replace(new RegExp(month, 'g'), months_local[key]);
                         });
                     } else {

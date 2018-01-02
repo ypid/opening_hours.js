@@ -19,12 +19,10 @@ export default {
     ],
     external: dependencies ? [] : [
         'i18next-client',
-        'moment',
         'suncalc'
     ],
     globals: dependencies ? {} : {
         'i18next-client': 'i18n',
-        'moment': 'moment',
         'suncalc': 'SunCalc'
     },
     output: {

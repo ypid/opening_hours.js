@@ -12,7 +12,6 @@
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
         <script src="opening_hours+deps.min.js"></script>
         <script src="node_modules/i18next-client/i18next.min.js"></script>
-        <script src="node_modules/moment/min/moment-with-locales.min.js"></script>
         <script src="js/i18n-resources.js"></script>
         <script src="js/opening_hours_table.js"></script>
         <script src="js/helpers.js"></script>
@@ -55,8 +54,8 @@
                         document.write('<span class="hd">' + i18n.t('words.date') + ' ' + i18n.t('words.and') + ' ' + i18n.t('words.time.time') + ':</span>');
                         document.write('<input type="number" step="1" min="1" max="31" id="dd" size="3" name="dd" value="02" onblur="Evaluate()"/>.');
                         document.write('<select id="mm" name="mm" onchange="Evaluate()">');
-                        for (var i = 0; i < moment.monthsShort().length; i++) {
-                            document.write('<option value="monthNumber' + i + '">' + moment.monthsShort(i) + '</option>');
+                        for (var i = 0; i < 12; i++) {
+                            document.write('<option value="monthNumber' + i + '">' + new Date(2018, i, 1).toLocaleString(i18n.lng(), {month: 'short'}) + '</option>');
                         }
                         document.write('</select>');
                     </script>

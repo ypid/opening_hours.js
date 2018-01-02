@@ -29,7 +29,6 @@ var opening_hours = require('./' + argv['library-file']);
 var colors        = require('colors');
 var sprintf       = require('sprintf-js').sprintf;
 var timekeeper    = require('timekeeper');
-var moment        = require('moment');
 var glob          = require('glob');
 var yaml          = require('js-yaml');
 var fs            = require('fs');
@@ -3134,9 +3133,6 @@ test.addTest('Week range first week', [
 // timekeeper makes the Date() Object nonReactive. Reset the timekeeper
 timekeeper.reset();
 
-var toTime = moment(new Date()).add(1, 'day').hours(23).minutes(59).seconds(0).milliseconds(0);
-var isOddWeekStart = (toTime % 2 === 0) ? '01' : '02';
-
 /*
  * Temporally disabled as they are not deterministic. Waiting for feedback:
  * https://github.com/opening-hours/opening_hours.js/pull/191
@@ -3146,6 +3142,9 @@ var isOddWeekStart = (toTime % 2 === 0) ? '01' : '02';
  * deterministic and the test log is compared, it potentially would still
  * break the tests.
  *
+var moment        = require('moment');
+var toTime = moment(new Date()).add(1, 'day').hours(23).minutes(59).seconds(0).milliseconds(0);
+var isOddWeekStart = (toTime % 2 === 0) ? '01' : '02';
 test.addTest('Week range. Working with Objects not Strings. from = moment(new Date())', [
         'week ' + isOddWeekStart + '-53/2 Mo-Su 07:30-08:00',
     ], moment(new Date()), toTime.toDate(), [
