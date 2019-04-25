@@ -1,5 +1,6 @@
-
 ---
+
+https://nominatim.openstreetmap.org/search?format=json&country=Greece&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en
 
 'Ελλάδα':  # https://el.wikipedia.org/wiki/%CE%95%CF%80%CE%AF%CF%83%CE%B7%CE%BC%CE%B5%CF%82_%CE%B1%CF%81%CE%B3%CE%AF%CE%B5%CF%82_%CF%83%CF%84%CE%B7%CE%BD_%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1
  
