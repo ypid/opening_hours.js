@@ -24,12 +24,15 @@ SH: # https://el.wikipedia.org/wiki/%CE%95%CF%80%CE%AF%CF%83%CE%B7%CE%BC%CE%B5%C
       2020': [12, 24, 1, 7]
   - name: Καλοκαίρι
      '2019': [7, 1, 8, 31]
+     '2020': [7, 1, 8, 31]
   - name: Πολυτεχνείο
      '2019': [11, 17]
   - name: Τριών Ιεραρχών
      '2019': [1, 30]
+      2020': [1, 30]    
    - name: Αγίου Πνεύματος
      '2019': [6, 17]
+     '2020': [6, 8]
 
 #Πολιούχοι
 # https://el.wikipedia.org/wiki/%CE%9A%CE%B1%CF%84%CE%AC%CE%BB%CE%BF%CE%B3%CE%BF%CF%82_%CF%80%CF%8C%CE%BB%CE%B5%CF%89%CE%BD_%CE%BA%CE%B1%CE%B9_%CF%80%CE%BF%CE%BB%CE%B9%CE%BF%CF%8D%CF%87%CF%89%CE%BD_%CE%B1%CE%B3%CE%AF%CF%89%CE%BD
