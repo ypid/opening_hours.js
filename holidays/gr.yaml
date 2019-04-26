@@ -29,6 +29,16 @@ SH: # https://el.wikipedia.org/wiki/%CE%95%CF%80%CE%AF%CF%83%CE%B7%CE%BC%CE%B5%C
    - name: Αγίου Πνεύματος
      '2019': [6, 17]
 
+Δράμα:
+_nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=drama&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
+PH:
+  - {'name': 'Αγίας Βαρβάρας', 'fixed_date': [12, 4]}
+
+Θεσσαλονίκη:
+_nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=thessaloniki&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
+ PH:
+   - {'name': 'Άγιος Δημήτριος', 'fixed_date': [10, 26]}
+ 
 Καβάλα:
 _nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=Kavala&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
 PH:
