@@ -34,29 +34,3 @@ SH: # https://el.wikipedia.org/wiki/%CE%95%CF%80%CE%AF%CF%83%CE%B7%CE%BC%CE%B5%C
      '2019': [6, 17]
      '2020': [6, 8]
 
-#Πολιούχοι
-# https://el.wikipedia.org/wiki/%CE%9A%CE%B1%CF%84%CE%AC%CE%BB%CE%BF%CE%B3%CE%BF%CF%82_%CF%80%CF%8C%CE%BB%CE%B5%CF%89%CE%BD_%CE%BA%CE%B1%CE%B9_%CF%80%CE%BF%CE%BB%CE%B9%CE%BF%CF%8D%CF%87%CF%89%CE%BD_%CE%B1%CE%B3%CE%AF%CF%89%CE%BD
-Αθήνα:
-_nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=athina&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
-PH:
-  - {'name': 'Άγιος Διονύσιος Αρεοπαγίτης', 'fixed_date': [10, 3]}
-
-Δράμα:
-_nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=drama&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
-PH:
-  - {'name': 'Αγίας Βαρβάρας', 'fixed_date': [12, 4]}
-
-Θεσσαλονίκη:
-_nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=thessaloniki&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
-PH:
-  - {'name': 'Άγιος Δημήτριος', 'fixed_date': [10, 26]}
-
-Καβάλα:
-_nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=Kavala&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
-PH:
-  - {'name': 'Πέτρου και Παύλου', 'fixed_date': [6, 29]}
-
-Χρυσούπολη:
-_nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=chrysoupoli&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
-PH:
-  - {'name': 'Άγιος Δημήτριος', 'fixed_date': [10, 26]}
