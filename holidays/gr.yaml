@@ -29,8 +29,8 @@ SH: # https://el.wikipedia.org/wiki/%CE%95%CF%80%CE%AF%CF%83%CE%B7%CE%BC%CE%B5%C
      '2019': [11, 17]
   - name: Τριών Ιεραρχών
      '2019': [1, 30]
-      2020': [1, 30]    
-   - name: Αγίου Πνεύματος
+      2020': [1, 30]
+  - name: Αγίου Πνεύματος
      '2019': [6, 17]
      '2020': [6, 8]
 
@@ -48,9 +48,9 @@ PH:
 
 Θεσσαλονίκη:
 _nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=thessaloniki&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
- PH:
-   - {'name': 'Άγιος Δημήτριος', 'fixed_date': [10, 26]}
- 
+PH:
+  - {'name': 'Άγιος Δημήτριος', 'fixed_date': [10, 26]}
+
 Καβάλα:
 _nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=Kavala&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
 PH:
@@ -58,5 +58,5 @@ PH:
 
 Χρυσούπολη:
 _nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Greece&city=chrysoupoli&&zoom=18&addressdetails=1&limit=1&accept-language=gr,en'
- PH:
-   - {'name': 'Άγιος Δημήτριος', 'fixed_date': [10, 26]}
+PH:
+  - {'name': 'Άγιος Δημήτριος', 'fixed_date': [10, 26]}
