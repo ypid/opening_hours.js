@@ -64,6 +64,7 @@ Contributors
 * [Discostu36_] - Michael
 * [debyos_] - Gábor Babos
 * [StephanGeorg_] - Stephan Georg
+* [hariskar_] - Haris K
 
 Thanks very much to all contributors!
 
@@ -111,6 +112,7 @@ Thanks very much to all contributors!
 .. _Discostu36: https://github.com/Discostu36
 .. _debyos: https://github.com/debyos
 .. _StephanGeorg: https://github.com/StephanGeorg
+.. _hariskar: https://github.com/hariskar
 
 Supporters
 ~~~~~~~~~~
@@ -140,6 +142,7 @@ Added
   * Australia [yourock17_, ypid_]
   * Ireland [Gerw88_, ypid_]
   * Ivory Coast [sommerluk_, ypid_]
+  * Greece [hariskar_]
 
 * Added Easter Sunday to Slovak holidays. [chiak597_]
 * Localizations added: Hungarian [urbalazs_, debyos_]
@@ -148,6 +151,7 @@ Added
 
   * Germany 2017 until 2024 [ypid_]
   * Austria [simon04_]
+  * Greece [hariskar_, ypid_]
 
 * Translate error tolerance warnings into German. [ypid_]
 * Add additional warnings:
