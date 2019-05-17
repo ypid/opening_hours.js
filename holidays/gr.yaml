@@ -10,6 +10,7 @@ PH:
   - {'name': 'Καθαρά Δευτέρα', 'variable_date': orthodox easter, 'offset': -48}
   - {'name': '25η Μαρτίου', 'fixed_date': [03, 25]}
   - {'name': 'Μεγάλη Παρασκευή', 'variable_date': orthodox easter, 'offset': -2}
+  - {'name': 'Δευτέρα του Πάσχα', 'variable_date': orthodox easter, 'offset': +1} 
   - {'name': 'Πρωτομαγιά', 'fixed_date': [5, 1]}
   - {'name': 'Κοίμηση της Θεοτόκου', 'fixed_date': [8, 15]}
   - {'name': '28η Οκτωβρίου', 'fixed_date': [10, 28]}
