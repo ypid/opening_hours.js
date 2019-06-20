@@ -331,7 +331,7 @@ function Evaluate (offset, reset) {
 
         var warnings = oh.getWarnings();
         if (warnings.length > 0) {
-            show_warnings_or_errors.innerHTML += '<p class="warning">' + i18n.t('texts.filter.error') + ' test:<br />'
+            show_warnings_or_errors.innerHTML += '<p class="warning">' + i18n.t('texts.filter.error') + ':<br />'
                 + '<textarea rows="' + (warnings.length + 1)
                 + '" style="width: 100%" name="WarnErrors" readonly="readonly">' + warnings.join('\n')
                 + '</textarea></p>';
