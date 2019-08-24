@@ -65,6 +65,8 @@ Contributors
 * [debyos_] - Gábor Babos
 * [StephanGeorg_] - Stephan Georg
 * [hariskar_] - Haris K
+* [Virtakuono_] - Juho Häppölä
+
 
 Thanks very much to all contributors!
 
@@ -113,6 +115,7 @@ Thanks very much to all contributors!
 .. _debyos: https://github.com/debyos
 .. _StephanGeorg: https://github.com/StephanGeorg
 .. _hariskar: https://github.com/hariskar
+.. _Virtakuono: https://github.com/Virtakuono
 
 Supporters
 ~~~~~~~~~~
@@ -137,12 +140,13 @@ Added
 
 * Public holiday definitions added:
 
-  * England and Wales [skifans_, simon04_]
-  * Norway [Gazer75_]
   * Australia [yourock17_, ypid_]
+  * England and Wales [skifans_, simon04_]
+  * Finland [Virtakuono_]
+  * Greece [hariskar_]
   * Ireland [Gerw88_, ypid_]
   * Ivory Coast [sommerluk_, ypid_]
-  * Greece [hariskar_]
+  * Norway [Gazer75_]
 
 * Added Easter Sunday to Slovak holidays. [chiak597_]
 * Localizations added: Hungarian [urbalazs_, debyos_]
