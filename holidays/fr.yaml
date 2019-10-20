@@ -13,7 +13,7 @@ PH:
   - {'name': 'Fête de la Victoire', 'fixed_date': [5, 8]}
   - {'name': 'Abolition de l''esclavage (Martinique)', 'fixed_date': [5, 22], 'only_states': [Martinique]}
   - {'name': 'Abolition de l''esclavage (Guadeloupe)', 'fixed_date': [5, 27], 'only_states': [Guadeloupe]}
-  - {'name': 'Abolition de l''esclavage (Saint-Martin)', 'fixed_date': [5, 28], 'only_states': [Saint-Martin]}
+  - {'name': 'Abolition de l''esclavage (Saint-Martin)', 'fixed_date': [5, 28], 'only_states': [Saint-Martin (France)]}
   - {'name': 'Jeudi de l''Ascension', 'variable_date': easter, 'offset': 39}
   - {'name': 'Lundi de Pentecôte', 'variable_date': easter, 'offset': 50}
   - {'name': 'Abolition de l''esclavage (Guyane)', 'fixed_date': [6, 10], 'only_states': [Guyane]}
