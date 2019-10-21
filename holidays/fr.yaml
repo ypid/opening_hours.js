@@ -71,7 +71,7 @@ Auvergne-Rhône-Alpes:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Bourgogne-Franche-Comté (Académies de Besançon, Dijon)
 Bourgogne-Franche-Comté:
@@ -105,7 +105,7 @@ Bourgogne-Franche-Comté:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Nouvelle-Aquitaine (Académies de Bordeaux, Limoges, Poitiers)
 Nouvelle-Aquitaine:
@@ -139,7 +139,7 @@ Nouvelle-Aquitaine:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie#  Région Nouvelle-Aquitaine (Académies de Bordeaux, Limoges, Poitiers)
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie#  Région Nouvelle-Aquitaine (Académies de Bordeaux, Limoges, Poitiers)
 
 # Zone B:
 # -------
@@ -175,7 +175,7 @@ Bretagne:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Centre-Val de Loire (Académie de Orléans-Tours)
 Centre-Val de Loire:
@@ -209,7 +209,7 @@ Centre-Val de Loire:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Grand Est (Académies de Nancy-Metz, Reims, Strasbourg)
 Grand Est:
@@ -243,7 +243,7 @@ Grand Est:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Hauts-de-France (Académies de Amiens, Lille)
 Hauts-de-France:
@@ -277,7 +277,7 @@ Hauts-de-France:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Normandie (Académies de Caen, Rouen)
 Normandie:
@@ -311,7 +311,7 @@ Normandie:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Pays de la Loire (Académie de Nantes)
 Pays de la Loire:
@@ -345,7 +345,7 @@ Pays de la Loire:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Provence-Alpes-Côte d'Azur (Académies de Aix-Marseille, Nice)
 Provence-Alpes-Côte d'Azur:
@@ -379,7 +379,7 @@ Provence-Alpes-Côte d'Azur:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 # Zone C:
 # -------
@@ -416,7 +416,7 @@ Provence-Alpes-Côte d'Azur:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 #  Région Occitanie (Académies de Montpellier, Toulouse)
 Occitanie:
@@ -450,7 +450,7 @@ Occitanie:
       '2018': [7, 8, 9, 2]
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 6, 8, 30] # reprise des cours officielle pas encore définie
+      '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
 
 # Corse et Outre-Mer:
 # -------------------
@@ -509,7 +509,7 @@ Guadeloupe:
     - name: Grandes Vacances
       '2018': [7, 7, 9, 3]
       '2019': [7, 7, 9, 1]
-      '2020': [7, 5, 8, 31] # reprise des cours officielle pas encore définie
+      '2020': [7, 5, 8, 31]  # reprise des cours officielle pas encore définie
 
 Saint-Martin (France):
   _state_code: FR-MF
@@ -535,9 +535,9 @@ Saint-Martin (France):
     - name: Grandes Vacances
       '2018': [7, 7, 9, 3]
       '2019': [7, 7, 9, 1]
-      '2020': [7, 5, 8, 31] # reprise des cours officielle pas encore définie
+      '2020': [7, 5, 8, 31]  # reprise des cours officielle pas encore définie
 
-Saint-Barthélemy :
+Saint-Barthélemy:
   _state_code: FR-BL
   _nominatim_url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat=17.89684&lon=-62.83098&zoom=18&addressdetails=1&accept-language=fr,en'
   SH:
@@ -563,7 +563,7 @@ Saint-Barthélemy :
     - name: Grandes Vacances
       '2018': [7, 7, 9, 3]
       '2019': [7, 7, 9, 1]
-      '2020': [7, 5, 8, 31] # reprise des cours officielle pas encore définie
+      '2020': [7, 5, 8, 31]  # reprise des cours officielle pas encore définie
 
 # Académie de Guyane:
 Guyane:
@@ -598,7 +598,7 @@ Guyane:
       '2018': [7, 8, 9, 2]
       '2019': [7, 9, 9, 1]
       '2020': [7, 5, 8, 31]
-      '2021': [7, 4, 8, 31] # reprise des cours officielle pas encore définie
+      '2021': [7, 4, 8, 31]  # reprise des cours officielle pas encore définie
 
 # Académie de Martinique:
 Martinique:
@@ -628,7 +628,7 @@ Martinique:
     - name: Grandes Vacances
       '2018': [7, 7, 9, 3]
       '2019': [7, 7, 9, 1]
-      '2020': [7, 5, 8, 31] # reprise des cours officielle pas encore définie
+      '2020': [7, 5, 8, 31]  # reprise des cours officielle pas encore définie
 
 # Académie de Mayotte:
 Mayotte:
@@ -772,7 +772,7 @@ Saint-Pierre-et-Miquelon:
     - name: Vacances d'Été
       '2018': [6, 30, 9, 6]
       '2019': [7, 4, 9, 4]
-      '2020': [7, 4, 9, 2] # reprise des cours officielle pas encore définie
+      '2020': [7, 4, 9, 2]  # reprise des cours officielle pas encore définie
 
 # Vice-rectorat de Wallis-et-Futuna:
 Wallis-et-Futuna:
