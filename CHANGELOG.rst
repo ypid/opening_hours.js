@@ -66,6 +66,7 @@ Contributors
 * [StephanGeorg_] - Stephan Georg
 * [hariskar_] - Haris K
 * [Virtakuono_] - Juho Häppölä
+* [blef00fr_]
 
 
 Thanks very much to all contributors!
@@ -116,6 +117,7 @@ Thanks very much to all contributors!
 .. _StephanGeorg: https://github.com/StephanGeorg
 .. _hariskar: https://github.com/hariskar
 .. _Virtakuono: https://github.com/Virtakuono
+.. _blef00fr: https://github.com/blef00fr
 
 Supporters
 ~~~~~~~~~~
@@ -153,8 +155,9 @@ Added
 
 * School holiday definitions added:
 
-  * Germany 2017 until 2024 [ypid_]
   * Austria [simon04_]
+  * France [blef00fr_, ypid_]
+  * Germany 2017 until 2024 [ypid_]
   * Greece [hariskar_, ypid_]
 
 * Translate error tolerance warnings into German. [ypid_]
