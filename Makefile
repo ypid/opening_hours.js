@@ -537,17 +537,12 @@ opening_hours.js:
 opening_hours+deps.js:
 	DEPS=YES ./node_modules/.bin/rollup -c
 
-uglifyjs.log: opening_hours.js
-	uglifyjs "$<" --lint 1>/dev/zero 2>uglifyjs.log
-
 opening_hours.min.js:
 
-opening_hours+deps.min.js: opening_hours+deps.js
-	@true I don’t really care for warnings in dependencies of opening_hours.js.
-	uglifyjs "$<" --output "$@" --comments '/github.com/' --lint 2> >(grep --invert-match '^WARN: ')
+opening_hours+deps.min.js:
 
 %.min.js: %.js
-	uglifyjs "$<" --output "$@" --comments '/github.com/' --lint
+	./node_modules/.bin/terser "$<" --output "$@" --comments '/github.com/' --lint
 
 README.html:
 
