@@ -42,8 +42,7 @@
     "regex_search": "make run-regex_search"
   },
   "dependencies": {
-    "suncalc": "^1.8.0",
-    "uglify-js": "^2.7.5"
+    "suncalc": "^1.8.0"
   },
   "devDependencies": {
     "assert": "^1.4.1",
@@ -59,8 +58,8 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-yaml": "^1.0.0",
     "sprintf-js": "1.1.1",
-    "timekeeper": "^2.0.0",
-    "uglify-js": "^3.0.15"
+    "terser": "^4.6.3",
+    "timekeeper": "^2.0.0"
   },
   "peerDependencies": {
     "i18next-client": "^1.11.1",
