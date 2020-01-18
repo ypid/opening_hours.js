@@ -542,7 +542,7 @@ opening_hours.min.js:
 opening_hours+deps.min.js:
 
 %.min.js: %.js
-	./node_modules/.bin/terser "$<" --output "$@" --comments '/github.com/' --lint
+	./node_modules/.bin/terser --output "$@" --comments '/github.com/' "$<"
 
 README.html:
 
