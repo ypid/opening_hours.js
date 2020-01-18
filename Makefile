@@ -145,7 +145,7 @@ run-interactive_testing: interactive_testing.js opening_hours.js
 	$(NODEJS) "$<" --locale "$(CHECK_LANG)"
 ## }}}
 
-## Source code QA {{{
+## source code QA {{{
 .PHONY: qa-quick
 qa-quick: qa-phrases-to-avoid
 
@@ -431,7 +431,7 @@ osm-tag-data-overpass-kill-queries:
 # ;
 ## }}}
 
-## Generate statistics  {{{
+## generate statistics {{{
 
 ## Cronjob is running on gauss: http://munin.openstreetmap.de/gauss/gauss-load.html
 # m h  dom mon dow   command
