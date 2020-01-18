@@ -9,7 +9,7 @@ var exit_code_not_new = 1;
 var optimist = require('optimist')
     .usage('Usage: $0')
     .describe('h', 'Display the usage')
-    .describe('E', 'Specifiy the exit code in case there is no new data. The default value is ' + exit_code_not_new + '.')
+    .describe('E', 'Specify the exit code in case there is no new data. The default value is ' + exit_code_not_new + '.')
     .alias('h', 'help')
     .alias('E', 'exit-code-not-new');
 
@@ -53,7 +53,7 @@ var local_dump_creation_time = get_dump_creation_time_from_file('taginfo_sources
 
 /* Download source file and compare {{{ */
 var taginfo_api_url_source = taginfo_api_base_url + 'site/sources';
-console.log('Loading file ' + taginfo_api_url_source + ' to check if new data is availale.');
+console.log('Loading file ' + taginfo_api_url_source + ' to check if new data is available.');
 var file = fs.createWriteStream('taginfo_sources.json');
 var request = https.get(taginfo_api_url_source, function(response) {
     response.pipe(file);

@@ -435,7 +435,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
         if (typeof optional_conf_parm[key] === expected_type) {
             return true;
         } else if (typeof optional_conf_parm[key] !== 'undefined') {
-            throw t('conf param unkown type', { 'key': key, 'given': typeof(optional_conf_parm[key]), 'expected': expected_type });
+            throw t('conf param unknown type', { 'key': key, 'given': typeof(optional_conf_parm[key]), 'expected': expected_type });
         }
         return false;
     }
@@ -2457,7 +2457,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
                                         /* Because not all school holidays
                                          * have to apply each year this
                                          * part has been simplified which
-                                         * makes the implementation abit
+                                         * makes the implementation a bit
                                          * less efficient but reduces
                                          * complexity.
                                          */

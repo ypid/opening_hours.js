@@ -32,7 +32,7 @@ var json_file = args[0];
 if (typeof json_file === 'undefined') {
     // json_file = 'export.opening_hours.json';
     json_file = 'export.opening_hours:kitchen.json';
-    // console.log('Please specify the expored JSON file form taginfo as parameter.');
+    // console.log('Please specify the exported JSON file form taginfo as parameter.');
     // return;
 }
 
