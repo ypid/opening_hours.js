@@ -4,7 +4,6 @@
 SHELL   := /bin/bash -o nounset -o pipefail -o errexit
 NODEJS  ?= node
 NODE_ICU_DATA ?= node_modules/full-icu
-export NODE_ICU_DATA
 SEARCH  ?= opening_hours
 VERBOSE ?= 1
 RELEASE_OPENPGP_FINGERPRINT ?= C505B5C93B0DB3D338A1B6005FE92C12EE88E1F0
@@ -201,7 +200,7 @@ check-opening_hours.js:
 check-opening_hours.min.js:
 
 check-%.js: %.js test.js
-	$(NODEJS) test.js --library-file "./$<"
+	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test.js --library-file "./$<"
 
 check-diff-all-opening_hours.js:
 check-diff-all-opening_hours.min.js:
@@ -216,7 +215,7 @@ check-diff-de-opening_hours.js:
 
 check-diff-%.js: %.js test.js
 	rm -rf "test.$(CHECK_LANG).log"
-	$(NODEJS) test.js --library-file "$<" --locale $(CHECK_LANG) 1> test.$(CHECK_LANG).log 2>&1 || true; \
+	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test.js --library-file "$<" --locale $(CHECK_LANG) 1> test.$(CHECK_LANG).log 2>&1 || true; \
 	if git diff --quiet --exit-code HEAD -- "test.$(CHECK_LANG).log"; then \
 		echo "Test results for $< ($(CHECK_LANG)) are exactly the same as on developemt system. So far, so good ;)"; \
 	else \
