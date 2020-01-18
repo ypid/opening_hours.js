@@ -27,4 +27,4 @@ install:
   - 'pip install --user html5validator yq'
 
 script:
-  - "make NODEJS=node NODE_ICU_DATA=node_modules/full-icu check-full"
+  - "make check-full"
