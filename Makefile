@@ -199,7 +199,7 @@ check-opening_hours.js:
 check-opening_hours.min.js:
 
 check-%.js: %.js test.js
-	$(NODEJS) test.js "./$<"
+	$(NODEJS) test.js --library-file "./$<"
 
 check-diff-all-opening_hours.js:
 check-diff-all-opening_hours.min.js:
