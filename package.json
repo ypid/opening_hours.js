@@ -47,24 +47,26 @@
   "devDependencies": {
     "assert": "^1.4.1",
     "colors": "^0.6.2",
+    "country-language": "^0.1.7",
+    "full-icu": "^1.2.0",
     "glob": "^7.1.1",
     "https": "^1.0.0",
+    "i18next-client": "^1.11.1",
     "js-yaml": "^3.8.2",
     "line-reader": "^0.4.0",
+    "moment": "^2.10.6",
     "optimist": "^0.6.1",
     "package-json-validator": "^0.6.1",
-    "rollup": "^0.50.0",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-yaml": "^1.0.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-yaml": "^2.0.0",
     "sprintf-js": "1.1.1",
     "terser": "^4.6.3",
     "timekeeper": "^2.0.0"
   },
   "peerDependencies": {
-    "i18next-client": "^1.11.1",
-    "moment": "^2.10.6",
-    "country-language": "^0.1.7"
+    "i18next-client": "^1.11.1"
   },
   "engines": {
     "node": ">=6.0.0"

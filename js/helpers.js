@@ -167,7 +167,7 @@ function Evaluate (offset, reset) {
     document.forms.check.elements['dd'].value         = u2(date.getDate());
     document.forms.check.elements['HH'].value         = u2(date.getHours());
     document.forms.check.elements['MM'].value         = u2(date.getMinutes());
-    document.forms.check.elements['wday'].value       = moment.weekdays(date.getDay());
+    document.forms.check.elements['wday'].value       = date.toLocaleString(i18n.lng(), {weekday: 'short'});
     document.forms.check.elements['week'].value       = 'W'+u2(dateAtWeek(date, 0) + 1);
 
     var show_time_table         = document.getElementById('show_time_table');

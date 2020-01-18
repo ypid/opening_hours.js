@@ -1171,6 +1171,5 @@ if (!i18n.isInitialized()) {
         i18n.addResourceBundle(lang, 'translation', resources[lang]['translation'], true);
     }
 }
-moment.locale(i18n.lng());
 // }}}
 // }}}
