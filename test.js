@@ -1052,12 +1052,12 @@ test.addTest('SH for Austria', [
     'SH',
 ], '2017-01-01 0:00', '2018-02-01 0:00', [
 	[ '2017-01-01 00:00', '2017-01-08 00:00', false, 'Weihnachtsferien' ],
-	[ '2017-02-05 00:00', '2017-02-11 00:00', false, 'Semesterferien' ],
-	[ '2017-03-24 00:00', '2017-04-04 00:00', false, 'Osterferien' ],
-	[ '2017-05-19 00:00', '2017-05-23 00:00', false, 'Pfingstferien' ],
+	[ '2017-02-13 00:00', '2017-02-19 00:00', false, 'Semesterferien' ],
+	[ '2017-04-08 00:00', '2017-04-19 00:00', false, 'Osterferien' ],
+	[ '2017-06-03 00:00', '2017-06-07 00:00', false, 'Pfingstferien' ],
 	[ '2017-07-01 00:00', '2017-09-04 00:00', false, 'Sommerferien' ],
-	[ '2017-12-24 00:00', '2018-01-07 00:00', false, 'Weihnachtsferien' ],
-], 9241200000, 0, false, nominatim_by_loc.at_1, 'not only test');
+	[ '2017-12-24 00:00', '2018-01-07 00:00', false, 'Weihnachtsferien' ]
+], 9244800000, 0, false, nominatim_by_loc.at_1, 'not only test');
 
 /* }}} */
 
