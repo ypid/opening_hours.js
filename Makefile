@@ -179,15 +179,6 @@ check-diff-all: check-diff check-diff-opening_hours.min.js
 .PHONY: check-diff
 check-diff: check-diff-all-opening_hours.js
 
-
-.PHONY: check-diff-uglifyjs-log
-check-diff-uglifyjs-log: uglifyjs.log
-	git --no-pager diff -- "$<"
-	git diff --quiet --exit-code HEAD -- "$<" || read fnord; \
-	if [ "$${fnord:-}" == "b" ]; then \
-		exit 1; \
-	fi
-
 .PHONY: check-test
 check-test: check-opening_hours.js
 
@@ -274,7 +265,7 @@ release-versionbump: package.json bower.json CHANGELOG.rst
 	sh -c 'git commit --all --message "Release version $$(jq --raw-output '.version' '$<')"'
 
 .PHONY: release-prepare
-release-prepare: package.json taginfo.json check-holidays update-dependency-versions doctoc check-diff-uglifyjs-log check qa-source-code qa-https-everywhere
+release-prepare: package.json taginfo.json check-holidays update-dependency-versions doctoc check qa-source-code qa-https-everywhere
 
 .PHONY: release-local
 release-local: package.json release-versionbump check-package.json
