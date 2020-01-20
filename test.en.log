@@ -443,8 +443,8 @@ With [1m[34mwarnings[39m[22m:
 "PH: Only if PH is Wednesday" for " We,Fr: PH": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	* We,Fr: PH <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
-	*PH <--- (The selector "holiday" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*PH We,Fr <--- (The selector "weekday" was switched with the selector "holiday" for readablitity and compatibiltity reasons.)
+	*PH <--- (The selector "holiday" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*PH We,Fr <--- (The selector "weekday" was switched with the selector "holiday" for readability and compatibility reasons.)
 "SH" for "SH Mo-Fr": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*SH Mo-Fr <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
@@ -500,8 +500,8 @@ With [1m[34mwarnings[39m[22m:
 "Variable days: public holidays" for "Mo-We PH -1 day": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*Mo-We PH -1 day <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
-	*PH -1 day <--- (The selector "holiday" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*PH -1 day Mo-We <--- (The selector "weekday" was switched with the selector "holiday" for readablitity and compatibiltity reasons.)
+	*PH -1 day <--- (The selector "holiday" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*PH -1 day Mo-We <--- (The selector "weekday" was switched with the selector "holiday" for readability and compatibility reasons.)
 "Variable days: public holidays" for "day before public holiday Mo-We": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*day before public holiday <--- (Please use notation "PH -1 day" for "day before public holiday".)
@@ -1331,53 +1331,53 @@ With [1m[34mwarnings[39m[22m:
 	*Feb week 05 <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
 "Selector order" for "00:00-24:00 week 05 Feb": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 05 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 05 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Selector order" for "week 05 00:00-24:00 Feb": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "week" for readablitity and compatibiltity reasons.)
-	*Feb week 05 <--- (The selector "week" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 05 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "week" for readability and compatibility reasons.)
+	*Feb week 05 <--- (The selector "week" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 05 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Selector order" for "Feb week 05 00:00-24:00": [1m[32mPASSED[39m[22m
 "Selector order" for "Feb week 05: 00:00-24:00": [1m[32mPASSED[39m[22m
 "Selector order" for "Feb week 05 Mo-Su 00:00-24:00": [1m[32mPASSED[39m[22m
 "Selector order" for "Mo-Su week 05 Feb 00:00-24:00": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*Feb week 05 Mo-Su <--- (The selector "weekday" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*Feb week 05 Mo-Su <--- (The selector "weekday" was switched with the selector "month" for readability and compatibility reasons.)
 "Selector order" for "00:00-24:00 Mo-Su week 05 Feb": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 05 <--- (The selector "week" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*Feb week 05 Mo-Su <--- (The selector "weekday" was switched with the selector "week" for readablitity and compatibiltity reasons.)
-	*Feb week 05 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 05 <--- (The selector "week" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*Feb week 05 Mo-Su <--- (The selector "weekday" was switched with the selector "week" for readability and compatibility reasons.)
+	*Feb week 05 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Selector order" for "00:00-24:00 week 05 Mo-Su Feb": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 05 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 05 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Selector order" for "Mo-Su 00:00-24:00 week 05 Feb": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*Feb week 05 <--- (The selector "week" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 05 Mo-Su <--- (The selector "weekday" was switched with the selector "week" for readablitity and compatibiltity reasons.)
-	*Feb week 05 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*Feb week 05 <--- (The selector "week" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 05 Mo-Su <--- (The selector "weekday" was switched with the selector "week" for readability and compatibility reasons.)
+	*Feb week 05 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Selector order" for "2012 00:00-24:00 week 05 Feb": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
 	*2012  <--- (The year is in the past.)
-	*2012 Feb <--- (The selector "month" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*2012 Feb week 05 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*2012 Feb <--- (The selector "month" was switched with the selector "time" for readability and compatibility reasons.)
+	*2012 Feb week 05 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Selector order" for "00:00-24:00 2012 week 05 Feb": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
 	*00:00-24:00 2012  <--- (The year is in the past.)
-	*2012 <--- (The selector "year" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*2012 Feb <--- (The selector "month" was switched with the selector "year" for readablitity and compatibiltity reasons.)
-	*2012 Feb week 05 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*2012 <--- (The selector "year" was switched with the selector "time" for readability and compatibility reasons.)
+	*2012 Feb <--- (The selector "month" was switched with the selector "year" for readability and compatibility reasons.)
+	*2012 Feb week 05 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Selector order" for "week 05 Feb 2012-2014": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
 	*week 05 Feb 2012-2014 <--- (The year is in the past.)
 	*week 05 Feb 2012-2014 <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
-	*2012-2014 <--- (The selector "year" was switched with the selector "week" for readablitity and compatibiltity reasons.)
-	*2012-2014 Feb week 05 <--- (The selector "week" was switched with the selector "year" for readablitity and compatibiltity reasons.)
+	*2012-2014 <--- (The selector "year" was switched with the selector "week" for readability and compatibility reasons.)
+	*2012-2014 Feb week 05 <--- (The selector "week" was switched with the selector "year" for readability and compatibility reasons.)
 "Selector order" for "Feb week 06": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue Ignored but passes!
 With [1m[34mwarnings[39m[22m:
 	*Feb week 06 <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
@@ -1390,8 +1390,8 @@ With [1m[34mwarnings[39m[22m:
 "Selector order" for "open week 06 Feb": [1m[32mPASSED[39m[22m, [1m[33mexcept[39m[22m prettifyValue
 With [1m[34mwarnings[39m[22m:
 	*open week 06 Feb <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
-	*Feb <--- (The selector "month" was switched with the selector "state" for readablitity and compatibiltity reasons.)
-	*Feb week 06 open <--- (The selector "state" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "state" for readability and compatibility reasons.)
+	*Feb week 06 open <--- (The selector "state" was switched with the selector "month" for readability and compatibility reasons.)
 "Additional comment "Nach Vereinbarung"" for "Mo-Fr 08:00-12:00 open "Kein Termin erforderlich", Mo-Fr 13:00-17:00 open "Nach Vereinbarung"": [1m[32mPASSED[39m[22m
 "Additional comment "Nach Vereinbarung"" for "Mo-Fr 08:00-12:00 open "Kein Termin erforderlich", Mo-Fr 13:00-17:00 open nach_vereinbarung": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
@@ -1412,13 +1412,13 @@ With [1m[34mwarnings[39m[22m:
 "Date overwriting with additional comments for unknown " for "Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 "Maybe open. Call us."": [1m[32mPASSED[39m[22m
 "Date overwriting with additional comments for unknown " for "Mo-Fr 10:00-20:00 unknown "Maybe"; We "Maybe open. Call us." 10:00-16:00": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
-	*Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 <--- (The selector "time" was switched with the selector "comment" for readablitity and compatibiltity reasons.)
-	*Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 "Maybe open. Call us." <--- (The selector "comment" was switched with the selector "time" for readablitity and compatibiltity reasons.)
+	*Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 <--- (The selector "time" was switched with the selector "comment" for readability and compatibility reasons.)
+	*Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 "Maybe open. Call us." <--- (The selector "comment" was switched with the selector "time" for readability and compatibility reasons.)
 "Date overwriting with additional comments for unknown " for "Mo-Fr 10:00-20:00 unknown "Maybe"; "Maybe open. Call us." We 10:00-16:00": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
-	*Mo-Fr 10:00-20:00 unknown "Maybe"; We <--- (The selector "weekday" was switched with the selector "comment" for readablitity and compatibiltity reasons.)
-	*Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 <--- (The selector "time" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 "Maybe open. Call us." <--- (The selector "comment" was switched with the selector "time" for readablitity and compatibiltity reasons.)
+	*Mo-Fr 10:00-20:00 unknown "Maybe"; We <--- (The selector "weekday" was switched with the selector "comment" for readability and compatibility reasons.)
+	*Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 <--- (The selector "time" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*Mo-Fr 10:00-20:00 unknown "Maybe"; We 10:00-16:00 "Maybe open. Call us." <--- (The selector "comment" was switched with the selector "time" for readability and compatibility reasons.)
 "Additional comments with time ranges spanning midnight" for "22:00-26:00; We 12:00-14:00 unknown "Maybe open. Call us."": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*22:00-26:00; We 12:00-14:00 unknown "Maybe open. Call us." <--- (This rule overwrites parts of the previous rule. This happens because normal rules apply to the whole day and overwrite any definition made by previous rules. You can make this rule an additional rule by using a "," instead of the normal ";" to separate the rules. Note that the overwriting can also be desirable in which case you can ignore this warning.)
@@ -1767,8 +1767,8 @@ With [1m[34mwarnings[39m[22m:
 "Error tolerance: case and whitespace" for "   monday,    Tu, wE,   TH    12:00 - 20:00  ; Off 14:00-16:00	": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*   monday <--- (Please use the English abbreviation "Mo" for "monday".)
-	*Mo,Tu,We,Th 12:00-20:00; 14:00-16:00 <--- (The selector "time" was switched with the selector "state" for readablitity and compatibiltity reasons.)
-	*Mo,Tu,We,Th 12:00-20:00; 14:00-16:00 off <--- (The selector "state" was switched with the selector "time" for readablitity and compatibiltity reasons.)
+	*Mo,Tu,We,Th 12:00-20:00; 14:00-16:00 <--- (The selector "time" was switched with the selector "state" for readability and compatibility reasons.)
+	*Mo,Tu,We,Th 12:00-20:00; 14:00-16:00 off <--- (The selector "state" was switched with the selector "time" for readability and compatibility reasons.)
 "Error tolerance: weekdays, months in different languages" for "Mo,Tu,We,Th 12:00-20:00; 14:00-16:00 off": [1m[32mPASSED[39m[22m
 "Error tolerance: weekdays, months in different languages" for "mon, Dienstag, Mi, donnerstag 12:00-20:00; 14:00-16:00 off": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
@@ -2078,57 +2078,57 @@ With [1m[34mwarnings[39m[22m:
 With [1m[34mwarnings[39m[22m:
 	*Sa 2 <--- (The number 2200 will be interpreted as year. This is probably not intended. Times can be specified as "12:00".)
 	*Sa 2200 <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
-	*2200 <--- (The selector "year" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*2200 Sa <--- (The selector "weekday" was switched with the selector "year" for readablitity and compatibiltity reasons.)
+	*2200 <--- (The selector "year" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*2200 Sa <--- (The selector "weekday" was switched with the selector "year" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "Feb week 06": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*Feb week 06 <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
 "Value not ideal (probably wrong). Should throw a warning." for "00:00-24:00 week 06 Feb": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 06 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 06 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "week 06 00:00-24:00 Feb": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "week" for readablitity and compatibiltity reasons.)
-	*Feb week 06 <--- (The selector "week" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 06 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "week" for readability and compatibility reasons.)
+	*Feb week 06 <--- (The selector "week" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 06 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "Mo-Su week 06 Feb 00:00-24:00": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*Feb week 06 Mo-Su <--- (The selector "weekday" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*Feb week 06 Mo-Su <--- (The selector "weekday" was switched with the selector "month" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "00:00-24:00 Mo-Su week 06 Feb": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 06 <--- (The selector "week" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*Feb week 06 Mo-Su <--- (The selector "weekday" was switched with the selector "week" for readablitity and compatibiltity reasons.)
-	*Feb week 06 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 06 <--- (The selector "week" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*Feb week 06 Mo-Su <--- (The selector "weekday" was switched with the selector "week" for readability and compatibility reasons.)
+	*Feb week 06 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "00:00-24:00 week 06 Mo-Su Feb": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 06 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 06 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "Mo-Su 00:00-24:00 week 06 Feb": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
-	*Feb <--- (The selector "month" was switched with the selector "weekday" for readablitity and compatibiltity reasons.)
-	*Feb week 06 <--- (The selector "week" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*Feb week 06 Mo-Su <--- (The selector "weekday" was switched with the selector "week" for readablitity and compatibiltity reasons.)
-	*Feb week 06 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*Feb <--- (The selector "month" was switched with the selector "weekday" for readability and compatibility reasons.)
+	*Feb week 06 <--- (The selector "week" was switched with the selector "time" for readability and compatibility reasons.)
+	*Feb week 06 Mo-Su <--- (The selector "weekday" was switched with the selector "week" for readability and compatibility reasons.)
+	*Feb week 06 Mo-Su 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "2012 00:00-24:00 week 06 Feb": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*2012  <--- (The year is in the past.)
-	*2012 Feb <--- (The selector "month" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*2012 Feb week 06 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*2012 Feb <--- (The selector "month" was switched with the selector "time" for readability and compatibility reasons.)
+	*2012 Feb week 06 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "00:00-24:00 2012 week 06 Feb": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*00:00-24:00 2012  <--- (The year is in the past.)
-	*2012 <--- (The selector "year" was switched with the selector "time" for readablitity and compatibiltity reasons.)
-	*2012 Feb <--- (The selector "month" was switched with the selector "year" for readablitity and compatibiltity reasons.)
-	*2012 Feb week 06 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readablitity and compatibiltity reasons.)
+	*2012 <--- (The selector "year" was switched with the selector "time" for readability and compatibility reasons.)
+	*2012 Feb <--- (The selector "month" was switched with the selector "year" for readability and compatibility reasons.)
+	*2012 Feb week 06 00:00-24:00 <--- (The selector "time" was switched with the selector "month" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "week 06 Feb 2012-2014": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*week 06 Feb 2012-2014 <--- (The year is in the past.)
 	*week 06 Feb 2012-2014 <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
-	*2012-2014 <--- (The selector "year" was switched with the selector "week" for readablitity and compatibiltity reasons.)
-	*2012-2014 Feb week 06 <--- (The selector "week" was switched with the selector "year" for readablitity and compatibiltity reasons.)
+	*2012-2014 <--- (The selector "year" was switched with the selector "week" for readability and compatibility reasons.)
+	*2012-2014 Feb week 06 <--- (The selector "week" was switched with the selector "year" for readability and compatibility reasons.)
 "Value not ideal (probably wrong). Should throw a warning." for "2012 Jan-Feb; 00:23-00:42 unknown "warning at correct position?"": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*2012  <--- (The year is in the past.)
