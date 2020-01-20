@@ -36,6 +36,7 @@
   "scripts": {
     "build": "make build",
     "test": "make check-full",
+    "eslint": "eslint index.js",
     "osm-tag-data-check": "make osm-tag-data-check",
     "benchmark": "make benchmark",
     "interactive_testing": "make run-interactive_testing",
@@ -48,6 +49,7 @@
     "assert": "^1.4.1",
     "colors": "^0.6.2",
     "country-language": "^0.1.7",
+    "eslint": "^6.8.0",
     "full-icu": "^1.2.0",
     "glob": "^7.1.1",
     "https": "^1.0.0",

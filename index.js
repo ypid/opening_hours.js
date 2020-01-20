@@ -1513,30 +1513,6 @@ export default function(value, nominatim_object, optional_conf_parm) {
     }
     /* }}} */
 
-    /* Function to determine whether an array contains a value {{{
-     * Source: https://stackoverflow.com/a/1181586
-     *
-     * :param needle: Element to find.
-     * :returns: Index of element if present, if not present returns -1.
-     */
-    function indexOf(needle) {
-        if(typeof Array.prototype.indexOf === 'function') {
-            indexOf = Array.prototype.indexOf;
-        } else {
-            indexOf = function(needle) {
-                var i = -1, index = -1;
-                for(i = 0; i < this.length; i++) {
-                    if(this[i] === needle) {
-                        index = i;
-                        break;
-                    }
-                }
-                return index;
-            };
-        }
-        return indexOf.call(this, needle);
-    } /* }}} */
-
     /* Numeric list parser (1,2,3-4,-1) {{{
      * Used in weekday parser above.
      *
@@ -2817,7 +2793,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
                 );
                 if (year !== next_holiday.getFullYear()) {
                     throw t('movable not in year', {
-                        'name': holiday_item.variable_date, 'days': offset});
+                        'name': holiday_item.variable_date, 'days': date_offset});
                 }
             } else {
                 throw formatLibraryBugMessage('Unexpected object: ' + JSON.stringify(holiday_item, null, '    '));
@@ -3590,6 +3566,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
                              * '17:00-00:00 unknown "Specified as open end. Closing time was guessed.", 13:00-00:00 open' // First internal rule.
                              * + ', ' overwritten part: 00:00-03:00 open + '00:00-02:00 open', // Second internal rule.
                              */
+                            // eslint-disable-next-line no-constant-condition
                             if (    false
                                     && typeof rules[rule-1] === 'object'
                                     && rules[rule].build_from_token_rule.toString() === rules[rule-1].build_from_token_rule.toString()
@@ -4062,6 +4039,6 @@ export default function(value, nominatim_object, optional_conf_parm) {
     /* }}} */
 
     /* }}} */
-};
+}
 
 /* vim: set ts=4 sw=4 tw=0 et foldmarker={{{,}}} foldlevel=0 foldmethod=marker : */
