@@ -44,7 +44,7 @@
   This rule will be evaluated as closed but it was specified as additional rule.
   It should be specified as normal rule using ";" as rule separator.
   See https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification#explain:rule_modifier:closed.
-'switched': 'The selector "__first__" was switched with the selector "__second__" for readablitity and compatibiltity reasons.'
+'switched': 'The selector "__first__" was switched with the selector "__second__" for readability and compatibility reasons.'
 'no colon after': 'Please don’t use ":" after __token__.'
 'number -5 to 5': 'Number between -5 and 5 (except 0) expected.'
 'one weekday constraint': 'You can not use more than one constrained weekday in a month range'
