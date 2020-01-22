@@ -969,7 +969,8 @@ export default function(value, nominatim_object, optional_conf_parm) {
                     }
                     // console.log(rule_infos);
                     // console.log(next_rule_selects_next_day);
-                    if (rules_too_complex_count < 2 && next_rule_selects_next_day) {
+                    var additional_rule_separator_enabled = (optional_conf_parm||{}).additional_rule_separator !== false;
+                    if (rules_too_complex_count < 2 && next_rule_selects_next_day && additional_rule_separator_enabled) {
                         parsing_warnings.push([nrule+1, new_tokens[nrule+1][0].length - 1,
                             t('additional_rule_separator not used after time wrapping midnight'),
                             new_tokens
