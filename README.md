@@ -111,7 +111,7 @@ make build
 
 and finally build the deployable minified js-file:
 ```Shell
-make opening_hours+deps.js
+make opening_hours+deps.min.js
 ```
 
 ### Web developer
