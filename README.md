@@ -104,6 +104,16 @@ and install it’s dependencies (execute inside the repository):
 npm install
 ```
 
+and build the library (so tests can be run):
+```Shell
+make build
+```
+
+and finally build the deployable minified js-file:
+```Shell
+make opening_hours+deps.js
+```
+
 ### Web developer
 
 If you are a web developer and want to use this library you can do so by including the current version from here:
