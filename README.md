@@ -238,6 +238,8 @@ function getReadableState(startString, endString, oh, past) {
 
         *   'locale' (type: string, default: i18n.lng() || 'en'): Defines the locale for errors and warnings.
 
+        *   'additional_rule_separator' (type boolean, default true): Allows to disable the "additional_rule_separator not used after time wrapping midnight" check giving rise to the warning "This rule overwrites parts of the previous rule. This happens because normal rules apply to the whole day and overwrite any definition made by previous rules. You can make this rule an additional rule by using a "," instead of the normal ";" to separate the rules. Note that the overwriting can also be desirable in which case you can ignore this warning."
+
 *   `var warnings = oh.getWarnings();`
 
     Get warnings which appeared during parsing as human readable string array. Every violation is described in one element of the array. Almost all warnings can be auto corrected and are probably interpreted as indented by the mapper. However, this is not a granite of course.
