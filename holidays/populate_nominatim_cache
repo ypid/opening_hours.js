@@ -101,7 +101,7 @@ def handle_nominatim_url(nominatim_url, def_file, state=None):
             parsed_url[2] = '/reverse'
             parsed_url[4] = urllib.parse.urlencode(reverse_geocoding_qs, doseq=True, safe=",")
             correct_nominatim_url = urllib.parse.urlunparse(parsed_url)
-            return handle_nominatim_url(correct_nominatim_url, def_file)
+            return handle_nominatim_url(correct_nominatim_url, def_file, state)
 
         nominatim_data = OrderedDict(sorted(
             nominatim_data.items(),
