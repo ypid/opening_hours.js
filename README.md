@@ -102,6 +102,7 @@ git clone --recursive https://github.com/opening-hours/opening_hours.js.git
 and install it’s dependencies (execute inside the repository):
 ```Shell
 npm install
+pip install -r requirements.txt
 ```
 
 and build the library (so tests can be run):
