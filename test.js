@@ -5170,6 +5170,10 @@ test.addPrettifyValue('Compare prettifyValue', [
     ], 'de', 'Di');
 
 test.addPrettifyValue('Compare prettifyValue', [
+        'Tu,PH off',
+    ], 'de', 'Di,Feiertags geschlossen', 'only test');
+
+test.addPrettifyValue('Compare prettifyValue', [
         'PH',
     ], 'de', 'Feiertags');
 
