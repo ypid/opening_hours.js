@@ -96,8 +96,8 @@ Solothurn:
   _nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Switzerland&state=Solothurn&zoom=18&addressdetails=1&limit=1&accept-language=de,fr,it,rm'
   _state_code: so
 
-St. Gallen:
-  _nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Switzerland&state=St.%20Gallen&zoom=18&addressdetails=1&limit=1&accept-language=de,fr,it,rm'
+Sankt Gallen:
+  _nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Switzerland&state=Sankt%20Gallen&zoom=18&addressdetails=1&limit=1&accept-language=de,fr,it,rm'
   _state_code: sg
 
 Tessin:
