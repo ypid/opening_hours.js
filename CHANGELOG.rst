@@ -67,6 +67,9 @@ Contributors
 * [hariskar_] - Haris K
 * [Virtakuono_] - Juho Häppölä
 * [blef00fr_]
+* [mstock_] - Manfred Stock
+* [emilsivro_]
+* [simonpoole_] - Simon Poole
 
 
 Thanks very much to all contributors!
@@ -118,6 +121,10 @@ Thanks very much to all contributors!
 .. _hariskar: https://github.com/hariskar
 .. _Virtakuono: https://github.com/Virtakuono
 .. _blef00fr: https://github.com/blef00fr
+.. _mstock: https://github.com/mstock
+.. _emilsivro: https://github.com/emilsivro
+.. _simonpoole: https://github.com/simonpoole
+
 
 Supporters
 ~~~~~~~~~~
@@ -149,6 +156,8 @@ Added
   * Ireland [Gerw88_, ypid_]
   * Ivory Coast [sommerluk_, ypid_]
   * Norway [Gazer75_]
+  * Switzerland [mstock_, emilsivro_, simonpoole_, ypid_]
+
 
 * Added Easter Sunday to Slovak holidays. [chiak597_]
 * Localizations added: Hungarian [urbalazs_, debyos_]
