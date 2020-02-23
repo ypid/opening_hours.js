@@ -102,6 +102,7 @@ git clone --recursive https://github.com/opening-hours/opening_hours.js.git
 and install it’s dependencies (execute inside the repository):
 ```Shell
 npm install
+pip install -r requirements.txt
 ```
 
 and build the library (so tests can be run):
@@ -517,6 +518,7 @@ Almost everything from opening_hours definition is supported, as well as some ex
         * [Russian][PH-ru]
         * [Slovenian][PH-si]
         * [Sweden][PH-se]
+        * [Switzerland][PH-ch]
         * [Ukraine][PH-ua]
         * [United states][PH-us] (Some special cases are [currently not handled](https://github.com/opening-hours/opening_hours.js/issues/69#issuecomment-74103181))
 
@@ -848,6 +850,7 @@ Edit: This does also work on npmjs in this short version … -->
 [PH-be]: https://de.wikipedia.org/wiki/Feiertage_in_Belgien
 [PH-br]: https://pt.wikipedia.org/wiki/Feriados_no_Brasil
 [PH-ca]: https://en.wikipedia.org/wiki/Public_holidays_in_Canada
+[PH-ch]: https://www.bj.admin.ch/dam/data/bj/publiservice/service/zivilprozessrecht/kant-feiertage.pdf
 [PH-ci]: https://fr.wikipedia.org/wiki/Jour_f%C3%A9ri%C3%A9#_C%C3%B4te_d%27Ivoire
 [PH-cz]: https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
 [PH-de]: https://de.wikipedia.org/wiki/Feiertage_in_Deutschland
