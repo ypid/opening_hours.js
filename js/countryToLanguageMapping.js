@@ -66,7 +66,7 @@ var countryToLanguageMapping = {
     'eg': 'ar',
     'eh': 'ar,es,fr',
     'er': 'ti,ar,en',
-    'es': 'ast,ca,es,eu,gl',
+    'es': 'es,ca,eu,gl,an,oc,ast',
     'et': 'am,om',
     'fi': 'fi,sv,se',
     'fj': 'en',
