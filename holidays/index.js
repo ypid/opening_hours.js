@@ -8,6 +8,7 @@ export {default as ci} from "./ci.yaml";
 export {default as cz} from "./cz.yaml";
 export {default as de} from "./de.yaml";
 export {default as dk} from "./dk.yaml";
+export {default as es} from "./es.yaml";
 export {default as fi} from "./fi.yaml";
 export {default as fr} from "./fr.yaml";
 export {default as gb} from "./gb.yaml";
