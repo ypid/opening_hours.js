@@ -70,6 +70,7 @@ Contributors
 * [mstock_] - Manfred Stock
 * [emilsivro_]
 * [simonpoole_] - Simon Poole
+* [jmontane_] - Joan Montané
 
 
 Thanks very much to all contributors!
@@ -124,6 +125,7 @@ Thanks very much to all contributors!
 .. _mstock: https://github.com/mstock
 .. _emilsivro: https://github.com/emilsivro
 .. _simonpoole: https://github.com/simonpoole
+.. _jmontane: https://github.com/jmontane
 
 
 Supporters
@@ -156,6 +158,7 @@ Added
   * Ireland [Gerw88_, ypid_]
   * Ivory Coast [sommerluk_, ypid_]
   * Norway [Gazer75_]
+  * Spain [jmontane_]
   * Switzerland [mstock_, emilsivro_, simonpoole_, ypid_]
 
 
