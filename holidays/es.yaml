@@ -30,8 +30,8 @@ PH:
   - {'name': 'Epifanía del Señor', 'fixed_date': [1, 6]}
   - {'name': 'Día de Andalucía', 'fixed_date': [2, 28], 'only_states': [Andalucía]}
   - {'name': 'Dia de les Illes Balears', 'fixed_date': [3, 1], 'only_states': [Islas Baleares]}
-  - {'name': 'Sant Josep', 'fixed_date': [3, 19], 'only_states': [Comunidad Valenciana]} 
-  - {'name': 'San José', 'fixed_date': [3, 19], 'only_states': [Murcia]} 
+  - {'name': 'Sant Josep', 'fixed_date': [3, 19], 'only_states': [Comunidad Valenciana]}
+  - {'name': 'San José', 'fixed_date': [3, 19], 'only_states': [Murcia]}
   - {'name': 'Jueve Santo', 'variable_date': easter, 'offset': -3, 'only_states': [Andalucía, Aragón, Castilla y León, Castilla-La Mancha, Canarias, Extremadura, Galicia, Islas Baleares, La Rioja, Comunidad de Madrid, Región de Murcia, Navarra, Asturias, País Vasco, Cantabria, Ceuta, Melilla]}
   - {'name': 'Divendres Sant', 'variable_date': easter, 'offset': -2, 'only_states': [Cataluña, Comunidad Valenciana, Islas Baleares]}
   - {'name': 'Viernes Santo', 'variable_date': easter, 'offset': -2}
@@ -76,7 +76,7 @@ PH:
 # Andalucía		37.33999,-4.58116
 Andalucía:
   _nominatim_url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat=37.33999&lon=-4.58116&zoom=18&addressdetails=1&limit=1&accept-language=es,ca'
-  _state_code: 
+  _state_code: AN
 
 # Aragón 		41.37872,-0.76393
 Aragón:
@@ -167,4 +167,3 @@ Ceuta:
 Melilla:
   _nominatim_url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat=35.29186&lon=-2.94090&zoom=18&addressdetails=1&limit=1&accept-language=es'
   _state_code: ML
-
