@@ -60,6 +60,12 @@ def handle_country_holiday_def_file(def_file):
         handle_nominatim_url(c_def['_nominatim_url'], def_file)
     for r_name, r_def in c_def.items():
         if type(r_def) == dict and type(r_def.get('_nominatim_url')) == str:
+            if any(c.isupper() for c in str(r_def.get('_state_code', ''))):
+                raise Exception("Found upper case _state_code {} in file {}!".format(
+                    r_def.get('_state_code', ''),
+                    def_file,
+                ))
+
             handle_nominatim_url(
                 r_def['_nominatim_url'],
                 def_file,
