@@ -245,6 +245,7 @@ Fixed
   shown changes or failed to return with an error before. [ypid_]
 * Fix support for legacy browsers (IE) with using proper for...in loops. [shouze_]
 * Error tolerance: Fix mapping of Spanish weekdays. [maxerickson_]
+* Do not zero pad ``positive_number`` symbols by default in ``oh.prettifyValue``. [ypid_]
 
 
 v3.5.0_ - 2017-02-17

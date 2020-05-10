@@ -1068,7 +1068,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
      * :param tokens: List of token objects.
      * :param at: Position where to start.
      * :returns:
-     *        * false the current token is not the begin of a selector.
+     *        * false if the current token is not the begin of a selector.
      *        * Position in token array from where the decision was made that
      *          the token is the start of a selector.
      */
@@ -1107,8 +1107,9 @@ export default function(value, nominatim_object, optional_conf_parm) {
 
         for (; selector_start >= 0; selector_start--) {
             pos_in_token_array = tokenIsTheBeginOfSelector(tokens, selector_start);
-            if (pos_in_token_array)
+            if (pos_in_token_array) {
                 break;
+            }
         }
         selector_end = selector_start;
 
@@ -1577,6 +1578,9 @@ export default function(value, nominatim_object, optional_conf_parm) {
                     t('range constrained weekdays'));
             }
         });
+        for (var i = at; i < endat; i++) {
+            tokens[i][4] = 'positive_number';
+        }
 
         if (!matchTokens(tokens, endat, ']'))
             throw formatWarnErrorMessage(nrule, endat, t('expected', {symbol: ']'}));
@@ -2938,6 +2942,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
                     period = matchTokens(tokens, at+3, '/', 'number');
                     if (period) {
                         period = tokens[at+4][0];
+                        tokens[at+4][4] = 'positive_number';
                         if (period < 2) {
                             throw formatWarnErrorMessage(nrule, at+4, t('week period less than 2', {
                                 'weekfrom': week_from, 'weekto': week_to, 'period': period}));
@@ -3291,6 +3296,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
                     var range_to = tokens[at+has_year+(is_range ? 3 : 1)][0] + 1;
                     if (is_range && matchTokens(tokens, at+has_year+4, '/', 'number')) {
                         period = tokens[at+has_year+5][0];
+                        tokens[at+has_year+5][4] = 'positive_number';
                         checkPeriod(at+has_year+5, period, 'day');
                     }
 
@@ -3643,6 +3649,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
 
         var prettified_value = '';
         var at = selector_start;
+        // console.log(selector_type);
         while (at <= selector_end) {
             // console.log('At: ' + at + ', token: ' + tokens[at]);
             if (matchTokens(tokens, at, 'weekday')) {
@@ -3685,11 +3692,10 @@ export default function(value, nominatim_object, optional_conf_parm) {
             } else if (matchTokens(tokens, at, 'closed')) {
                 prettified_value += (conf.leave_off_closed ? tokens[at][0] : conf.keyword_for_off_closed);
             } else if (at - selector_start > 0 && matchTokens(tokens, at, 'number')
-                    && (matchTokens(tokens, at-1, 'month') && selector_type === 'month'
-                    ||  matchTokens(tokens, at-1, 'week')  && selector_type === 'week'
-                    )) {
-                prettified_value += ' '
-                    + (conf.zero_pad_month_and_week_numbers && tokens[at][0] < 10 ? '0' : '')
+                    && (selector_type === 'month' || selector_type === 'week')) {
+                prettified_value +=
+                    (matchTokens(tokens, at-1, 'month') || matchTokens(tokens, at-1, 'week') ? ' ' : '')
+                    + (conf.zero_pad_month_and_week_numbers && tokens[at][4] !== 'positive_number' && tokens[at][0] < 10 ? '0' : '')
                     + tokens[at][0];
             } else if (at - selector_start > 0 && matchTokens(tokens, at, 'month')
                     && matchTokens(tokens, at-1, 'year')) {

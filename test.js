@@ -2813,14 +2813,14 @@ test.addTest('Fallback group rules, with some closed times', [
 
 // week ranges {{{
 test.addTest('Week ranges', [
-        'week 01,3 00:00-24:00',
-        'week 01,3 00:00-24:00 || closed "should not change the test result"',
+        'week 01,03 00:00-24:00',
+        'week 01,03 00:00-24:00 || closed "should not change the test result"',
         // because comments for closed states are not compared (not returned by the high-level API).
-        'week 01,3: 00:00-24:00',
+        'week 01,03: 00:00-24:00',
         'week 01,week 03: 00:00-24:00',
         'week 01: 00:00-24:00; week 03: 00:00-24:00',
         'week 01; week 03',
-        'week 01-3/2 00:00-24:00',
+        'week 01-03/2 00:00-24:00',
     ], '2012-01-01 0:00', '2013-01-01 0:00', [
         [ '2012-01-02 00:00', '2012-01-09 00:00' ],
         [ '2012-01-16 00:00', '2012-01-23 00:00' ],
@@ -2828,12 +2828,12 @@ test.addTest('Week ranges', [
     ], 1000 * 60 * 60 * 24 * (2 * 7 + 1), 0, false, {}, 'not last test');
 
 test.addTest('Week ranges', [
-        'week 02,4 00:00-24:00',
-        'week 02-4/2 00:00-24:00',
+        'week 02,04 00:00-24:00',
+        'week 02-04/2 00:00-24:00',
     ], '2012-01-01 0:00', '2013-01-01 0:00', [
         [ '2012-01-09 00:00', '2012-01-16 00:00' ],
         [ '2012-01-23 00:00', '2012-01-30 00:00' ],
-    ], 1000 * 60 * 60 * 24 * (7 + 7), 0, false);
+    ], 1000 * 60 * 60 * 24 * (7 + 7), 0, false, {}, 'not only test');
 
 test.addTest('Week range limit', [
         'week 02-53',
@@ -5194,6 +5194,15 @@ test.addPrettifyValue('Compare prettifyValue', [
 test.addPrettifyValue('Compare prettifyValue', [
         'Mo: 7-18; ',
     ], 'all', 'Mo 07:00-18:00', 'not last test');
+
+test.addPrettifyValue('Compare prettifyValue', [
+        'Jan 01,3,9,21,31',
+    ], 'all', 'Jan 01,03,09,21,31', 'not only test');
+
+test.addPrettifyValue('Compare prettifyValue', [
+        'week 01-05/2,9',
+    ], 'all', 'week 01-05/2,09', 'not only test');
+
 /* }}} */
 
 /* isEqualTo {{{ */
