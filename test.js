@@ -2317,17 +2317,17 @@ test.addTest('Variable days: United States public holidays. Vermont', [
 test.addTest('Variable days: United States public holidays. Virginia', [
     'PH',
 ], '2014-01-01 0:00', '2014-12-31 23:59', [
-    [ '2014-01-01 00:00', '2014-01-02 00:00', false, "New Year's Day" ],
-    [ '2014-01-17 00:00', '2014-01-18 00:00', false, "Lee-Jackson Day" ],
-    [ '2014-01-20 00:00', '2014-01-21 00:00', false, "Martin Luther King, Jr. Day" ],
-    [ '2014-02-17 00:00', '2014-02-18 00:00', false, "Washington's Birthday" ],
-    [ '2014-05-26 00:00', '2014-05-27 00:00', false, "Memorial Day" ],
-    [ '2014-07-04 00:00', '2014-07-05 00:00', false, "Independence Day" ],
-    [ '2014-09-01 00:00', '2014-09-02 00:00', false, "Labor Day" ],
-    [ '2014-10-13 00:00', '2014-10-14 00:00', false, "Columbus Day" ],
-    [ '2014-11-11 00:00', '2014-11-12 00:00', false, "Veterans Day" ],
-    [ '2014-11-27 00:00', '2014-11-28 00:00', false, "Thanksgiving" ],
-    [ '2014-12-25 00:00', '2014-12-26 00:00', false, "Christmas Day" ],
+	[ '2014-01-01 00:00', '2014-01-02 00:00', false, "New Year's Day" ],
+	[ '2014-01-20 00:00', '2014-01-21 00:00', false, "Martin Luther King, Jr. Day" ],
+	[ '2014-02-17 00:00', '2014-02-18 00:00', false, "Washington's Birthday" ],
+	[ '2014-05-26 00:00', '2014-05-27 00:00', false, "Memorial Day" ],
+	[ '2014-07-04 00:00', '2014-07-05 00:00', false, "Independence Day" ],
+	[ '2014-09-01 00:00', '2014-09-02 00:00', false, "Labor Day" ],
+	[ '2014-10-13 00:00', '2014-10-14 00:00', false, "Columbus Day" ],
+	[ '2014-11-04 00:00', '2014-11-05 00:00', false, "Election Day" ],
+	[ '2014-11-11 00:00', '2014-11-12 00:00', false, "Veterans Day" ],
+	[ '2014-11-27 00:00', '2014-11-28 00:00', false, "Thanksgiving" ],
+	[ '2014-12-25 00:00', '2014-12-26 00:00', false, "Christmas Day" ],
 ], 1000 * 60 * 60 * 24 * (10 + 1), 0, false, nominatim_by_loc.us_va, 'not last test');
 
 test.addTest('Variable days: United States public holidays. Washington', [
