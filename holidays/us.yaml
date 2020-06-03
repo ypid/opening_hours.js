@@ -789,13 +789,13 @@ Virginia:
   _nominatim_url: 'https://nominatim.openstreetmap.org/reverse?format=json&lat=36.9454&lon=-76.2888&zoom=18&addressdetails=1&accept-language=en'
   PH:
     - {'name': 'New Year''s Day', 'fixed_date': [1, 1]}
-    - {'name': 'Lee-Jackson Day', 'variable_date': firstJanuaryMonday, 'offset': 11}
     - {'name': 'Martin Luther King, Jr. Day', 'variable_date': firstJanuaryMonday, 'offset': 14}
     - {'name': 'Washington''s Birthday', 'variable_date': firstFebruaryMonday, 'offset': 14}
     - {'name': 'Memorial Day', 'variable_date': lastMayMonday}
     - {'name': 'Independence Day', 'fixed_date': [7, 4]}
     - {'name': 'Labor Day', 'variable_date': firstSeptemberMonday}
     - {'name': 'Columbus Day', 'variable_date': firstOctoberMonday, 'offset': 7}
+    - {'name': 'Election Day', 'variable_date': firstNovemberMonday, 'offset': 1}
     - {'name': 'Veterans Day', 'fixed_date': [11, 11]}
     - {'name': 'Thanksgiving', 'variable_date': firstNovemberThursday, 'offset': 21}
     - {'name': 'Christmas Day', 'fixed_date': [12, 25]}
