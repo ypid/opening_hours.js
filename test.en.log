@@ -897,10 +897,10 @@ With [1m[34mwarnings[39m[22m:
 "Variable days: Weekday in given week." for "PH": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*PH <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
-"Variable days: Ireland public holidays." for "PH": [1m[32mPASSED[39m[22m
+"Variable days: New Zealand public holidays." for "PH": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*PH <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
-"Variable days: New Zealand public holidays." for "PH": [1m[32mPASSED[39m[22m
+"Variable days: Ireland public holidays." for "PH": [1m[32mPASSED[39m[22m
 With [1m[34mwarnings[39m[22m:
 	*PH <--- (This rule is not very explicit because there is no time selector being used. A time selector is the part specifying hours when the object is opened, for example "10:00-19:00". Please add a time selector to this rule or use a comment to make it more explicit.)
 "Weekdays" for "Mo,Th,Sa,Su 10:00-12:00": [1m[32mPASSED[39m[22m
