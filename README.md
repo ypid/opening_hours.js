@@ -513,6 +513,7 @@ Almost everything from opening_hours definition is supported, as well as some ex
         * [Italy][PH-it] (Without the Saint Patron day, see [comment](https://github.com/opening-hours/opening_hours.js/pull/74#issuecomment-76194891))
         * [Ivory Coast][PH-ci] (Without the four islamic holidays because they can not be calculated and depend on subjective ad-hoc definition)
         * [Netherlands][PH-ne]
+        * [New Zealand][PH-nz] (Provincial holiday is not handled. See [PR #333](https://github.com/opening-hours/opening_hours.js/pull/333) for details.)
         * [Poland][PH-nl]
         * [Romania][PH-ro]
         * [Russian][PH-ru]
@@ -521,6 +522,7 @@ Almost everything from opening_hours definition is supported, as well as some ex
         * [Switzerland][PH-ch]
         * [Ukraine][PH-ua]
         * [United states][PH-us] (Some special cases are [currently not handled](https://github.com/opening-hours/opening_hours.js/issues/69#issuecomment-74103181))
+
 
     * **EXT:** Supports limited calculations based on public holidays (e.g. `Sa,PH -1 day open`). The only two possibilities are currently +1 and -1. All other cases are not handled. This seems to be enough because the only thing which is really used is -1.
 
@@ -868,5 +870,6 @@ Edit: This does also work on npmjs in this short version … -->
 [PH-si]: http://www.vlada.si/o_sloveniji/politicni_sistem/prazniki/
 [PH-ua]: https://uk.wikipedia.org/wiki/%D0%A1%D0%B2%D1%8F%D1%82%D0%B0_%D1%82%D0%B0_%D0%BF%D0%B0%D0%BC%27%D1%8F%D1%82%D0%BD%D1%96_%D0%B4%D0%BD%D1%96_%D0%B2_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%96
 [PH-us]: https://en.wikipedia.org/wiki/Public_holidays_in_the_United_States
+[PH-nz]: https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand
 
 <!-- }}} -->
