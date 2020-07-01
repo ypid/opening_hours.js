@@ -18,6 +18,7 @@ export {default as ie} from "./ie.yaml";
 export {default as it} from "./it.yaml";
 export {default as nl} from "./nl.yaml";
 export {default as no} from "./no.yaml";
+export {default as nz} from "./nz.yaml";
 export {default as pl} from "./pl.yaml";
 export {default as ro} from "./ro.yaml";
 export {default as ru} from "./ru.yaml";

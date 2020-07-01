@@ -71,6 +71,7 @@ Contributors
 * [emilsivro_]
 * [simonpoole_] - Simon Poole
 * [jmontane_] - Joan Montané
+* [Mortein_] - Kiel Hurley
 
 
 Thanks very much to all contributors!
@@ -126,6 +127,7 @@ Thanks very much to all contributors!
 .. _emilsivro: https://github.com/emilsivro
 .. _simonpoole: https://github.com/simonpoole
 .. _jmontane: https://github.com/jmontane
+.. _Mortein: https://github.com/Mortein
 
 
 Supporters
@@ -134,9 +136,9 @@ Supporters
 * `iMi digital`_
 * AddisMap_
 
-Thanks for helping by allowing employees to work on the project during work hours!
+Thanks for helping by allowing employees work on the project during work hours!
 
-.. _iMi digital: http://www.imi-digital.de/
+.. _iMi digital: https://www.imi-digital.de/
 .. _AddisMap: https://www.addismap.com/
 
 master_ - unreleased
@@ -157,6 +159,7 @@ Added
   * Greece [hariskar_]
   * Ireland [Gerw88_, ypid_]
   * Ivory Coast [sommerluk_, ypid_]
+  * New Zealand [Mortein_]
   * Norway [Gazer75_]
   * Spain [jmontane_]
   * Switzerland [mstock_, emilsivro_, simonpoole_, ypid_]

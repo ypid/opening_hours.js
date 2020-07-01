@@ -2449,6 +2449,44 @@ test.addTest('Variable days: Weekday in given week.', [
 
 /* }}} */
 
+/* New Zealand holidays {{{ */
+test.addTest('Variable days: New Zealand public holidays.', [
+    'PH',
+], '2020-01-01 0:00', '2022-12-31 23:59', [
+    [ '2020-01-01 00:00', '2020-01-01 24:00', false, 'New Year\'s Day' ],
+    [ '2020-01-02 00:00', '2020-01-02 24:00', false, 'Day after New Year\'s Day' ],
+    [ '2020-02-06 00:00', '2020-02-06 24:00', false, 'Waitangi Day' ],
+    [ '2020-04-10 00:00', '2020-04-10 24:00', false, 'Good Friday' ],
+    [ '2020-04-13 00:00', '2020-04-13 24:00', false, 'Easter Monday' ],
+    [ '2020-04-25 00:00', '2020-04-25 24:00', false, 'Anzac Day' ],
+    [ '2020-06-01 00:00', '2020-06-01 24:00', false, 'Queen\'s Birthday' ],
+    [ '2020-10-26 00:00', '2020-10-26 24:00', false, 'Labour Day' ],
+    [ '2020-12-25 00:00', '2020-12-25 24:00', false, 'Christmas Day' ],
+    [ '2020-12-26 00:00', '2020-12-26 24:00', false, 'Boxing Day' ],
+    [ '2021-01-01 00:00', '2021-01-01 24:00', false, 'New Year\'s Day' ],
+    [ '2021-01-02 00:00', '2021-01-02 24:00', false, 'Day after New Year\'s Day' ],
+    [ '2021-02-06 00:00', '2021-02-06 24:00', false, 'Waitangi Day' ],
+    [ '2021-04-02 00:00', '2021-04-02 24:00', false, 'Good Friday' ],
+    [ '2021-04-05 00:00', '2021-04-05 24:00', false, 'Easter Monday' ],
+    [ '2021-04-25 00:00', '2021-04-25 24:00', false, 'Anzac Day' ],
+    [ '2021-06-07 00:00', '2021-06-07 24:00', false, 'Queen\'s Birthday' ],
+    [ '2021-10-25 00:00', '2021-10-25 24:00', false, 'Labour Day' ],
+    [ '2021-12-25 00:00', '2021-12-25 24:00', false, 'Christmas Day' ],
+    [ '2021-12-26 00:00', '2021-12-26 24:00', false, 'Boxing Day' ],
+    [ '2022-01-01 00:00', '2022-01-01 24:00', false, 'New Year\'s Day' ],
+    [ '2022-01-02 00:00', '2022-01-02 24:00', false, 'Day after New Year\'s Day' ],
+    [ '2022-02-06 00:00', '2022-02-06 24:00', false, 'Waitangi Day' ],
+    [ '2022-04-15 00:00', '2022-04-15 24:00', false, 'Good Friday' ],
+    [ '2022-04-18 00:00', '2022-04-18 24:00', false, 'Easter Monday' ],
+    [ '2022-04-25 00:00', '2022-04-25 24:00', false, 'Anzac Day' ],
+    [ '2022-06-06 00:00', '2022-06-06 24:00', false, 'Queen\'s Birthday' ],
+    [ '2022-10-24 00:00', '2022-10-24 24:00', false, 'Labour Day' ],
+    [ '2022-12-25 00:00', '2022-12-25 24:00', false, 'Christmas Day' ],
+    [ '2022-12-26 00:00', '2022-12-26 24:00', false, 'Boxing Day' ],
+], 1000 * 60 * 60 * 24 * 30, 0, false, nominatim_by_loc.nz, 'not last test');
+
+/* }}} */
+
 /* Ireland holidays {{{ */
 test.addTest('Variable days: Ireland public holidays.', [
     'PH',
