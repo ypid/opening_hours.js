@@ -653,7 +653,6 @@ Project                                                          | Additional In
 -------------                                                    | -------------
 [osm24.eu](https://github.com/dotevo/osm24)                      |
 [OpenBeerMap](https://openbeermap.github.io)                     | [issue for integration](https://github.com/OpenBeerMap/OpenBeerMap.github.io/issues/25)
-[JOSM](https://josm.openstreetmap.de/)                           | [ticket for integration](https://josm.openstreetmap.de/ticket/9157)
 [opening_hours_map]                                              |
 [ulm-opening-hours](https://github.com/cmichi/ulm-opening-hours) |
 [YoHours][]                                                      | A simple editor for OpenStreetMap opening hours, [GitHub](https://github.com/PanierAvide/panieravide.github.io/tree/master/yohours)
@@ -664,6 +663,13 @@ Project                                                          | Additional In
 [ComplexAlarm](https://github.com/ypid/ComplexAlarm)             | Java/Android. Using the JS implementation through [js-evaluator-for-android](https://github.com/evgenyneu/js-evaluator-for-android).
 
 If you use this library please let me know.
+
+
+## Projects that previously used the library
+
+Project                                                          | Additional Information
+-------------                                                    | -------------
+[JOSM](https://josm.openstreetmap.de/)                           | [ticket for integration in 13.11](https://josm.openstreetmap.de/ticket/9157), [ticket for removal in 20.03](https://josm.openstreetmap.de/ticket/18140)
 
 ### YoHours
 
