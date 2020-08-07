@@ -53,18 +53,41 @@ colors.setTheme({
     result: [ 'green', 'bold' ],
 });
 
+/* Also used by opening_hours_map/opening_hours_map.html */
 test_framework.config = {
+    'opening_hours:kitchen': {
+    },
+    'opening_hours:warm_kitchen': {
+    },
+    'opening_hours:covid19': {
+        manually_ignored: [ 'same', 'restricted' ],
+    },
     'smoking_hours': {
         manually_ignored: [ 'yes' ],
     },
+    'collection_times': {
+        oh_mode: 2
+        /* oh_mode 2: "including the hyphen because there are post boxes which are
+         * emptied several (undefined) times or one (undefined) time in a certain time
+         * frame. This shall be covered also.".
+         * Ref: http://wiki.openstreetmap.org/wiki/Key:collection_times */
+    },
     'service_times': {
         manually_ignored: [ 'automatic' ],
+        oh_mode: 2,
     },
     'fee': {
         manually_ignored: [ 'yes', 'no', 'interval', 'unknown' ],
     },
     'lit': {
-        manually_ignored: [ 'yes', 'automatic', 'no', 'interval', 'limited' ],
+        manually_ignored: [ 'interval', 'limited' ],
+        map: {
+            'yes'      : 'sunset-sunrise open "specified as yes: At night (unknown time schedule or daylight detection)"',
+            'automatic': 'unknown "specified as automatic: When someone enters the way the lights are turned on."',
+            'no'       : 'off "specified as no: There are no lights installed."',
+            // 'interval' : 'unknown "specified as interval"',
+            // 'limited'  : 'unknown "specified as limited"',
+        }
     },
 }
 

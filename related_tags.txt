@@ -3,6 +3,7 @@
 opening_hours
 opening_hours:kitchen
 opening_hours:warm_kitchen
+opening_hours:covid19
 happy_hours
 delivery_hours
 opening_hours:delivery
