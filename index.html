@@ -52,15 +52,15 @@
                 <p>
                     <script>
                         document.write('<span class="hd">' + i18n.t('words.date') + ' ' + i18n.t('words.and') + ' ' + i18n.t('words.time.time') + ':</span>');
-                        document.write('<input type="number" step="1" min="1" max="31" id="dd" size="3" name="dd" value="02" onblur="Evaluate()"/>.');
+                        document.write('<input type="number" step="1" class="input__year" id="yyyy" name="yyyy" value="2013" onblur="Evaluate()" />-');
                         document.write('<select id="mm" name="mm" onchange="Evaluate()">');
                         for (var i = 0; i < 12; i++) {
                             document.write('<option value="monthNumber' + i + '">' + new Date(2018, i, 1).toLocaleString(i18n.lng(), {month: 'short'}) + '</option>');
                         }
-                        document.write('</select>');
+                        document.write('</select>-');
+                        document.write('<input type="number" step="1" min="1" max="31" id="dd" size="3" name="dd" value="02" onblur="Evaluate()"/>');
                     </script>
 
-                    <input type="number" step="1" class="input__year" id="yyyy" name="yyyy" value="2013" onblur="Evaluate()" />
                     &#160;
                     <input type="number" step="1" min="0" max="23" name="HH" value="22" onblur="Evaluate()" />:<input type="number" step="1" min="0" max="59" name="MM" value="21" onblur="Evaluate()" />
                     &#160;
