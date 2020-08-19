@@ -72,6 +72,7 @@ Contributors
 * [simonpoole_] - Simon Poole
 * [jmontane_] - Joan Montané
 * [Mortein_] - Kiel Hurley
+* [stefanct_] - Stefan Tauner
 
 
 Thanks very much to all contributors!
@@ -128,6 +129,7 @@ Thanks very much to all contributors!
 .. _simonpoole: https://github.com/simonpoole
 .. _jmontane: https://github.com/jmontane
 .. _Mortein: https://github.com/Mortein
+.. _stefanct: https://github.com/stefanct
 
 
 Supporters
@@ -176,6 +178,7 @@ Added
   * Greece [hariskar_, ypid_]
 
 * Translate error tolerance warnings into German. [ypid_]
+* Add +/-1 week button to evaluation tool. [stefanct_]
 * Add additional warnings:
 
   * Misused ``.`` character. Example: ``Jan 01,Dec 24.-25.``. [ypid_]
