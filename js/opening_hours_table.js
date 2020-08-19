@@ -75,11 +75,17 @@ var OpeningHoursTable = {
     },
 
     printDate: function (date) {
-            return date.toLocaleDateString(i18n.lng());
+        // return date.toLocaleDateString('en-CA');
+        return date.getFullYear()+'-'
+            + this.pad(date.getMonth()+1)+'-'
+            + this.pad(date.getDate());
     },
 
     printTime: function (date) {
-            return date.toLocaleTimeString(i18n.lng());
+        // return date.toLocaleTimeString('de');
+        return this.pad(date.getHours())+':'
+            + this.pad(date.getMinutes())+':'
+            + this.pad(date.getSeconds());
     },
 
     drawTable: function (it, date_today, has_next_change) {

@@ -231,6 +231,7 @@ Changed
 
 * Improved performance of common constructor calls by factor 6! [ypid_]
 * Improve number input in the evaluation tool and other HTML and CSS improvements. Useful for example on mobile devices. [HolgerJeromin_, ypid_]
+* Change from localized dates to ISO 8601 in evaluation tool. The syntax has no support for legacy stuff like AM/PM or weirdly written dates anyway. Commit to ISO 8601 all the way regardless of local quirks. [ypid_]
 
 * Merge country into state holidays. This avoids repeating country-wide holidays.
   [simon04_]
