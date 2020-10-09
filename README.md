@@ -225,8 +225,8 @@ function getReadableState(startString, endString, oh, past) {
 
 		The country code and the state is needed to calculate the correct public holidays (PH) and school holidays (SH).
 
-        In order to obtain such an object, you'll need to know the coordinates or preferably the OSM id (for the node, way or relation) of the facility (where the opening hours do apply). These can be used to query the other parameters, using [reverse geocoding with Nominatim][Nominatim].
-		The JSON obtained from the online service  [Nominatim] can be passed in as the second argument of the constructor.
+        Based on the coordinates or the OSM id of the facility, the other parameters can be queried using [reverse geocoding with Nominatim][Nominatim].
+		The JSON obtained from this online service can be passed in as the second argument of the constructor.
 		The data returned by Nominatim should be in the local language (the language of the country for which the opening hours apply). If not, *accept-language* can be used as parameter in the request URL.
 		To get started, see [this example query](https://nominatim.openstreetmap.org/reverse?format=json&lat=49.5487429714954&lon=9.81602098644987&zoom=5&addressdetails=1) or [have a look in the API-reference](https://nominatim.org/release-docs/develop/api/Overview/)
 
