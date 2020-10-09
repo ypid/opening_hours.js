@@ -219,7 +219,16 @@ function getReadableState(startString, endString, oh, past) {
 
         Throws an error string if the expression is malformed or unsupported.
 
-    *   nominatim_object (optional, type: object or null): In order to calculate the correct times for variable times (e.g. sunrise, dusk, see under [Time ranges][ohlib.time-ranges]) the coordinates are needed. To apply the correct holidays (PH) and school holidays (SH) the country code and the state is needed. The only thing you as programmer need to know are the coordinates or preferably the OSM id (for the node, way or relation) of the facility (where the opening hours do apply) anything else can be queried for using [reverse geocoding with Nominatim][Nominatim]. So just use as second parameter the returned JSON from [Nominatim] (example URL: https://nominatim.openstreetmap.org/reverse?format=json&lat=49.5487429714954&lon=9.81602098644987&zoom=5&addressdetails=1) and you are good to go. Note that this second parameter is optional. The data returned by Nominatim should be in the local language (the language of the country for which the opening hours apply). If not, *accept-language* can be used as parameter in the request URL.
+    *   nominatim_object (optional, type: object or null): Used in order to calculate the correct times for holidays and variable times (e.g. sunrise, dusk, see under [Time ranges][ohlib.time-ranges]).
+    
+        The nominatim-object should contain the fields `{lat, lon, address: {country_code, state}}`. The location (`lat` and `lon`) is used to calculate the correct values for sunrise and sunset.
+
+		The country code and the state is needed to calculate the correct public holidays (PH) and school holidays (SH).
+
+        In order to obtain such an object, you'll need to know the coordinates or preferably the OSM id (for the node, way or relation) of the facility (where the opening hours do apply). These can be used to query the other parameters, using [reverse geocoding with Nominatim][Nominatim].
+		The JSON obtained from the online service  [Nominatim] can be passed in as the second argument of the constructor.
+		The data returned by Nominatim should be in the local language (the language of the country for which the opening hours apply). If not, *accept-language* can be used as parameter in the request URL.
+		To get started, see [this example query](https://nominatim.openstreetmap.org/reverse?format=json&lat=49.5487429714954&lon=9.81602098644987&zoom=5&addressdetails=1) or [have a look in the API-reference](https://nominatim.org/release-docs/develop/api/Overview/)
 
         The `nominatim_object` can also be `null` in which case a default location will be used.
         This can be used if you don’t care about correct opening hours for more complex opening_hours values.
