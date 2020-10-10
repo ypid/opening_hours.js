@@ -220,15 +220,15 @@ function getReadableState(startString, endString, oh, past) {
         Throws an error string if the expression is malformed or unsupported.
 
     *   nominatim_object (optional, type: object or null): Used in order to calculate the correct times for holidays and variable times (e.g. sunrise, dusk, see under [Time ranges][ohlib.time-ranges]).
-    
+
         The nominatim-object should contain the fields `{lat, lon, address: {country_code, state}}`. The location (`lat` and `lon`) is used to calculate the correct values for sunrise and sunset.
 
-		The country code and the state is needed to calculate the correct public holidays (PH) and school holidays (SH).
+        The country code and the state is needed to calculate the correct public holidays (PH) and school holidays (SH).
 
         Based on the coordinates or the OSM id of the facility, the other parameters can be queried using [reverse geocoding with Nominatim][Nominatim].
-		The JSON obtained from this online service can be passed in as the second argument of the constructor.
-		The data returned by Nominatim should be in the local language (the language of the country for which the opening hours apply). If not, *accept-language* can be used as parameter in the request URL.
-		To get started, see [this example query](https://nominatim.openstreetmap.org/reverse?format=json&lat=49.5487429714954&lon=9.81602098644987&zoom=5&addressdetails=1) or [have a look in the API-reference](https://nominatim.org/release-docs/develop/api/Overview/)
+        The JSON obtained from this online service can be passed in as the second argument of the constructor.
+        The data returned by Nominatim should be in the local language (the language of the country for which the opening hours apply). If not, *accept-language* can be used as parameter in the request URL.
+        To get started, see [this example query](https://nominatim.openstreetmap.org/reverse?format=json&lat=49.5487429714954&lon=9.81602098644987&zoom=5&addressdetails=1) or [have a look in the API-reference](https://nominatim.org/release-docs/develop/api/Overview/)
 
         The `nominatim_object` can also be `null` in which case a default location will be used.
         This can be used if you don’t care about correct opening hours for more complex opening_hours values.
