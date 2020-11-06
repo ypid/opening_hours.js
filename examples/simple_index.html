@@ -14,11 +14,15 @@
       // Input string (english and german mixed)
       let input_value = 'do;mo-Fr 10:00 - 18:00;su off';
       
+      // Create opening_hours object
       let oh = new opening_hours(input_value, {}, { 'locale': 'de' });
 
+      // Prettify the the value
       let prettified_value = oh.prettifyValue({
         conf: { locale: 'de' },
       });
+      
+      // Console outputs
       console.log(prettified_value);
       console.log(JSON.stringify(oh.getWarnings(), null, '    '));
     </script>
