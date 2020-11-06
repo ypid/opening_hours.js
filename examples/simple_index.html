@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><!-- {{{ -->
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
     <title>Simple page using opening_hours.js</title>
-    <!-- Javascript {{{ -->
+    <!-- Javascript -->
     <script src="https://openingh.openstreetmap.de/opening_hours.js/opening_hours+deps.min.js"></script>
-    <!-- }}} -->
-  </head> <!-- }}} -->
-  <body><!-- {{{ -->
+  </head>
+
+  <body>
+
     <h1>Nothing to see here, open a debug console in your browser to see the interesting stuff.</h1>
+    
     <script>
       // Input string (english and german mixed)
       let input_value = 'do;mo-Fr 10:00 - 18:00;su off';
@@ -26,5 +27,6 @@
       console.log(prettified_value);
       console.log(JSON.stringify(oh.getWarnings(), null, '    '));
     </script>
+    
   </body>
 </html>
