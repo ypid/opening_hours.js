@@ -48,3 +48,11 @@ input[type="number"].input__year {
 input[type="number"].input__coordinate {
     width:6em;
 }
+
+input:read-only {
+    background-color: #E0E0E0;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
