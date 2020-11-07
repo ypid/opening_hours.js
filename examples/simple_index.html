@@ -4,33 +4,32 @@
     <title>Simple page using opening_hours.js</title>
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/png" href="https://openingh.openstreetmap.de/evaluation_tool/img/favicon.png">
-    <!-- Javascript -->
     <script src="https://openingh.openstreetmap.de/opening_hours.js/opening_hours+deps.min.js"></script>
   </head>
 
   <body>
 
     <h1>Nothing to see here, open a debug console in your browser to see the interesting stuff.</h1>
-    
+
     <script>
-      // Input string (english and german mixed)
-      let input_value = 'do;mo-Fr 10:00 - 18:00;su off';
-      
-      // Create opening_hours object (and output warnings in english)
+      // Input string (English and German mixed).
+      let input_value = 'Mo-Fr 10:00-20:00; Samstag und Sonntag geschlossen';
+
+      // Create opening_hours object (and output warnings in English).
       let oh = new opening_hours(input_value, {}, { 'locale': 'en' });
 
-      // Prettify the the value in different languages
+      // Prettify the value in different languages.
       let prettified_value_de = oh.prettifyValue({conf: { locale: 'de' },});
       let prettified_value_en = oh.prettifyValue({conf: { locale: 'en' },});
       let prettified_value_ru = oh.prettifyValue({conf: { locale: 'ru' },});
-      
-      // Console outputs
+
+      // Console outputs.
       console.log('Input value (de en mixed): ' + input_value);
       console.log('Prettified value (de):     ' + prettified_value_de);
       console.log('Prettified value (en):     ' + prettified_value_en);
       console.log('Prettified value (ru):     ' + prettified_value_ru);
       console.log('Warnings:' + JSON.stringify(oh.getWarnings(), null, '  '));
     </script>
-    
+
   </body>
 </html>
