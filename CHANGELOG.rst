@@ -73,6 +73,7 @@ Contributors
 * [jmontane_] - Joan Montané
 * [Mortein_] - Kiel Hurley
 * [stefanct_] - Stefan Tauner
+* [KristjanESPERANTO_] - Kristjan
 
 
 Thanks very much to all contributors!
@@ -130,6 +131,7 @@ Thanks very much to all contributors!
 .. _jmontane: https://github.com/jmontane
 .. _Mortein: https://github.com/Mortein
 .. _stefanct: https://github.com/stefanct
+.. _KristjanESPERANTO: https://github.com/KristjanESPERANTO
 
 
 Supporters
@@ -235,6 +237,7 @@ Changed
 
 * Merge country into state holidays. This avoids repeating country-wide holidays.
   [simon04_]
+* Update simple HTML usage example for using the library in a website. [KristjanESPERANTO_, ypid_]
 
 .. _ES2015 modules: http://exploringjs.com/es6/ch_modules.html
 .. _rollup: http://rollupjs.org/
