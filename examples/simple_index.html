@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><!-- {{{ -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
+  <head>
     <title>Simple page using opening_hours.js</title>
-    <!-- Javascript {{{ -->
-    <script src="opening_hours+deps.js"></script>
-    <!-- }}} -->
-  </head> <!-- }}} -->
-  <body><!-- {{{ -->
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="https://openingh.openstreetmap.de/evaluation_tool/img/favicon.png">
+    <script src="https://openingh.openstreetmap.de/opening_hours.js/opening_hours+deps.min.js"></script>
+  </head>
+
+  <body>
+
     <h1>Nothing to see here, open a debug console in your browser to see the interesting stuff.</h1>
+
     <script>
-      var opening_hours = require('opening_hours');
+      // Input string (English and German mixed).
+      let input_value = 'Mo-Fr 10:00-20:00; Samstag und Sonntag geschlossen';
 
-      var oh = new opening_hours('do', {}, { 'locale': 'de' });
+      // Create opening_hours object (and output warnings in English).
+      let oh = new opening_hours(input_value, {}, { 'locale': 'en' });
 
-      var prettified_value = oh.prettifyValue({
-        conf: { locale: 'de' },
-      });
-      console.log(prettified_value);
-      console.log(JSON.stringify(oh.getWarnings(), null, '    '));
+      // Prettify the value in different languages.
+      let prettified_value_de = oh.prettifyValue({conf: { locale: 'de' },});
+      let prettified_value_en = oh.prettifyValue({conf: { locale: 'en' },});
+      let prettified_value_ru = oh.prettifyValue({conf: { locale: 'ru' },});
+
+      // Console outputs.
+      console.log('Input value (de en mixed): ' + input_value);
+      console.log('Prettified value (de):     ' + prettified_value_de);
+      console.log('Prettified value (en):     ' + prettified_value_en);
+      console.log('Prettified value (ru):     ' + prettified_value_ru);
+      console.log('Warnings:' + JSON.stringify(oh.getWarnings(), null, '  '));
     </script>
+
   </body>
 </html>

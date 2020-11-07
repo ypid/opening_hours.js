@@ -154,7 +154,21 @@ fr:
       'assuming ok for ko': 'S''il vous plaît utiliser "<ok>" pour "<ko>".'
       'please use ok for ko': 'S''il vous plaît utiliser "__ok__" pour "__ko__".'
       'please use English abbreviation ok for ko': 'S''il vous plaît utiliser l''abréviation "__ok__" pour "__ko__".'
+    pretty:
+      'off': "fermé"
+      SH: "vacances scolaires"
+      PH: "vacances publiques"
 nl:
   opening_hours:
     texts:
       'please use English abbreviation ok for ko': 'Neem de engelse afkorting "__ok__" voor "__ko__" alstublieft.'
+    pretty:
+      'off': "gesloten"
+      SH: "schoolvakantie"
+      PH: "feestdagen"
+ru:
+  opening_hours:
+    pretty:
+      'off': "закрыто"
+      SH: "каникулы"
+      PH: "праздник"
