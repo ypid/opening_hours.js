@@ -13,7 +13,7 @@
 
     <script>
       // Input string (English and German mixed).
-      let input_value = 'Mo-Fr 10:00-20:00; Samstag und Sonntag geschlossen';
+      let input_value = 'Mo-Tu 10:00-20:00; Mi-Fr 10:00-20:00; Samstag und Sonntag geschlossen';
 
       // Create opening_hours object (and output warnings in English).
       let oh = new opening_hours(input_value, {}, { 'locale': 'en' });
