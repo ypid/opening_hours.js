@@ -55,7 +55,7 @@ var countryToLanguageMapping = {
     'cx': 'en',
     'cy': 'el,tr',
     'cz': 'cs',
-    '// de': 'de',
+    // 'de': 'de',
     'dj': 'fr,ar,so',
     'dk': 'da',
     'dm': 'en',
