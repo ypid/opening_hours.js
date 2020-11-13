@@ -16,10 +16,10 @@
       let input_value = 'Mo-Tu,Do-Fr 10:00-20:00; Samstag und Sonntag geschlossen';
 
       // Language for the warnings (get it from the browser settings).
-      let warnings_language = navigator.language.split('-')[0];
+      let locale = navigator.language.split('-')[0];
       
       // Create opening_hours object.
-      let oh = new opening_hours(input_value, {}, { 'locale': warnings_language });
+      let oh = new opening_hours(input_value, {}, { 'locale': locale });
 
       // Prettify the value in different languages.
       let prettified_value_de = oh.prettifyValue({conf: { locale: 'de' },});
