@@ -16,8 +16,8 @@
       let input_value = 'Mo-Tu,Do-Fr 10:00-20:00; Samstag und Sonntag geschlossen';
 
       // Language for the warnings (get it from the browser settings).
-      let locale = navigator.language.split('-')[0];
-      
+      let locale = navigator.language;
+
       // Create opening_hours object.
       let oh = new opening_hours(input_value, {}, { 'locale': locale });
 
