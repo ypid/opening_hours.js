@@ -140,7 +140,7 @@ Supporters
 * `iMi digital`_
 * AddisMap_
 
-Thanks for helping by allowing employees work on the project during work hours!
+Thanks for helping by allowing employees to work on the project during work hours!
 
 .. _iMi digital: https://www.imi-digital.de/
 .. _AddisMap: https://www.addismap.com/
