@@ -101,8 +101,8 @@ export default function(value, nominatim_object, optional_conf_parm) {
     /* }}} */
 
     /* Translation function {{{ */
-    /* Roughly compatibly to i18next so we can replace everything by i18next include later
-     * sprintf support
+    /* Roughly compatibly to i18next so we can replace everything by i18next with
+     * sprintf support.
      */
     var locale = 'en'; // Default locale
     if (typeof i18n === 'object') {
@@ -200,7 +200,10 @@ export default function(value, nominatim_object, optional_conf_parm) {
     if (typeof optional_conf_parm === 'number') {
         oh_mode = optional_conf_parm;
     } else if (typeof optional_conf_parm === 'object') {
-        locale = optional_conf_parm['locale'];
+        if (typeof optional_conf_parm['locale'] === 'string') {
+            /* TODO: The split thing is obviously a workaround. */
+            locale = optional_conf_parm['locale'].split('-')[0];
+        }
         if (checkOptionalConfParm('mode', 'number')) {
             oh_mode = optional_conf_parm['mode'];
         }

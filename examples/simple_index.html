@@ -13,10 +13,13 @@
 
     <script>
       // Input string (English and German mixed).
-      let input_value = 'Mo-Fr 10:00-20:00; Samstag und Sonntag geschlossen';
+      let input_value = 'Mo-Tu,Do-Fr 10:00-20:00; Samstag und Sonntag geschlossen';
 
-      // Create opening_hours object (and output warnings in English).
-      let oh = new opening_hours(input_value, {}, { 'locale': 'en' });
+      // Language for the warnings (get it from the browser settings).
+      let locale = navigator.language;
+
+      // Create opening_hours object.
+      let oh = new opening_hours(input_value, {}, { 'locale': locale });
 
       // Prettify the value in different languages.
       let prettified_value_de = oh.prettifyValue({conf: { locale: 'de' },});
