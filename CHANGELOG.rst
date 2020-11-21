@@ -175,7 +175,7 @@ Added
 * Localizations added:
 
   * Hungarian [urbalazs_, debyos_]
-  * Spanish [Robot8A_]
+  * Spanish [Robot8A_, ypid_]
 
 * School holiday definitions added:
 
