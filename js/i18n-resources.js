@@ -140,7 +140,7 @@ var resources = { // English is fallback language.
             },
         },
     }, // }}}
-    
+
     es: {
         translation: {
             "lang": {
