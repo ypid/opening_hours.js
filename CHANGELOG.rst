@@ -74,6 +74,7 @@ Contributors
 * [Mortein_] - Kiel Hurley
 * [stefanct_] - Stefan Tauner
 * [KristjanESPERANTO_] - Kristjan
+* [Robot8A_] - Héctor Ochoa Ortiz
 
 
 Thanks very much to all contributors!
@@ -132,6 +133,7 @@ Thanks very much to all contributors!
 .. _Mortein: https://github.com/Mortein
 .. _stefanct: https://github.com/stefanct
 .. _KristjanESPERANTO: https://github.com/KristjanESPERANTO
+.. _Robot8A: https://www.openstreetmap.org/user/Robot8A
 
 
 Supporters
@@ -170,7 +172,10 @@ Added
 
 
 * Added Easter Sunday to Slovak holidays. [chiak597_]
-* Localizations added: Hungarian [urbalazs_, debyos_]
+* Localizations added:
+
+  * Hungarian [urbalazs_, debyos_]
+  * Spanish [Robot8A_, ypid_]
 
 * School holiday definitions added:
 
