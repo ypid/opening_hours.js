@@ -277,7 +277,7 @@ var resources = { // English is fallback language.
                     "years many": "años",
                     "hours minutes sep": "y ",
                     "now": "ahora",
-                    "time": "tiempo",
+                    "time": "hora",
                 },
             },
         },
