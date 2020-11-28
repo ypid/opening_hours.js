@@ -1,4 +1,7 @@
 ---
+
+_nominatim_url: 'https://nominatim.openstreetmap.org/search?format=json&country=Belgium&zoom=18&addressdetails=1&limit=1&accept-language=nl,fr,de,en'
+
 # https://nl.wikipedia.org/wiki/Feestdagen_in_Belgi%C3%AB
 PH:
   - {'name': 'Nieuwjaar - Jour de l''an', 'fixed_date': [1, 1]}
