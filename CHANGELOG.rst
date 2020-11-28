@@ -181,7 +181,7 @@ Added
 
   * Austria [simon04_]
   * France [blef00fr_, ypid_]
-  * Germany 2017 until 2024 [ypid_]
+  * Germany 2017 until 2024 [ypid_, KristjanESPERANTO_]
   * Greece [hariskar_, ypid_]
 
 * Translate error tolerance warnings into German. [ypid_]
