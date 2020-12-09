@@ -75,6 +75,7 @@ Contributors
 * [stefanct_] - Stefan Tauner
 * [KristjanESPERANTO_] - Kristjan
 * [Robot8A_] - Héctor Ochoa Ortiz
+* [pietervdvn_] - Pieter Vander Vennet
 
 
 Thanks very much to all contributors!
@@ -134,6 +135,7 @@ Thanks very much to all contributors!
 .. _stefanct: https://github.com/stefanct
 .. _KristjanESPERANTO: https://github.com/KristjanESPERANTO
 .. _Robot8A: https://www.openstreetmap.org/user/Robot8A
+.. _pietervdvn: https://github.com/pietervdvn
 
 
 Supporters
@@ -170,19 +172,19 @@ Added
   * Spain [jmontane_]
   * Switzerland [mstock_, emilsivro_, simonpoole_, ypid_]
 
+* School holiday definitions added:
+
+  * Austria [simon04_]
+  * Belgium [pietervdvn_]
+  * France [blef00fr_, ypid_]
+  * Germany 2017 until 2024 [ypid_]
+  * Greece [hariskar_, ypid_]
 
 * Added Easter Sunday to Slovak holidays. [chiak597_]
 * Localizations added:
 
   * Hungarian [urbalazs_, debyos_]
   * Spanish [Robot8A_, ypid_]
-
-* School holiday definitions added:
-
-  * Austria [simon04_]
-  * France [blef00fr_, ypid_]
-  * Germany 2017 until 2024 [ypid_]
-  * Greece [hariskar_, ypid_]
 
 * Translate error tolerance warnings into German. [ypid_]
 * Add +/-1 week button to evaluation tool. [stefanct_]
