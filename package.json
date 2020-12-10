@@ -40,7 +40,8 @@
     "osm-tag-data-check": "make osm-tag-data-check",
     "benchmark": "make benchmark",
     "interactive_testing": "make run-interactive_testing",
-    "regex_search": "make run-regex_search"
+    "regex_search": "make run-regex_search",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "suncalc": "^1.8.0"
