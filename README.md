@@ -695,7 +695,7 @@ YoHours currently only checks with this lib if the opening_hours value can be ev
 ## Bindings and ports
 
 * Python: https://github.com/ypid/pyopening_hours (using the JS implementation through Python subprocess and JSON passing to a Node.JS process executing the JS implementation, access to the [simple API](https://github.com/opening-hours/opening_hours.js#simple-api))
-* Java/Nashorn: https://josm.openstreetmap.de/ticket/11755 (using the JS implementation through [Nashorn](http://openjdk.java.net/projects/nashorn/), Status: Nashorn provides access to all features of the JS implementation)
+* Java/Nashorn: https://josm.openstreetmap.de/ticket/11755 (using the JS implementation through [Nashorn](https://openjdk.java.net/projects/nashorn/), Status: Nashorn provides access to all features of the JS implementation)
 - Java/Android: https://github.com/ypid/ComplexAlarm (using the JS implementation through [js-evaluator-for-android](https://github.com/evgenyneu/js-evaluator-for-android), Status: Library runs on Android, Return code/Result passing from JS to Java not yet clear/tested)
 
 ## Other implementations
