@@ -1,22 +1,27 @@
 ---
 
-## https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
 
 dist: 'xenial'
 
 addons:
   apt:
     packages:
-      ## Install Java8 as required by vnu.jar
+      # Install Java8 as required by vnu.jar
       - 'openjdk-8-jre'
 
 language: 'node_js'
 node_js:
+  # Support policy: We support every Node.js version is still "maintained".
+  # Testing unmaintained versions serves no purpose.
+
+  # The only exception is that the oldest Node.js version under which all tests
+  # pass is still tested but can be increased as needed.
   - '8'
-  - '9'
+
   - '10'
-  - '11'
   - '12'
+  - '14'
   - 'node'
 
 install:
@@ -25,4 +30,4 @@ install:
   - 'pip install --user html5validator yq'
 
 script:
-  - "make check-full"
+  - 'make check-full'
