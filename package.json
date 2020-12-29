@@ -56,7 +56,6 @@
     "i18next-client": "^1.11.1",
     "js-yaml": "^3.8.2",
     "line-reader": "^0.4.0",
-    "moment": "^2.10.6",
     "optimist": "^0.6.1",
     "package-json-validator": "^0.6.1",
     "rollup": "^1.29.0",
