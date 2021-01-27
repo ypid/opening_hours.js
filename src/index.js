@@ -3,8 +3,8 @@
 /* jshint loopfunc: true */
 
 import * as holiday_definitions from './holidays/index';
-import word_error_correction from './locales/word_error_correction.yaml';
-import lang from './locales/lang.yaml';
+import word_error_correction from './locales/word_error_correction.json';
+import lang from './locales/lang.json';
 
 import SunCalc from 'suncalc';
 import i18n from './locales/core';

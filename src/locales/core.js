@@ -1,7 +1,7 @@
 import i18n from 'i18next-client';
 export default i18n;
 
-import opening_hours_resources from './opening_hours_resources.yaml';
+import opening_hours_resources from './opening_hours_resources.json';
 
 if (!i18n.isInitialized()) {
     i18n.init({

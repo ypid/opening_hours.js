@@ -225,8 +225,8 @@ benchmark-opening_hours.js:
 benchmark-opening_hours.min.js:
 
 # .PHONY: benchmark
-benchmark-%.js: %.js benchmark.js
-	$(NODEJS) ./benchmark.js "./$<"
+benchmark-%.js: %.js ./scripts/benchmark.js
+	$(NODEJS) ./scripts/benchmark.js "./$<"
 
 .PHONY: check-package.json
 check-package.json: package.json
@@ -526,11 +526,9 @@ opening_hours+deps.js:
 	DEPS=YES ./node_modules/.bin/rollup -c
 
 opening_hours.min.js:
-
 opening_hours+deps.min.js:
-
 %.min.js: %.js
-	./node_modules/.bin/terser --output "$@" --comments '/github.com/' "$<"
+	./node_modules/.bin/esbuild --output "$@" --comments '/github.com/' "$<"
 
 README.html:
 

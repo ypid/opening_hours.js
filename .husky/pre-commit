@@ -1,0 +1,6 @@
+#!/bin/sh
+git stash -q --keep-index
+
+make check
+git add test.*.log
+git stash pop -q

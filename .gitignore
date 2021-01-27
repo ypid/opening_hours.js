@@ -9,7 +9,7 @@ export*
 
 *.csv
 *.log
-*.json
+
 !package-lock.json
 
 ## Neko bytecode
