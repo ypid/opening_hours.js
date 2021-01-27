@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2016-2021 Robin Schneider <ypid@riseup.net>
+..
+.. SPDX-License-Identifier: LGPL-3.0-only
+
 Changelog
 =========
 

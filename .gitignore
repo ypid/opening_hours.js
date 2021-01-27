@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2013-2017 Robin Schneider <ypid@riseup.net>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 export*
 
 # Enable the following line for repositories which should track statistical data.
