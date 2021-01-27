@@ -17,7 +17,7 @@ API_URL_OVERPASS ?= https://overpass-api.de/api
 # GnuTLS: A TLS warning alert has been received.
 # GnuTLS: received alert [112]: The server name sent was not recognized
 
-TMP_QUERY ?= ./tmp_query.op
+TMP_QUERY ?= tmp_query.op
 OVERPASS_QUERY_KEY_FILTER_CMD ?= cat
 OVERPASS_QUERY_TIMEOUT ?= 4000
 # OVERPASS_QUERY_TIMEOUT ?= 1000
@@ -47,7 +47,7 @@ MAKE_OPTIONS ?= --no-print-directory
 CHECK_LANG ?= 'en'
 ## }}}
 
-REPO_FILES ?= git ls-files -z | xargs --null -I '{}' find '{}' -type f -print0 | egrep -zZv '^(submodules|holidays/nominatim_cache).*$$'
+REPO_FILES ?= git ls-files -z | xargs --null -I '{}' find '{}' -type f -print0 | egrep -zZv '^(submodules|src/holidays/nominatim_cache).*$$'
 REPO_SOURCE_FILES ?= $(REPO_FILES) | egrep -zZv '(\.png)$$'
 
 .PHONY: default
@@ -69,14 +69,14 @@ build: opening_hours.min.js
 check: qa-quick check-diff check-package.json
 
 .PHONY: check-full
-check-full: clean check-diff-all check-package.json check-yaml check-holidays
+check-full: check-diff-all check-package.json check-yaml check-html check-holidays
 
 .PHONY: benchmark
 benchmark: benchmark-opening_hours.min.js
 
 .PHONY: clean
 clean: osm-tag-data-rm
-	rm -f *+deps.js *.min.js
+	rm -rf build
 	rm -f README.html
 	rm -f taginfo_sources.json
 
@@ -133,7 +133,7 @@ ready-for-hosting: dependencies-get opening_hours+deps.min.js
 ## command line programs {{{
 .PHONY: run-regex_search
 run-regex_search: export.$(SEARCH).json interactive_testing.js regex_search.py
-	$(NODEJS) ./regex_search.py "$<"
+	$(NODEJS) regex_search.py "$<"
 
 .PHONY: run-interactive_testing
 run-interactive_testing: interactive_testing.js opening_hours.js
@@ -178,21 +178,18 @@ check-diff: check-diff-all-opening_hours.js
 .PHONY: check-test
 check-test: check-opening_hours.js
 
-.PHONY: check-test
-check-test: check-opening_hours.js
-
 # .PHONY: check-opening_hours.js check-opening_hours.min.js
 ## Does not work
 check-opening_hours.js:
 check-opening_hours.min.js:
 
-check-%.js: %.js test.js
-	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test.js --library-file "./$<"
+check-%.js: build/%.js test/test.js
+	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "../$<"
 
 check-diff-all-opening_hours.js:
 check-diff-all-opening_hours.min.js:
 
-check-diff-all-%.js: %.js test.js
+check-diff-all-%.js: build/%.js test/test.js
 	@echo -n "en de" | xargs --delimiter ' ' --max-args=1 -I '{}' $(MAKE) $(MAKE_OPTIONS) "CHECK_LANG={}" check-diff-opening_hours.js
 
 .SILENT: check-diff-opening_hours.js check-diff-opening_hours.min.js
@@ -200,9 +197,9 @@ check-diff-en-opening_hours.js: check-diff-opening_hours.js
 check-diff-de-opening_hours.js:
 	$(MAKE) $(MAKE_OPTIONS) CHECK_LANG=de check-diff-opening_hours.js
 
-check-diff-%.js: %.js test.js
+check-diff-%.js: build/%.js test/test.js
 	rm -rf "test.$(CHECK_LANG).log"
-	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test.js --library-file "$<" --locale $(CHECK_LANG) 1> test.$(CHECK_LANG).log 2>&1 || true; \
+	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<" --locale $(CHECK_LANG) 1> test.$(CHECK_LANG).log 2>&1 || true; \
 	if git diff --quiet --exit-code HEAD -- "test.$(CHECK_LANG).log"; then \
 		echo "Test results for $< ($(CHECK_LANG)) are exactly the same as on developemt system. So far, so good ;)"; \
 	else \
@@ -212,7 +209,7 @@ check-diff-%.js: %.js test.js
 
 .PHONY: osm-tag-data-taginfo-check
 osm-tag-data-taginfo-check: real_test.js opening_hours.js osm-tag-data-get-taginfo
-	$(NODEJS) ./check_for_new_taginfo_data.js --exit-code-not-new 0
+	$(NODEJS) check_for_new_taginfo_data.js --exit-code-not-new 0
 	@grep -v '^#' $(OH_RELATED_TAGS) | while read key; do \
 		$(NODEJS) "$<" $(REAL_TEST_OPTIONS) --map-bad-oh-values --ignore-manual-values "export.$$key.json"; \
 	done
@@ -225,8 +222,8 @@ benchmark-opening_hours.js:
 benchmark-opening_hours.min.js:
 
 # .PHONY: benchmark
-benchmark-%.js: %.js ./scripts/benchmark.js
-	$(NODEJS) ./scripts/benchmark.js "./$<"
+benchmark-%.js: build/%.js scripts/benchmark.js
+	$(NODEJS) scripts/benchmark.js "$<"
 
 .PHONY: check-package.json
 check-package.json: package.json
@@ -234,12 +231,12 @@ check-package.json: package.json
 
 .PHONY: check-holidays
 check-holidays:
-	@for def_file in ./holidays/*.yaml; do \
-		country=$${def_file#./holidays/}; \
+	@for def_file in src/holidays/*.yaml; do \
+		country=$${def_file#src/holidays/}; \
 		country=$${country%.yaml}; \
 		for region in $$(cat "$$def_file" | yq '. | values |  .[]._state_code? | select(. != null)' --raw-output); do \
 			echo "$$country - $$region: "; \
-			./PH_SH_exporter.js --from 2017 --to 2017 /tmp/out -c "$$country" -p -v -r "$$region"; \
+			PH_SH_exporter.js --from 2017 --to 2017 /tmp/out -c "$$country" -p -v -r "$$region"; \
 		done \
 	done
 
@@ -291,7 +288,7 @@ osm-tag-data-update-taginfo: taginfo_sources.json osm-tag-data-taginfo-rm osm-ta
 ## Always refresh
 .PHONY: taginfo_sources.json
 taginfo_sources.json:
-	$(NODEJS) ./check_for_new_taginfo_data.js
+	$(NODEJS) scripts/check_for_new_taginfo_data.js
 
 .PHONY: osm-tag-data-get-taginfo
 osm-tag-data-get-taginfo: $(OH_RELATED_TAGS)
@@ -332,7 +329,7 @@ export♡name♡Leutershausen.json:
 
 ## Generate OverpassQL and execute it.
 .PRECIOUS: export♡%.json
-export♡%.json: real_test.js $(OH_RELATED_TAGS)
+export♡%.json: scripts/real_test.js $(OH_RELATED_TAGS)
 	@timestamp="$(shell echo "$@" | sed 's/♡/\x0/g;s/\.json$$//;' | cut -d '' -f 4)"; \
 		boundary_key="$(shell echo "$@" | sed 's/♡/\x0/g;s/\.json$$//;' | cut -d '' -f 2)"; \
 		boundary_value="$(shell echo "$@" | sed 's/♡/\x0/g;s/\.json$$//;' | cut -d '' -f 3)"; \
@@ -421,9 +418,9 @@ osm-tag-data-overpass-kill-queries:
 
 ## Cronjob is running on gauss: http://munin.openstreetmap.de/gauss/gauss-load.html
 # m h  dom mon dow   command
-# 12 22    * * *       cd ./oh-stats/ && make osm-tag-data-gen-stats-cron-overpass > cron.22.log 2>&1
-# 48 02    * * *       cd ./oh-stats/ && make osm-tag-data-gen-stats-cron-taginfo > cron.02.log 2>&1
-# 48 06    * * *       cd ./oh-stats/ && make osm-tag-data-gen-stats-cron-taginfo > cron.06.log 2>&1
+# 12 22    * * *       cd oh-stats/ && make osm-tag-data-gen-stats-cron-overpass > cron.22.log 2>&1
+# 48 02    * * *       cd oh-stats/ && make osm-tag-data-gen-stats-cron-taginfo > cron.02.log 2>&1
+# 48 06    * * *       cd oh-stats/ && make osm-tag-data-gen-stats-cron-taginfo > cron.06.log 2>&1
 .PHONY: osm-tag-data-gen-stats-cron-taginfo
 osm-tag-data-gen-stats-cron-taginfo: real_test.opening_hours.stats.csv
 	date
@@ -517,18 +514,18 @@ osm-tag-data-gen-stats-sort:
 	done
 ## }}}
 
-.PHONY: opening_hours.js
-opening_hours.js:
-	DEPS=NO ./node_modules/.bin/rollup -c
+# .PHONY: opening_hours.js
+# opening_hours.js:
+# 	DEPS=NO node_modules/.bin/rollup -c
 
-.PHONY: opening_hours+deps.js
-opening_hours+deps.js:
-	DEPS=YES ./node_modules/.bin/rollup -c
+# .PHONY: opening_hours+deps.js
+# opening_hours+deps.js:
+# 	DEPS=YES node_modules/.bin/rollup -c
 
-opening_hours.min.js:
-opening_hours+deps.min.js:
-%.min.js: %.js
-	./node_modules/.bin/esbuild --output "$@" --comments '/github.com/' "$<"
+# opening_hours.min.js:
+# opening_hours+deps.min.js:
+# %.min.js: %.js
+# 	node_modules/.bin/esbuild --output "$@" --comments '/github.com/' "$<"
 
 README.html:
 
