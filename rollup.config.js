@@ -3,7 +3,6 @@ import common from "rollup-plugin-commonjs";
 import nodeResolve from "rollup-plugin-node-resolve";
 import yaml from "rollup-plugin-yaml";
 import esbuild from "rollup-plugin-esbuild";
-import json from "@rollup/plugin-json";
 
 var banner = readFileSync("./scripts/banner.js", "utf-8");
 // var dependencies = process.env.DEPS === "YES";
@@ -22,11 +21,6 @@ var yamlPlugin = yaml({
   },
 });
 
-const jsonPlugin = json({
-  compact: true,
-  preferConst: true,
-});
-
 const esbuildPlugin = esbuild({
   minify: true,
   loaders: {
@@ -37,7 +31,7 @@ const esbuildPlugin = esbuild({
 export default [
   {
     input: "./src/index.js",
-    plugins: [jsonPlugin, nodeResolve(), common()],
+    plugins: [yamlPlugin, nodeResolve(), common()],
     output: {
       name: "opening_hours",
       banner: banner,
@@ -47,7 +41,7 @@ export default [
   },
   {
     input: "./src/index.js",
-    plugins: [jsonPlugin, nodeResolve(), common(), esbuildPlugin],
+    plugins: [yamlPlugin, nodeResolve(), common(), esbuildPlugin],
     output: {
       name: "opening_hours",
       banner: banner,
@@ -57,7 +51,7 @@ export default [
   },
   {
     input: "./src/index.js",
-    plugins: [jsonPlugin],
+    plugins: [yamlPlugin],
     external: ["i18next-client", "suncalc"],
     output: {
       name: "opening_hours",
@@ -72,7 +66,7 @@ export default [
   },
   {
     input: "./src/index.js",
-    plugins: [jsonPlugin, esbuildPlugin],
+    plugins: [yamlPlugin, esbuildPlugin],
     external: ["i18next-client", "suncalc"],
     output: {
       name: "opening_hours",
