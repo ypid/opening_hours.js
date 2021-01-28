@@ -170,7 +170,7 @@ check-all: check-package.json check-test check-diff-all osm-tag-data-update-chec
 check-fast: check-diff-en-opening_hours.js
 
 .PHONY: check-diff-all
-check-diff-all: check-diff check-diff-opening_hours.min.js
+check-diff-all: check-diff check-diff-all-opening_hours.min.js
 
 .PHONY: check-diff
 check-diff: check-diff-all-opening_hours.js
@@ -184,7 +184,7 @@ check-opening_hours.js:
 check-opening_hours.min.js:
 
 check-%.js: build/%.js test/test.js
-	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "../$<"
+	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<"
 
 check-diff-all-opening_hours.js:
 check-diff-all-opening_hours.min.js:

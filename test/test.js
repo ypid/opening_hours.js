@@ -59,7 +59,8 @@ if (argv.help) {
 /* }}} */
 
 /* Required modules {{{ */
-var opening_hours = require('./' + argv['library-file']);
+const {resolve} = require('path')
+var opening_hours = require(resolve(argv['library-file']));
 var colors        = require('colors');
 var sprintf       = require('sprintf-js').sprintf;
 var timekeeper    = require('timekeeper');
