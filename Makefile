@@ -9,8 +9,8 @@ VERBOSE ?= 1
 RELEASE_OPENPGP_FINGERPRINT ?= C505B5C93B0DB3D338A1B6005FE92C12EE88E1F0
 
 ## Data source variables {{{
-OH_RELATED_TAGS ?= related_tags.txt
-STATS_FOR_BOUNDARIES ?= stats_for_boundaries.txt
+OH_RELATED_TAGS ?= scripts/related_tags.txt
+STATS_FOR_BOUNDARIES ?= scripts/stats_for_boundaries.txt
 
 API_URL_TAGINFO  ?= https://taginfo.openstreetmap.org/api
 API_URL_OVERPASS ?= https://overpass-api.de/api
@@ -113,8 +113,8 @@ dependencies-user-wide-get:
 	npm install --global doctoc npm-check-updates npm-install-peers
 ## }}}
 
-taginfo.json: related_tags.txt gen_taginfo_json.js taginfo_template.json
-	gen_taginfo_json.js --key-file "$<" --template-file taginfo_template.json > "$@"
+taginfo.json: scripts/related_tags.txt scripts/gen_taginfo_json.js scripts/taginfo_template.json
+	scripts/gen_taginfo_json.js --key-file "$<" --template-file ./taginfo_template.json > "$@"
 	## Haxe implementation produces a different sorted JSON.
 	# haxe -main Gen_taginfo_json -lib mcli -neko Gen_taginfo_json.n && neko Gen_taginfo_json --key_file "$<" --template_file taginfo_template.json > "$@"
 
@@ -208,8 +208,8 @@ check-diff-%.js: build/%.js test/test.js
 	sh -c 'git --no-pager diff --exit-code -- "test.$(CHECK_LANG).log"'
 
 .PHONY: osm-tag-data-taginfo-check
-osm-tag-data-taginfo-check: real_test.js opening_hours.js osm-tag-data-get-taginfo
-	$(NODEJS) check_for_new_taginfo_data.js --exit-code-not-new 0
+osm-tag-data-taginfo-check: scripts/real_test.js build/opening_hours.js osm-tag-data-get-taginfo
+	$(NODEJS) scripts/check_for_new_taginfo_data.js --exit-code-not-new 0
 	@grep -v '^#' $(OH_RELATED_TAGS) | while read key; do \
 		$(NODEJS) "$<" $(REAL_TEST_OPTIONS) --map-bad-oh-values --ignore-manual-values "export.$$key.json"; \
 	done
@@ -242,7 +242,7 @@ check-holidays:
 
 .PHONY: check-yaml
 check-yaml:
-	$(REPO_FILES) | xargs --null -I '{}' find '{}' -type f -regextype posix-extended -regex '.*\.(yml|yaml)$$' -print0 | xargs --null yamllint --strict
+	yamllint --strict .
 
 .PHONY: check-html
 check-html:
