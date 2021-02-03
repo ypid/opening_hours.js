@@ -12,7 +12,7 @@
 
 ## Summary
 
-The [opening_hours][Key:opening_hours] tag is used in [OpenStreetMap](https://openstreetmap.org) to describe time ranges when a facility (for example, a café) is open. As it has pretty [complex syntax][oh:specification] which requires special parsing and additional processing to extract some useful information (e.g. whether a facility is open at a specific time, next time it's going to open/close, or a readable set of working hours), this library is being developed.
+The [opening_hours][Key:opening_hours] tag is used in [OpenStreetMap](https://openstreetmap.org) to describe time ranges when a facility (for example, a café) is open. This library exists to easily extract useful information (e.g. whether a facility is open at a specific time, next time it's going to open/close, or a readable set of working hours) from the [complex syntax][oh:specification].
 
 Examples of some complex opening_hours values:
 
@@ -21,7 +21,7 @@ Mo,Tu,Th,Fr 12:00-18:00; Sa,PH 12:00-17:00; Th[3],Th[-1] off
 Mo-Fr 12:00-18:00; We off; Sa,PH 12:00-17:00; Th[3],Th[-1] off
 ```
 
-a library which is open from 12:00 to 18:00 on workdays (Mo-Fr) except Wednesday, and from 12:00 to 17:00 on Saturday and public holidays. It also has breaks on the third and last Thursday of each month.
+A library which is open from 12:00 to 18:00 on workdays (Mo-Fr) except Wednesday, and from 12:00 to 17:00 on Saturday and public holidays. It also has breaks on the third and last Thursday of each month.
 
 ```
 open; Tu-Su 08:30-09:00 off; Tu-Su,PH 14:00-14:30 off; Mo 08:00-13:00 off
@@ -85,10 +85,9 @@ around-the-clock shop with some breaks.
 
 ## evaluation tool
 
-Please have a look at the [evaluation tool][] which can give you an impression how this library can be used and what it is capable of.
+Please have a look at the [evaluation tool] which can give you an impression how this library can be used and what it is capable of.
 
-A mirror is setup up under: https://openingh.ypid.de/evaluation_tool/
-
+A mirror is set up at https://openingh.ypid.de/evaluation_tool/
 
 ## Install
 
@@ -233,11 +232,11 @@ function getReadableState(startString, endString, oh, past) {
         The `nominatim_object` can also be `null` in which case a default location will be used.
         This can be used if you don’t care about correct opening hours for more complex opening_hours values.
 
-    *   optional_conf_parm (optional, either of type number of object):
+    *   optional_conf_param (optional, either of type number or object):
 
-        If this parameter is of the type number then it is interpreted as 'mode' (see below). For the type object, the following keys are defined.
+        If this parameter is of the type number then it is interpreted as 'mode' (see below). Alternatively it can be an object with any of the following keys:
 
-        *   'mode' (type: (integer) number, default: 0): In OSM, the syntax originally designed to describe opening hours, is now used to describe a few other things as well. Some of those other tags work with points in time instead of time ranges. To support this the mode can be specified. *Note that it is recommended to not use the mode parameter directly but instead use the tag_key parameter.* If there is no mode specified, opening_hours.js will only operate with time ranges and will throw an error when points in times are used in the value.
+        *   'mode' (type: (integer) number, default: 0): In OSM, the syntax originally designed to describe opening hours, is now used to describe a few other things as well. Some of those other tags work with points in time instead of time ranges. To support this the mode can be specified. *Note that it is recommended to use the tag_key parameter instead, which automatically sets the appropriate mode.* If there is no mode specified, opening_hours.js will only operate with time ranges and will throw an error when the value contains points in times.
 
             * 0: time ranges (opening_hours, lit, …) default
             * 1: points in time
@@ -262,15 +261,15 @@ function getReadableState(startString, endString, oh, past) {
 
 *   `var warnings = oh.getWarnings();`
 
-    Get warnings which appeared during parsing as human readable string array. Every violation is described in one element of the array. Almost all warnings can be auto corrected and are probably interpreted as indented by the mapper. However, this is not a granite of course.
+    Get warnings which appeared during parsing as human readable string array with one element per violation. Almost all warnings can be auto-corrected and are probably interpreted as intended by the mapper. However, this is not a granite of course.
 
-    This function does also some additional testing and because of that it theoretically possible that this function throws an error like all other functions which go through time.
+    This function performs some additional testing and can thus also theoretically throw an error like all other functions which parse the time.
 
 *   `var prettified = oh.prettifyValue(argument_hash);`
 
     Return a prettified version of the opening_hours value. The value is generated by putting the tokens back together to a string.
 
-    The function excepts one optional hash.
+    The function accepts an optional hash.
 
     The key 'conf' can hold another hash with configuration options. One example:
 
