@@ -236,7 +236,7 @@ function getReadableState(startString, endString, oh, past) {
 
         If this parameter is of the type number then it is interpreted as 'mode' (see below). Alternatively it can be an object with any of the following keys:
 
-        *   'mode' (type: (integer) number, default: 0): In OSM, the syntax originally designed to describe opening hours, is now used to describe a few other things as well. Some of those other tags work with points in time instead of time ranges. To support this the mode can be specified. *Note that it is recommended use the tag_key parameter instead, which automatically sets the appropriate mode.* If there is no mode specified, opening_hours.js will only operate with time ranges and will throw an error when the value contains points in times.
+        *   'mode' (type: (integer) number, default: 0): In OSM, the syntax originally designed to describe opening hours, is now used to describe a few other things as well. Some of those other tags work with points in time instead of time ranges. To support this the mode can be specified. *Note that it is recommended to use the tag_key parameter instead, which automatically sets the appropriate mode.* If there is no mode specified, opening_hours.js will only operate with time ranges and will throw an error when the value contains points in times.
 
             * 0: time ranges (opening_hours, lit, …) default
             * 1: points in time
