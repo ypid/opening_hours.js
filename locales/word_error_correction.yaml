@@ -25,6 +25,12 @@
   f: Fr
   # TODO: Needs code refactor to support this.
   # außer: '; off'
+  
+  #Italian
+  primavera: Mar-May
+  estate: Jun-Aug
+  autunno: Sep-Nov
+  inverno: Dec-Feb
 'please use English written ok for ko':
   '(?:an )?feiertag(?:s|en?)?': PH
 'please use off for ko':
@@ -308,6 +314,23 @@
   # torsdag: Th
   # fredag: Fr
   lørdag: Sa
+  
+  # Italian
+  dom: Su
+  domenica?: Su
+  domeniche?: Su
+  lun: Mo
+  lunedì?: Mo
+  mar?: Tu  # Used here:  http://www.westerhambeauty.co.uk/contact.php
+  martedì?: Tu
+  mer?: We
+  mercoledì?: We
+  gio: Th
+  giovedì?: Th
+  ven: Fr
+  venerdì?: Fr
+  sab: Sa
+  sabato?: Sa
 
 
   # month
@@ -361,6 +384,19 @@
   maart: Mar
   mei: May
   augustus: Aug
+  
+  # Italian
+  gennaio: Jan
+  febbraio: Feb
+  marzo: Mar
+  aprile: Apr
+  giugno?: Jun
+  luglio?: Jul
+  agosto: Aug
+  settembre: Sep
+  ottobre: Oct
+  novembre: Nov
+  dicembre: Dec
 
 'please use ok for similar looking ko':
   оff: 'off'
