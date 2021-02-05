@@ -95,7 +95,7 @@ var test = new opening_hours_test();
 // Nominatim data {{{
 
 var nominatim_by_loc = {};
-for (var nominatim_file of glob.sync("holidays/nominatim_cache/*.yaml")) {
+for (var nominatim_file of glob.sync("src/holidays/nominatim_cache/*.yaml")) {
     var country_state = nominatim_file.match(/^.*\/([^/]*)\.yaml$/)[1];
     nominatim_by_loc[country_state] = yaml.safeLoad(fs.readFileSync(nominatim_file));
 }

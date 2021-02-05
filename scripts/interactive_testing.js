@@ -14,7 +14,7 @@ var optimist = require('optimist')
     .alias('l', 'locale')
     .alias('L', 'prettify-locale')
     .alias('V', 'value')
-    .default('f', './opening_hours.js')
+    .default('f', '../build/opening_hours.js')
     .default('l', 'en')
     .default('L', 'en');
 
