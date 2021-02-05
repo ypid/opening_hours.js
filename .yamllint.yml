@@ -1,8 +1,10 @@
 ---
+
 extends: default
 
 ignore: |
-  node_modules/*
+  node_modules
+  submodules
 
 rules:
   line-length:
