@@ -25,8 +25,8 @@
   f: Fr
   # TODO: Needs code refactor to support this.
   # außer: '; off'
-  
-  #Italian
+
+  # Italian
   primavera: Mar-May
   estate: Jun-Aug
   autunno: Sep-Nov
@@ -314,7 +314,7 @@
   # torsdag: Th
   # fredag: Fr
   lørdag: Sa
-  
+
   # Italian
   dom: Su
   domenica?: Su
@@ -384,7 +384,7 @@
   maart: Mar
   mei: May
   augustus: Aug
-  
+
   # Italian
   gennaio: Jan
   febbraio: Feb
@@ -395,7 +395,7 @@
   agosto: Aug
   settembre: Sep
   ottobre: Oct
-  novembre: Nov
+  # novembre: Nov
   dicembre: Dec
 
 'please use ok for similar looking ko':
