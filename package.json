@@ -18,7 +18,7 @@
     "OSM",
     "opening_hours"
   ],
-  "license": "LGPL-3.0",
+  "license": "LGPL-3.0-only",
   "files": [
     "Makefile",
     "CHANGELOG.rst",
