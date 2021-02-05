@@ -514,18 +514,18 @@ osm-tag-data-gen-stats-sort:
 	done
 ## }}}
 
-# .PHONY: opening_hours.js
-# opening_hours.js:
-# 	DEPS=NO node_modules/.bin/rollup -c
+.PHONY: opening_hours.js
+build/opening_hours.js:
+	DEPS=NO node_modules/.bin/rollup -c
 
-# .PHONY: opening_hours+deps.js
-# opening_hours+deps.js:
-# 	DEPS=YES node_modules/.bin/rollup -c
+.PHONY: opening_hours+deps.js
+opening_hours+deps.js:
+	DEPS=YES node_modules/.bin/rollup -c
 
-# opening_hours.min.js:
-# opening_hours+deps.min.js:
-# %.min.js: %.js
-# 	node_modules/.bin/esbuild --output "$@" --comments '/github.com/' "$<"
+opening_hours.min.js:
+opening_hours+deps.min.js:
+%.min.js: %.js
+	node_modules/.bin/esbuild --output "$@" --comments '/github.com/' "$<"
 
 README.html:
 
