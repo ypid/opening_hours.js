@@ -1,0 +1,13 @@
+---
+# SPDX-FileCopyrightText: 2021 Robin Schneider <ypid@riseup.net>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+repos:
+  - repo: local
+    hooks:
+      - id: old-pre-commit
+        name: This is a draft
+        entry: scripts/pre-commit
+        language: script
+        # files: \.x$
