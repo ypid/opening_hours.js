@@ -7,12 +7,14 @@ SPDX-License-Identifier: LGPL-3.0-only
 
 # opening_hours
 
-[![Build Status](https://travis-ci.org/opening-hours/opening_hours.js.svg?branch=master)](https://travis-ci.org/opening-hours/opening_hours.js)
+[![GitHub CI]](https://github.com/opening-hours/opening_hours.js/actions?query=workflow%3A%22Continuous+Integration%22)
 [![license NPM](https://img.shields.io/npm/l/opening_hours.svg)][ohlib.github]
 [![required Node.js version](https://img.shields.io/node/v/opening_hours.svg)][ohlib.github]
 [![version NPM](https://img.shields.io/npm/v/opening_hours.svg)][ohlib.npmjs]
 [![monthly downloads via NPM](https://img.shields.io/npm/dm/opening_hours.svg)][ohlib.npmjs]
 [![total downloads via NPM](https://img.shields.io/npm/dt/opening_hours.svg)][ohlib.npmjs]
+
+[GitHub CI]: https://github.com/opening-hours/opening_hours.js/workflows/Continuous%20Integration/badge.svg
 
 <!-- https://img.shields.io/github/license/opening-hours/opening_hours.js.svg -->
 <!-- https://img.shields.io/github/downloads/opening-hours/opening_hours.js/total.svg -->

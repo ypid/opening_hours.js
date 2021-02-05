@@ -69,7 +69,7 @@ build: opening_hours.min.js
 check: qa-quick check-diff check-package.json
 
 .PHONY: check-full
-check-full: clean check-diff-all check-package.json check-yaml check-html check-holidays
+check-full: clean check-diff-all check-package.json check-yaml check-holidays
 
 .PHONY: benchmark
 benchmark: benchmark-opening_hours.min.js
@@ -89,12 +89,8 @@ osm-tag-data-rm: osm-tag-data-taginfo-rm osm-tag-data-overpass-rm
 dependencies-get: package.json dependencies-patch-legacy
 	git submodule update --init --recursive
 	npm install
-	if [[ "$${TRAVIS_NODE_VERSION:-probably_newer}" =~ ^0.12 ]]; then \
-		jq -r '.peerDependencies | to_entries[] | .key + "@" + .value' package.json | xargs npm install --no-save; \
-	else \
-		npm-install-peers; \
-	fi
-	pip install --user yamllint
+	npm-install-peers
+	pip3 install --user yamllint yq
 
 .PHONY: dependencies-patch-legacy
 dependencies-patch-legacy: package.json
@@ -234,7 +230,7 @@ benchmark-%.js: %.js benchmark.js
 
 .PHONY: check-package.json
 check-package.json: package.json
-	pjv --warnings --recommendations --filename "$<"
+	./node_modules/package-json-validator/bin/pjv --warnings --recommendations --filename "$<"
 
 .PHONY: check-holidays
 check-holidays:
