@@ -5,6 +5,7 @@ extends: default
 ignore: |
   node_modules
   submodules
+  src/holidays/nominatim_cache/
 
 rules:
   line-length:
