@@ -1,7 +1,10 @@
 ## vim: foldmarker={{{,}}} foldlevel=0 foldmethod=marker spell:
 
+SHELL ?= /bin/bash -o nounset -o pipefail -o errexit
+MAKEFLAGS += --no-builtin-rules
+.SUFFIXES:
+
 ## Variables {{{
-SHELL   := /bin/bash -o nounset -o pipefail -o errexit
 NODEJS  ?= node
 NODE_ICU_DATA ?= node_modules/full-icu
 SEARCH  ?= opening_hours
@@ -63,13 +66,14 @@ list:
 
 ## defaults {{{
 .PHONY: build
-build: opening_hours.min.js
+build: build/opening_hours.min.js \
+		build/opening_hours+deps.min.js
 
 .PHONY: check
 check: qa-quick check-diff check-package.json
 
 .PHONY: check-full
-check-full: check-diff-all check-package.json check-yaml check-html check-holidays
+check-full: clean check-all-diff check-package.json check-yaml check-holidays
 
 .PHONY: benchmark
 benchmark: benchmark-opening_hours.min.js
@@ -86,18 +90,11 @@ osm-tag-data-rm: osm-tag-data-taginfo-rm osm-tag-data-overpass-rm
 
 ## dependencies {{{
 .PHONY: dependencies-get
-dependencies-get: package.json dependencies-patch-legacy
+dependencies-get: package.json
 	git submodule update --init --recursive
 	npm install
 	npm-install-peers
 	pip3 install --user yamllint yq
-
-.PHONY: dependencies-patch-legacy
-dependencies-patch-legacy: package.json
-	if [[ "$${TRAVIS_NODE_VERSION:-probably_newer}" =~ ^0.12 ]]; then \
-		echo "Support on best effort base!"; \
-		jq '.devDependencies.rollup = "^0.42.0" | .devDependencies["sprintf-js"] = "1.0.3"' package.json > package-patched.json && mv package-patched.json package.json; \
-	fi
 
 # colors above v0.6.1 broke the 'bold' option. For what we need this package, v0.6.1 is more than sufficient.
 .PHONY: update-dependency-versions
@@ -164,48 +161,40 @@ qa-https-everywhere:
 ## software testing {{{
 
 .PHONY: check-all
-check-all: check-package.json check-test check-diff-all osm-tag-data-update-check
-
-.PHONY: check-fast
-check-fast: check-diff-en-opening_hours.js
-
-.PHONY: check-diff-all
-check-diff-all: check-diff check-diff-all-opening_hours.min.js
-
-.PHONY: check-diff
-check-diff: check-diff-all-opening_hours.js
+check-all: check-package.json check-test check-all-diff osm-tag-data-update-check
 
 .PHONY: check-test
 check-test: check-opening_hours.js
+
+.PHONY: check-fast
+check-fast: check-diff-opening_hours.js
+
+.PHONY: check-all-diff
+check-all-diff: check-all-lang-diff check-diff-opening_hours.min.js
+
+.PHONY: check-all-lang-diff
+check-all-lang-diff:
+	@echo -n "en de" | xargs --delimiter ' ' --max-args=1 -I '{}' $(MAKE) $(MAKE_OPTIONS) "CHECK_LANG={}" check-diff-opening_hours.js
 
 # .PHONY: check-opening_hours.js check-opening_hours.min.js
 ## Does not work
 check-opening_hours.js:
 check-opening_hours.min.js:
 
-check-%.js: build/%.js test/test.js
-	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<"
-
-check-diff-all-opening_hours.js:
-check-diff-all-opening_hours.min.js:
-
-check-diff-all-%.js: build/%.js test/test.js
-	@echo -n "en de" | xargs --delimiter ' ' --max-args=1 -I '{}' $(MAKE) $(MAKE_OPTIONS) "CHECK_LANG={}" check-diff-opening_hours.js
-
-.SILENT: check-diff-opening_hours.js check-diff-opening_hours.min.js
-check-diff-en-opening_hours.js: check-diff-opening_hours.js
-check-diff-de-opening_hours.js:
-	$(MAKE) $(MAKE_OPTIONS) CHECK_LANG=de check-diff-opening_hours.js
-
-check-diff-%.js: build/%.js test/test.js
-	rm -rf "test/test.$(CHECK_LANG).log"
-	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<" --locale $(CHECK_LANG) 1> test/test.$(CHECK_LANG).log 2>&1 || true; \
+check-diff-%: build/% test/test.js
+	@rm -rf "test/test.$(CHECK_LANG).log"
+	@echo "Testing to reproduce test/test.$(CHECK_LANG).log using $<."
+	@NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<" --locale $(CHECK_LANG) 1> test/test.$(CHECK_LANG).log 2>&1 || true; \
 	if git diff --quiet --exit-code HEAD -- "test/test.$(CHECK_LANG).log"; then \
 		echo "Test results for $< ($(CHECK_LANG)) are exactly the same as on developemt system. So far, so good ;)"; \
 	else \
 		echo "Test results for $< ($(CHECK_LANG)) produced a different output then the output of the current HEAD. Checkout the following diff."; \
 	fi
-	sh -c 'git --no-pager diff --exit-code -- "test/test.$(CHECK_LANG).log"'
+	@sh -c 'git --no-pager diff --exit-code -- "test/test.$(CHECK_LANG).log"'
+
+check-o%.js: build/o%.js test/test.js
+	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<"
+
 
 .PHONY: osm-tag-data-taginfo-check
 osm-tag-data-taginfo-check: scripts/real_test.js build/opening_hours.js osm-tag-data-get-taginfo
@@ -223,7 +212,7 @@ benchmark-opening_hours.min.js:
 
 # .PHONY: benchmark
 benchmark-%.js: build/%.js scripts/benchmark.js
-	$(NODEJS) scripts/benchmark.js "$<"
+	$(NODEJS) scripts/benchmark.js "../$<"
 
 .PHONY: check-package.json
 check-package.json: package.json
@@ -514,20 +503,19 @@ osm-tag-data-gen-stats-sort:
 	done
 ## }}}
 
-.PHONY: opening_hours.js
 build/opening_hours.js:
 	DEPS=NO node_modules/.bin/rollup -c
 
-.PHONY: opening_hours+deps.js
-opening_hours+deps.js:
+build/opening_hours+deps.js:
 	DEPS=YES node_modules/.bin/rollup -c
 
-opening_hours.min.js:
-opening_hours+deps.min.js:
-%.min.js: %.js
+build/opening_hours.min.js:
+build/opening_hours+deps.min.js:
+
+# TODO: Figure out why this generates a broken minified version: TypeError: opening_hours is not a constructor
+# ./node_modules/.bin/esbuild --bundle "$<" --outfile="$@"
+build/%.min.js: build/%.js
 	./node_modules/.bin/terser --output "$@" --comments '/github.com/' "$<"
-	# TODO: Figure out why this generates a broken minified version: TypeError: opening_hours is not a constructor
-	# ./node_modules/.bin/esbuild --bundle "$<" --outfile="$@"
 
 README.html:
 

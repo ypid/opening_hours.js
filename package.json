@@ -34,7 +34,7 @@
     "locales": "./locales/"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "make build",
     "test": "make check-full",
     "eslint": "eslint ./src/index.js",
     "osm-tag-data-check": "make osm-tag-data-check",

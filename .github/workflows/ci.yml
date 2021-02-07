@@ -17,11 +17,6 @@ jobs:
         node-version:
           # Support policy: We support every Node.js version is still "maintained".
           # Testing unmaintained versions serves no purpose.
-
-          # The only exception is that the oldest Node.js version under which all tests
-          # pass is still tested but can be increased as needed.
-          - '8.x'
-
           - '12.x'
           - '14.x'
           - '15.x'
