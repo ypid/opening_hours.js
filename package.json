@@ -70,6 +70,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-yaml": "^2.0.0",
     "sprintf-js": "1.1.1",
+    "terser": "^4.6.3",
     "timekeeper": "^2.0.0"
   },
   "peerDependencies": {

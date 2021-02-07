@@ -525,7 +525,9 @@ opening_hours+deps.js:
 opening_hours.min.js:
 opening_hours+deps.min.js:
 %.min.js: %.js
-	node_modules/.bin/esbuild --output "$@" --comments '/github.com/' "$<"
+	./node_modules/.bin/terser --output "$@" --comments '/github.com/' "$<"
+	# TODO: Figure out why this generates a broken minified version: TypeError: opening_hours is not a constructor
+	# ./node_modules/.bin/esbuild --bundle "$<" --outfile="$@"
 
 README.html:
 
