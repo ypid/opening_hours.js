@@ -39,11 +39,12 @@ var optimist = require('optimist')
     // .default('p', true)
     .describe('s', 'Export school holidays. Can not be used together with --public-holidays.')
     .describe('c', 'Country (for which the holidays apply). Defaults to Germany.')
+    .describe('a', 'Iterate over all locations.')
     .describe('o', 'Omit hyphen in ISO 8061 dates.')
     .default('o', false)
     .default('c', 'de')
     .describe('r', 'Region (for which the holidays apply). If not given, the country wide definition is used.')
-    .boolean(['p', 's', ])
+    .boolean(['p', 's', 'a'])
     .alias('h', 'help')
     .alias('v', 'verbose')
     .alias('f', 'from')
@@ -52,6 +53,8 @@ var optimist = require('optimist')
     .alias('s', ['school-holidays', 'sh'])
     .alias('c', 'country')
     .alias('r', 'state')
+    .alias('a', 'all-locations')
+    .string(['c', 'r', ])
     .alias('o', 'omit-date-hyphens');
 
 var argv = optimist.argv;
@@ -66,20 +69,14 @@ if (argv['public-holidays'] && argv['school-holidays']) {
     console.error("--school-holidays and --public-holidays can not be used together.");
     process.exit(1);
 }
-if (!(argv['public-holidays'] || argv['school-holidays'])) {
+if (!(argv['public-holidays'] || argv['school-holidays'] || argv['all-locations'])) {
     console.error("Either --school-holidays or --public-holidays has to be specified.");
     process.exit(1);
 }
 let nominatim_by_loc = {};
-for (let nominatim_file of glob.sync("holidays/nominatim_cache/*.yaml")) {
+for (let nominatim_file of glob.sync("src/holidays/nominatim_cache/*.yaml")) {
     let country_state = nominatim_file.match(/^.*\/([^/]*)\.yaml$/)[1];
     nominatim_by_loc[country_state] = yaml.safeLoad(fs.readFileSync(nominatim_file));
-}
-const nominatim_data = nominatim_by_loc[argv.country + '_' + argv.state] || nominatim_by_loc[argv.country];
-
-if (typeof nominatim_data !== 'object') {
-    console.error(argv.country + (", " + argv.state ? typeof nominatim_data !== 'object' : '') + " is currently not supported.");
-    process.exit(1);
 }
 
 /* }}} */
@@ -89,9 +86,23 @@ var filepath = argv._[0];
 
 var oh_value = argv['public-holidays'] ? 'PH' : 'SH';
 
-write_config_file(filepath, oh_value, nominatim_data, new Date(argv.from, 0, 1), new Date(argv.to + 1, 0, 1));
+if (argv['all-locations']) {
+    for (let nominatim_file_lookup_string in nominatim_by_loc) {
+        write_config_file(filepath, oh_value, nominatim_file_lookup_string, new Date(argv.from, 0, 1), new Date(argv.to + 1, 0, 1));
+    }
+} else {
+    let nominatim_file_lookup_string = argv.country + '_' + argv.state.toString();
+    write_config_file(filepath, oh_value, nominatim_file_lookup_string, new Date(argv.from, 0, 1), new Date(argv.to + 1, 0, 1));
+}
 
-function write_config_file(filepath, oh_value, nominatim_data, from_date, to_date) {
+function write_config_file(filepath, oh_value, nominatim_file_lookup_string, from_date, to_date) {
+    let nominatim_data = nominatim_by_loc[nominatim_file_lookup_string] || nominatim_by_loc[argv.country];
+
+    if (typeof nominatim_data !== 'object') {
+        console.error(nominatim_file_lookup_string + " is currently not supported.");
+        process.exit(1);
+    }
+
     try {
         oh = new opening_hours(oh_value, nominatim_data);
     } catch (err) {
@@ -101,26 +112,24 @@ function write_config_file(filepath, oh_value, nominatim_data, from_date, to_dat
 
     var intervals = oh.getOpenIntervals(from_date, to_date);
 
-    var stream = fs.createWriteStream(filepath);
-
-    stream.once('open', function(fd) {
-        for (var i = 0; i < intervals.length; i++) {
-            var holiday_entry = intervals[i];
-            var output_line = [
-                getISODate(holiday_entry[0], 0, argv['omit-date-hyphens']),
-            ];
-            if (oh_value === 'SH') { /* Add end date */
-                output_line[0] += '--' + getISODate(holiday_entry[1], -1, argv['omit-date-hyphens']);
-            }
-
-            output_line.push(holiday_entry[3]);
-            if (argv.verbose) {
-                console.log(output_line.join(' '))
-            }
-            stream.write(output_line.join(' ') + "\n");
+    var output_lines = [];
+    for (var i = 0; i < intervals.length; i++) {
+        var holiday_entry = intervals[i];
+        var output_line = [
+            getISODate(holiday_entry[0], 0, argv['omit-date-hyphens']),
+        ];
+        if (oh_value === 'SH') { /* Add end date */
+            output_line[0] += '--' + getISODate(holiday_entry[1], -1, argv['omit-date-hyphens']);
         }
-        stream.end();
-    });
+
+        output_line.push(holiday_entry[3]);
+        output_lines.push(output_line.join(' '));
+    }
+    output_lines = output_lines.join("\n");
+    if (argv.verbose) {
+        console.log(`${nominatim_file_lookup_string}:\n${output_lines}`);
+    }
+    fs.writeFileSync(filepath, output_lines);
 }
 
 /* Helper functions {{{ */

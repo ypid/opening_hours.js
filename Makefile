@@ -219,15 +219,8 @@ check-package.json: package.json
 	./node_modules/package-json-validator/bin/pjv --warnings --recommendations --filename "$<"
 
 .PHONY: check-holidays
-check-holidays:
-	@for def_file in src/holidays/*.yaml; do \
-		country=$${def_file#src/holidays/}; \
-		country=$${country%.yaml}; \
-		for region in $$(cat "$$def_file" | yq '. | values |  .[]._state_code? | select(. != null)' --raw-output); do \
-			echo "$$country - $$region: "; \
-			PH_SH_exporter.js --from 2017 --to 2017 /tmp/out -c "$$country" -p -v -r "$$region"; \
-		done \
-	done
+check-holidays: scripts/PH_SH_exporter.js
+	"$<" --from 2021 --to 2021 /tmp/out --public-holidays --verbose --all-locations
 
 .PHONY: check-yaml
 check-yaml:
