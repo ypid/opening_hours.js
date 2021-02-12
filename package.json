@@ -41,6 +41,7 @@
     "benchmark": "make benchmark",
     "interactive_testing": "make run-interactive_testing",
     "regex_search": "make run-regex_search",
+    "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "readme": "doctoc README.md"
@@ -59,6 +60,7 @@
     "full-icu": "^1.2.0",
     "glob": "^7.1.1",
     "https": "^1.0.0",
+    "husky": "^5.0.6",
     "i18next-client": "^1.11.1",
     "js-yaml": "^3.14.1",
     "line-reader": "^0.4.0",
