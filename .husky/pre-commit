@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
 git stash -q --keep-index
 
 # # Redirect output to stderr.
 # exec 1>&2
 
-make check
-git add test.*.log
+npm run test
+git add test/test.*.log
 
 git stash pop -q
