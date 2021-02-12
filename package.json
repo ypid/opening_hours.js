@@ -68,7 +68,7 @@
     "js-yaml": "^3.14.1",
     "line-reader": "^0.4.0",
     "optimist": "^0.6.1",
-    "package-json-validator": "^0.6.1",
+    "package-json-validator": "^0.6.3",
     "pinst": "^2.1.1",
     "rollup": "^2.38.5",
     "sprintf-js": "1.1.1",
