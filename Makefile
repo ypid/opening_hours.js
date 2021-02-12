@@ -70,7 +70,7 @@ build: build/opening_hours.min.js \
 		build/opening_hours+deps.min.js
 
 .PHONY: check
-check: qa-quick check-diff check-package.json
+check: qa-quick check-fast check-package.json
 
 .PHONY: check-full
 check-full: clean check-all-diff check-package.json check-yaml check-holidays
@@ -143,7 +143,7 @@ qa-quick: qa-phrases-to-avoid
 
 .PHONY: qa-phrases-to-avoid
 qa-phrases-to-avoid:
-	! git grep --ignore-case 'input[ ]tolerance'
+	! git --no-pager grep --ignore-case 'input[ ]tolerance'
 
 .PHONY: qa-source-code
 qa-source-code:
