@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build": "make build",
+    "test-quick": "make check",
     "test": "make check-full",
     "eslint": "eslint ./src/index.js",
     "osm-tag-data-check": "make osm-tag-data-check",
