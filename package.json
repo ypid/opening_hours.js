@@ -42,7 +42,8 @@
     "interactive_testing": "make run-interactive_testing",
     "regex_search": "make run-regex_search",
     "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "postpublish": "pinst --enable",
+    "readme": "doctoc README.md"
   },
   "dependencies": {
     "suncalc": "^1.8.0"
@@ -52,6 +53,7 @@
     "assert": "^1.4.1",
     "colors": "^0.6.2",
     "country-language": "^0.1.7",
+    "doctoc": "^2.0.0",
     "esbuild": "^0.8.27",
     "eslint": "^6.8.0",
     "full-icu": "^1.2.0",
@@ -63,7 +65,6 @@
     "optimist": "^0.6.1",
     "package-json-validator": "^0.6.1",
     "pinst": "^2.1.1",
-    "prettier": "^2.2.1",
     "rollup": "^2.35.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-esbuild": "^2.6.1",
