@@ -133,21 +133,21 @@ A mirror is set up at <https://openingh.ypid.de/evaluation_tool/>
 
 Just clone the repository:
 
-```text
+```sh
 git clone --recursive https://github.com/opening-hours/opening_hours.js.git
 ```
 
 and install the required dependencies:
 
-```text
+```sh
 npm install
 pip install -r requirements.txt
 ```
 
 and build the library:
 
-```text
-make build
+```sh
+npm run build
 ```
 
 See the [Testing](#testing) section for details around writing and running tests
@@ -164,13 +164,13 @@ To get started checkout the [simple_index.html](/examples/simple_index.html) fil
 
 Install using npm/yarn.
 
-```text
-npm i opening_hours
+```sh
+npm install opening_hours
 ```
 
 or
 
-```text
+```sh
 yarn add opening_hours
 ```
 
