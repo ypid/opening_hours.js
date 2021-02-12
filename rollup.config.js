@@ -1,7 +1,7 @@
 import {readFileSync} from 'fs';
-import common from 'rollup-plugin-commonjs';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import yaml from 'rollup-plugin-yaml';
+import common from '@rollup/plugin-commonjs';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import yaml from '@rollup/plugin-yaml';
 
 var banner = readFileSync('./src/banner.js', 'utf-8');
 var dependencies = process.env.DEPS === 'YES';
