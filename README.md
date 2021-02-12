@@ -838,11 +838,7 @@ See under [testing][ohlib.testing].
 
 #### Commit hooks
 
-Note that there is a git pre-commit hook used to run and compare the test framework before each commit. To activate the hook, run:
-
-```text
-./hooks/link_hooks
-```
+Note that there is a git pre-commit hook used to run and compare the test framework before each commit. Hooks are written as shell scripts using [husky](https://github.com/typicode/husky) and should be installed to git automatically when running `npm install`. If this does not happen, you can manually run `npm run postinstall`.
 
 #### Documentation
 
