@@ -45,7 +45,9 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "readme": "doctoc README.md"
+    "readme": "doctoc README.md --title \"## Table of Contents\"",
+    "install-peers": "npm-install-peers",
+    "check-updates": " npm-check-updates --reject colors --upgrade"
   },
   "dependencies": {
     "suncalc": "^1.8.0"
@@ -68,6 +70,8 @@
     "i18next-client": "^1.11.1",
     "js-yaml": "^3.14.1",
     "line-reader": "^0.4.0",
+    "npm-check-updates": "^11.1.4",
+    "npm-install-peers": "^1.2.2",
     "optimist": "^0.6.1",
     "package-json-validator": "^0.6.3",
     "pinst": "^2.1.1",

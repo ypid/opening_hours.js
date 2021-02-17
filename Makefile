@@ -93,21 +93,17 @@ osm-tag-data-rm: osm-tag-data-taginfo-rm osm-tag-data-overpass-rm
 dependencies-get: package.json
 	git submodule update --init --recursive
 	npm install
-	npm-install-peers
+	npm run install-peers
 	pip3 install --user yamllint yq
 
 # colors above v0.6.1 broke the 'bold' option. For what we need this package, v0.6.1 is more than sufficient.
 .PHONY: update-dependency-versions
 update-dependency-versions: package.json
-	npm-check-updates --reject colors --upgrade --packageFile "$<"
+	npm run check-updates
 
 .PHONY: list-dependency-versions
 list-dependency-versions: package.json
 	npm list | egrep '^.─'
-
-.PHONY: dependencies-user-wide-get
-dependencies-user-wide-get:
-	npm install --global doctoc npm-check-updates npm-install-peers
 ## }}}
 
 taginfo.json: scripts/related_tags.txt scripts/gen_taginfo_json.js scripts/taginfo_template.json
@@ -120,7 +116,7 @@ README.html: README.md
 
 .PHONY: doctoc
 doctoc:
-	doctoc README.md --title '**Table of Contents**'
+	npm run readme
 ## }}}
 
 ## Build files which are needed to host the evaluation tool on a webserver.
