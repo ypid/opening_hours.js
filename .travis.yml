@@ -25,7 +25,6 @@ node_js:
   - 'node'
 
 install:
-  - 'make dependencies-user-wide-get'
   - 'make dependencies-get'
   - 'pip install --user html5validator yq'
 
