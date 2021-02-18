@@ -80,6 +80,7 @@ Contributors
 * [KristjanESPERANTO_] - Kristjan
 * [Robot8A_] - Héctor Ochoa Ortiz
 * [pietervdvn_] - Pieter Vander Vennet
+* [napei_] - Nathaniel Peiffer
 
 
 Thanks very much to all contributors!
@@ -140,6 +141,7 @@ Thanks very much to all contributors!
 .. _KristjanESPERANTO: https://github.com/KristjanESPERANTO
 .. _Robot8A: https://www.openstreetmap.org/user/Robot8A
 .. _pietervdvn: https://github.com/pietervdvn
+.. _napei: https://nathaniel.peiffer.com.au/
 
 
 Supporters
@@ -250,6 +252,7 @@ Changed
   [simon04_]
 * Update simple HTML usage example for using the library in a website. [KristjanESPERANTO_, ypid_]
 * Replaced moment.js with Date.toLocaleString [simon04]
+* Change directory layout of the project. [napei_, ypid_]
 
 .. _ES2015 modules: http://exploringjs.com/es6/ch_modules.html
 .. _rollup: http://rollupjs.org/
