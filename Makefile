@@ -1,7 +1,10 @@
 ## vim: foldmarker={{{,}}} foldlevel=0 foldmethod=marker spell:
 
+SHELL ?= /bin/bash -o nounset -o pipefail -o errexit
+MAKEFLAGS += --no-builtin-rules
+.SUFFIXES:
+
 ## Variables {{{
-SHELL   := /bin/bash -o nounset -o pipefail -o errexit
 NODEJS  ?= node
 NODE_ICU_DATA ?= node_modules/full-icu
 SEARCH  ?= opening_hours
@@ -9,15 +12,15 @@ VERBOSE ?= 1
 RELEASE_OPENPGP_FINGERPRINT ?= C505B5C93B0DB3D338A1B6005FE92C12EE88E1F0
 
 ## Data source variables {{{
-OH_RELATED_TAGS ?= related_tags.txt
-STATS_FOR_BOUNDARIES ?= stats_for_boundaries.txt
+OH_RELATED_TAGS ?= scripts/related_tags.txt
+STATS_FOR_BOUNDARIES ?= scripts/stats_for_boundaries.txt
 
 API_URL_TAGINFO  ?= https://taginfo.openstreetmap.org/api
 API_URL_OVERPASS ?= https://overpass-api.de/api
 # GnuTLS: A TLS warning alert has been received.
 # GnuTLS: received alert [112]: The server name sent was not recognized
 
-TMP_QUERY ?= ./tmp_query.op
+TMP_QUERY ?= tmp_query.op
 OVERPASS_QUERY_KEY_FILTER_CMD ?= cat
 OVERPASS_QUERY_TIMEOUT ?= 4000
 # OVERPASS_QUERY_TIMEOUT ?= 1000
@@ -47,7 +50,7 @@ MAKE_OPTIONS ?= --no-print-directory
 CHECK_LANG ?= 'en'
 ## }}}
 
-REPO_FILES ?= git ls-files -z | xargs --null -I '{}' find '{}' -type f -print0 | egrep -zZv '^(submodules|holidays/nominatim_cache).*$$'
+REPO_FILES ?= git ls-files -z | xargs --null -I '{}' find '{}' -type f -print0 | egrep -zZv '^(submodules|src/holidays/nominatim_cache).*$$'
 REPO_SOURCE_FILES ?= $(REPO_FILES) | egrep -zZv '(\.png)$$'
 
 .PHONY: default
@@ -63,20 +66,21 @@ list:
 
 ## defaults {{{
 .PHONY: build
-build: opening_hours.min.js
+build: build/opening_hours.min.js \
+		build/opening_hours+deps.min.js
 
 .PHONY: check
-check: qa-quick check-diff check-package.json
+check: qa-quick check-fast check-package.json
 
 .PHONY: check-full
-check-full: clean check-diff-all check-package.json check-yaml check-holidays
+check-full: clean check-all-diff check-package.json check-yaml check-holidays
 
 .PHONY: benchmark
 benchmark: benchmark-opening_hours.min.js
 
 .PHONY: clean
 clean: osm-tag-data-rm
-	rm -f *+deps.js *.min.js
+	rm -rf build
 	rm -f README.html
 	rm -f taginfo_sources.json
 
@@ -86,35 +90,24 @@ osm-tag-data-rm: osm-tag-data-taginfo-rm osm-tag-data-overpass-rm
 
 ## dependencies {{{
 .PHONY: dependencies-get
-dependencies-get: package.json dependencies-patch-legacy
+dependencies-get: package.json
 	git submodule update --init --recursive
 	npm install
-	npm-install-peers
+	npm run install-peers
 	pip3 install --user yamllint yq
-
-.PHONY: dependencies-patch-legacy
-dependencies-patch-legacy: package.json
-	if [[ "$${TRAVIS_NODE_VERSION:-probably_newer}" =~ ^0.12 ]]; then \
-		echo "Support on best effort base!"; \
-		jq '.devDependencies.rollup = "^0.42.0" | .devDependencies["sprintf-js"] = "1.0.3"' package.json > package-patched.json && mv package-patched.json package.json; \
-	fi
 
 # colors above v0.6.1 broke the 'bold' option. For what we need this package, v0.6.1 is more than sufficient.
 .PHONY: update-dependency-versions
 update-dependency-versions: package.json
-	npm-check-updates --reject colors --upgrade --packageFile "$<"
+	npm run check-updates
 
 .PHONY: list-dependency-versions
 list-dependency-versions: package.json
 	npm list | egrep '^.─'
-
-.PHONY: dependencies-user-wide-get
-dependencies-user-wide-get:
-	npm install --global doctoc npm-check-updates npm-install-peers
 ## }}}
 
-taginfo.json: related_tags.txt gen_taginfo_json.js taginfo_template.json
-	gen_taginfo_json.js --key-file "$<" --template-file taginfo_template.json > "$@"
+taginfo.json: scripts/related_tags.txt scripts/gen_taginfo_json.js scripts/taginfo_template.json
+	scripts/gen_taginfo_json.js --key-file "$<" --template-file ./taginfo_template.json > "$@"
 	## Haxe implementation produces a different sorted JSON.
 	# haxe -main Gen_taginfo_json -lib mcli -neko Gen_taginfo_json.n && neko Gen_taginfo_json --key_file "$<" --template_file taginfo_template.json > "$@"
 
@@ -123,7 +116,7 @@ README.html: README.md
 
 .PHONY: doctoc
 doctoc:
-	doctoc README.md --title '**Table of Contents**'
+	npm run readme
 ## }}}
 
 ## Build files which are needed to host the evaluation tool on a webserver.
@@ -133,7 +126,7 @@ ready-for-hosting: dependencies-get opening_hours+deps.min.js
 ## command line programs {{{
 .PHONY: run-regex_search
 run-regex_search: export.$(SEARCH).json interactive_testing.js regex_search.py
-	$(NODEJS) ./regex_search.py "$<"
+	$(NODEJS) regex_search.py "$<"
 
 .PHONY: run-interactive_testing
 run-interactive_testing: interactive_testing.js opening_hours.js
@@ -146,7 +139,7 @@ qa-quick: qa-phrases-to-avoid
 
 .PHONY: qa-phrases-to-avoid
 qa-phrases-to-avoid:
-	! git grep --ignore-case 'input[ ]tolerance'
+	! git --no-pager grep --ignore-case 'input[ ]tolerance'
 
 .PHONY: qa-source-code
 qa-source-code:
@@ -164,55 +157,44 @@ qa-https-everywhere:
 ## software testing {{{
 
 .PHONY: check-all
-check-all: check-package.json check-test check-diff-all osm-tag-data-update-check
+check-all: check-package.json check-test check-all-diff osm-tag-data-update-check
+
+.PHONY: check-test
+check-test: check-opening_hours.js
 
 .PHONY: check-fast
-check-fast: check-diff-en-opening_hours.js
+check-fast: check-diff-opening_hours.js
 
-.PHONY: check-diff-all
-check-diff-all: check-diff check-diff-opening_hours.min.js
+.PHONY: check-all-diff
+check-all-diff: check-all-lang-diff check-diff-opening_hours.min.js
 
-.PHONY: check-diff
-check-diff: check-diff-all-opening_hours.js
-
-.PHONY: check-test
-check-test: check-opening_hours.js
-
-.PHONY: check-test
-check-test: check-opening_hours.js
+.PHONY: check-all-lang-diff
+check-all-lang-diff:
+	@echo -n "en de" | xargs --delimiter ' ' --max-args=1 -I '{}' $(MAKE) $(MAKE_OPTIONS) "CHECK_LANG={}" check-diff-opening_hours.js
 
 # .PHONY: check-opening_hours.js check-opening_hours.min.js
 ## Does not work
 check-opening_hours.js:
 check-opening_hours.min.js:
 
-check-%.js: %.js test.js
-	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test.js --library-file "./$<"
-
-check-diff-all-opening_hours.js:
-check-diff-all-opening_hours.min.js:
-
-check-diff-all-%.js: %.js test.js
-	@echo -n "en de" | xargs --delimiter ' ' --max-args=1 -I '{}' $(MAKE) $(MAKE_OPTIONS) "CHECK_LANG={}" check-diff-opening_hours.js
-
-.SILENT: check-diff-opening_hours.js check-diff-opening_hours.min.js
-check-diff-en-opening_hours.js: check-diff-opening_hours.js
-check-diff-de-opening_hours.js:
-	$(MAKE) $(MAKE_OPTIONS) CHECK_LANG=de check-diff-opening_hours.js
-
-check-diff-%.js: %.js test.js
-	rm -rf "test.$(CHECK_LANG).log"
-	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test.js --library-file "$<" --locale $(CHECK_LANG) 1> test.$(CHECK_LANG).log 2>&1 || true; \
-	if git diff --quiet --exit-code HEAD -- "test.$(CHECK_LANG).log"; then \
+check-diff-%: build/% test/test.js
+	@rm -rf "test/test.$(CHECK_LANG).log"
+	@echo "Testing to reproduce test/test.$(CHECK_LANG).log using $<."
+	@NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<" --locale $(CHECK_LANG) 1> test/test.$(CHECK_LANG).log 2>&1 || true; \
+	if git diff --quiet --exit-code HEAD -- "test/test.$(CHECK_LANG).log"; then \
 		echo "Test results for $< ($(CHECK_LANG)) are exactly the same as on developemt system. So far, so good ;)"; \
 	else \
 		echo "Test results for $< ($(CHECK_LANG)) produced a different output then the output of the current HEAD. Checkout the following diff."; \
 	fi
-	sh -c 'git --no-pager diff --exit-code -- "test.$(CHECK_LANG).log"'
+	@sh -c 'git --no-pager diff --exit-code -- "test/test.$(CHECK_LANG).log"'
+
+check-o%.js: build/o%.js test/test.js
+	NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<"
+
 
 .PHONY: osm-tag-data-taginfo-check
-osm-tag-data-taginfo-check: real_test.js opening_hours.js osm-tag-data-get-taginfo
-	$(NODEJS) ./check_for_new_taginfo_data.js --exit-code-not-new 0
+osm-tag-data-taginfo-check: scripts/real_test.js build/opening_hours.js osm-tag-data-get-taginfo
+	$(NODEJS) scripts/check_for_new_taginfo_data.js --exit-code-not-new 0
 	@grep -v '^#' $(OH_RELATED_TAGS) | while read key; do \
 		$(NODEJS) "$<" $(REAL_TEST_OPTIONS) --map-bad-oh-values --ignore-manual-values "export.$$key.json"; \
 	done
@@ -225,27 +207,20 @@ benchmark-opening_hours.js:
 benchmark-opening_hours.min.js:
 
 # .PHONY: benchmark
-benchmark-%.js: %.js benchmark.js
-	$(NODEJS) ./benchmark.js "./$<"
+benchmark-%.js: build/%.js scripts/benchmark.js
+	$(NODEJS) scripts/benchmark.js "../$<"
 
 .PHONY: check-package.json
 check-package.json: package.json
 	./node_modules/package-json-validator/bin/pjv --warnings --recommendations --filename "$<"
 
 .PHONY: check-holidays
-check-holidays:
-	@for def_file in ./holidays/*.yaml; do \
-		country=$${def_file#./holidays/}; \
-		country=$${country%.yaml}; \
-		for region in $$(cat "$$def_file" | yq '. | values |  .[]._state_code? | select(. != null)' --raw-output); do \
-			echo "$$country - $$region: "; \
-			./PH_SH_exporter.js --from 2017 --to 2017 /tmp/out -c "$$country" -p -v -r "$$region"; \
-		done \
-	done
+check-holidays: scripts/PH_SH_exporter.js
+	"$<" --from 2021 --to 2021 /tmp/out --public-holidays --verbose --all-locations
 
 .PHONY: check-yaml
 check-yaml:
-	$(REPO_FILES) | xargs --null -I '{}' find '{}' -type f -regextype posix-extended -regex '.*\.(yml|yaml)$$' -print0 | xargs --null yamllint --strict
+	yamllint --strict .
 
 .PHONY: check-html
 check-html:
@@ -291,7 +266,7 @@ osm-tag-data-update-taginfo: taginfo_sources.json osm-tag-data-taginfo-rm osm-ta
 ## Always refresh
 .PHONY: taginfo_sources.json
 taginfo_sources.json:
-	$(NODEJS) ./check_for_new_taginfo_data.js
+	$(NODEJS) scripts/check_for_new_taginfo_data.js
 
 .PHONY: osm-tag-data-get-taginfo
 osm-tag-data-get-taginfo: $(OH_RELATED_TAGS)
@@ -332,7 +307,7 @@ export♡name♡Leutershausen.json:
 
 ## Generate OverpassQL and execute it.
 .PRECIOUS: export♡%.json
-export♡%.json: real_test.js $(OH_RELATED_TAGS)
+export♡%.json: scripts/real_test.js $(OH_RELATED_TAGS)
 	@timestamp="$(shell echo "$@" | sed 's/♡/\x0/g;s/\.json$$//;' | cut -d '' -f 4)"; \
 		boundary_key="$(shell echo "$@" | sed 's/♡/\x0/g;s/\.json$$//;' | cut -d '' -f 2)"; \
 		boundary_value="$(shell echo "$@" | sed 's/♡/\x0/g;s/\.json$$//;' | cut -d '' -f 3)"; \
@@ -421,9 +396,9 @@ osm-tag-data-overpass-kill-queries:
 
 ## Cronjob is running on gauss: http://munin.openstreetmap.de/gauss/gauss-load.html
 # m h  dom mon dow   command
-# 12 22    * * *       cd ./oh-stats/ && make osm-tag-data-gen-stats-cron-overpass > cron.22.log 2>&1
-# 48 02    * * *       cd ./oh-stats/ && make osm-tag-data-gen-stats-cron-taginfo > cron.02.log 2>&1
-# 48 06    * * *       cd ./oh-stats/ && make osm-tag-data-gen-stats-cron-taginfo > cron.06.log 2>&1
+# 12 22    * * *       cd oh-stats/ && make osm-tag-data-gen-stats-cron-overpass > cron.22.log 2>&1
+# 48 02    * * *       cd oh-stats/ && make osm-tag-data-gen-stats-cron-taginfo > cron.02.log 2>&1
+# 48 06    * * *       cd oh-stats/ && make osm-tag-data-gen-stats-cron-taginfo > cron.06.log 2>&1
 .PHONY: osm-tag-data-gen-stats-cron-taginfo
 osm-tag-data-gen-stats-cron-taginfo: real_test.opening_hours.stats.csv
 	date
@@ -517,19 +492,18 @@ osm-tag-data-gen-stats-sort:
 	done
 ## }}}
 
-.PHONY: opening_hours.js
-opening_hours.js:
-	DEPS=NO ./node_modules/.bin/rollup -c
+build/opening_hours.js:
+	DEPS=NO node_modules/.bin/rollup -c
 
-.PHONY: opening_hours+deps.js
-opening_hours+deps.js:
-	DEPS=YES ./node_modules/.bin/rollup -c
+build/opening_hours+deps.js:
+	DEPS=YES node_modules/.bin/rollup -c
 
-opening_hours.min.js:
+build/opening_hours.min.js:
+build/opening_hours+deps.min.js:
 
-opening_hours+deps.min.js:
-
-%.min.js: %.js
+# TODO: Figure out why this generates a broken minified version: TypeError: opening_hours is not a constructor
+# ./node_modules/.bin/esbuild --bundle "$<" --outfile="$@"
+build/%.min.js: build/%.js
 	./node_modules/.bin/terser --output "$@" --comments '/github.com/' "$<"
 
 README.html:

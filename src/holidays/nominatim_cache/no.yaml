@@ -8,7 +8,7 @@ lon: '7.80328672208455'
 display_name: Lærdal, Sogn og Fjordane, Norge
 address:
   country: Norge
-  country_code: no
+  country_code: 'no'
   # county: Lærdal
   # state: Sogn og Fjordane
 boundingbox:

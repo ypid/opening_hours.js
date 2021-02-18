@@ -4,30 +4,24 @@
 # SPDX-License-Identifier: CC0-1.0
 
 name: Continuous Integration
-'on':
-  - 'push'
-  - 'pull_request'
+"on":
+  - "push"
+  - "pull_request"
 
 jobs:
   build:
-    runs-on: 'ubuntu-20.04'
+    runs-on: "ubuntu-20.04"
 
     strategy:
       matrix:
         node-version:
           # Support policy: We support every Node.js version is still "maintained".
           # Testing unmaintained versions serves no purpose.
-
-          # The only exception is that the oldest Node.js version under which all tests
-          # pass is still tested but can be increased as needed.
-          - '8.x'
-
-          - '12.x'
-          - '14.x'
-          - '15.x'
+          - "12.x"
+          - "14.x"
+          - "15.x"
 
     steps:
-
       - uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
@@ -38,7 +32,20 @@ jobs:
       - name: Add ~/.local/bin to $PATH
         run: 'printf "%s/.local/bin\n" "${HOME}" >> ${GITHUB_PATH}'
 
-      - run: make dependencies-user-wide-get
-      - run: make dependencies-get
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - uses: actions/cache@v2
+        # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        id: npm-cache
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ matrix.node-version }}-
+
+      - name: Install dependencies
+        run: make dependencies-get
 
       - run: make check-full

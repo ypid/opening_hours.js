@@ -6,7 +6,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-var opening_hours = require('./opening_hours.js');
+var opening_hours = require('../build/opening_hours.js');
 var fs = require('fs');
 var readline = require('readline');
 var colors = require('colors');

@@ -74,7 +74,8 @@ def handle_country_holiday_def_file(def_file):
 
 
 def handle_nominatim_url(nominatim_url, def_file, state=None):
-    LOG.debug('Calling handle_nominatim_url for {}, state: {}'.format(nominatim_url, state))
+    LOG.debug('Calling handle_nominatim_url for {}, state: {}'.format(
+        nominatim_url, state))
     level = 'state' if type(state) in [str, int] else 'country'
     country_code_re = re.match(r'.*?(?P<cc>\w+)\.', def_file)
     country_code = country_code_re.group('cc')
@@ -89,8 +90,10 @@ def handle_nominatim_url(nominatim_url, def_file, state=None):
         LOG.info('Loading {}'.format(nominatim_url))
         # Caused http.client.BadStatusLine exception with wired encoding in them.
         #  nominatim_data = json.loads(requests.get(nominatim_url).text)
-        req = urllib.request.Request(nominatim_url, headers={'User-Agent': 'curl/7.38.0'})
-        nominatim_data = json.loads(urllib.request.urlopen(req).read().decode('utf-8'))
+        req = urllib.request.Request(nominatim_url, headers={
+                                     'User-Agent': 'curl/7.38.0'})
+        nominatim_data = json.loads(
+            urllib.request.urlopen(req).read().decode('utf-8'))
         if isinstance(nominatim_data, list):
             # We expect that the URL was for geocoding and not reverse geocoding.
             parsed_url = urllib.parse.urlparse(nominatim_url)
@@ -105,7 +108,8 @@ def handle_nominatim_url(nominatim_url, def_file, state=None):
             }
             parsed_url = list(parsed_url)
             parsed_url[2] = '/reverse'
-            parsed_url[4] = urllib.parse.urlencode(reverse_geocoding_qs, doseq=True, safe=",")
+            parsed_url[4] = urllib.parse.urlencode(
+                reverse_geocoding_qs, doseq=True, safe=",")
             correct_nominatim_url = urllib.parse.urlunparse(parsed_url)
             return handle_nominatim_url(correct_nominatim_url, def_file, state)
 
@@ -135,8 +139,10 @@ def handle_nominatim_url(nominatim_url, def_file, state=None):
                 indent=2,
             )
 
-        nominatim_data['address'] = OrderedDict(sorted(nominatim_data['address'].items()))
-        nominatim_yaml = dump_holidays_as_yaml(nominatim_data, add_vspacing=False)
+        nominatim_data['address'] = OrderedDict(
+            sorted(nominatim_data['address'].items()))
+        nominatim_yaml = dump_holidays_as_yaml(
+            nominatim_data, add_vspacing=False)
         LOG.debug(nominatim_yaml)
 
         with open(nominatim_file, 'w') as nominatim_fh:
@@ -215,6 +221,7 @@ def main():  # pylint: disable=too-many-branches
     else:
         for def_file in iglob('*.yaml'):
             handle_country_holiday_def_file(def_file)
+
 
 if __name__ == '__main__':
     main()

@@ -80,6 +80,7 @@ Contributors
 * [KristjanESPERANTO_] - Kristjan
 * [Robot8A_] - Héctor Ochoa Ortiz
 * [pietervdvn_] - Pieter Vander Vennet
+* [napei_] - Nathaniel Peiffer
 
 
 Thanks very much to all contributors!
@@ -140,6 +141,7 @@ Thanks very much to all contributors!
 .. _KristjanESPERANTO: https://github.com/KristjanESPERANTO
 .. _Robot8A: https://www.openstreetmap.org/user/Robot8A
 .. _pietervdvn: https://github.com/pietervdvn
+.. _napei: https://nathaniel.peiffer.com.au/
 
 
 Supporters
@@ -221,7 +223,7 @@ Changed
   * Germany [StephanGeorg_]
 
 * Migrated to use `ES2015 modules`_ and rollup_ for module bundling. [simon04_]
-* Increased NodeJS version requirement to ``6.0.0``. Technically, the code should still work with ``4.0.0`` but support has been dropped because ``npm-install-peers`` depends on ``6.0.0``. [ypid_]
+* Increased NodeJS version requirement to ``12.0.0``. [ypid_]
 * Update to holiday definition format 2.2.0. Holidays are now maintained in
   YAML files, one for each country. [ypid_]
 * Update to holiday definition format 3.0.0. Use nested key-value pairs
@@ -250,6 +252,7 @@ Changed
   [simon04_]
 * Update simple HTML usage example for using the library in a website. [KristjanESPERANTO_, ypid_]
 * Replaced moment.js with Date.toLocaleString [simon04]
+* Change directory layout of the project. [napei_, ypid_]
 
 .. _ES2015 modules: http://exploringjs.com/es6/ch_modules.html
 .. _rollup: http://rollupjs.org/

@@ -8,8 +8,8 @@ export*
 # !export♡*♡stats.csv
 
 *.csv
-*.log
-*.json
+
+!package-lock.json
 
 ## Neko bytecode
 *.n
@@ -19,13 +19,11 @@ export*
 !taginfo_template.json
 !uglifyjs.log
 
-opening_hours.js
-opening_hours.min.js
-opening_hours+deps.js
-opening_hours+deps.min.js
+build
 node_modules
 tags
 README.html
 tmp_query*
 lockfile_*
 bower_components
+taginfo_sources.json

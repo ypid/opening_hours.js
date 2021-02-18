@@ -32,7 +32,7 @@
  */
 
 /* Required modules {{{ */
-var opening_hours = require('./opening_hours.js');
+var opening_hours = require('../build/opening_hours.js');
 var fs            = require('fs');
 var colors        = require('colors');
 var sprintf       = require('sprintf-js').sprintf;
