@@ -1,6 +1,6 @@
 {
   "name": "opening_hours",
-  "main": "opening_hours.js",
+  "main": "build/opening_hours.js",
   "description": "Library to parse and process opening_hours tag from OpenStreetMap data",
   "version": "3.5.0",
   "homepage": "https://github.com/opening-hours/opening_hours.js",
