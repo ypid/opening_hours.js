@@ -97,7 +97,7 @@ var test = new opening_hours_test();
 var nominatim_by_loc = {};
 for (var nominatim_file of glob.sync("src/holidays/nominatim_cache/*.yaml")) {
     var country_state = nominatim_file.match(/^.*\/([^/]*)\.yaml$/)[1];
-    nominatim_by_loc[country_state] = yaml.safeLoad(fs.readFileSync(nominatim_file));
+    nominatim_by_loc[country_state] = yaml.load(fs.readFileSync(nominatim_file));
 }
 
 var nominatim_default = nominatim_by_loc.de_bw;
