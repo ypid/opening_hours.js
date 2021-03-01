@@ -141,17 +141,6 @@ qa-quick: qa-phrases-to-avoid
 qa-phrases-to-avoid:
 	! git --no-pager grep --ignore-case 'input[ ]tolerance'
 
-.PHONY: qa-source-code
-qa-source-code:
-	$(REPO_FILES) | egrep -zZ '\.js$$' | xargs --null sed -i 's/\([^=!]\)==\([^=]\)/\1===\2/g;s/\([^=!]\)!=\([^=]\)/\1!==\2/g;'
-
-.PHONY: qa-https-everywhere
-qa-https-everywhere:
-	$(REPO_SOURCE_FILES) | xargs --null sed --regexp-extended --in-place 's#http(:\\?/\\?/)((:?www\.)?momentjs\.com|overpass-turbo\.eu|gnu\.org|stackoverflow\.com|openstreetmap\.(org|de)|nominatim\.openstreetmap\.org|taginfo\.openstreetmap\.org|wiki\.openstreetmap\.org|josm\.openstreetmap\.de|www\.openstreetmap\.org\\/copyright|github\.com|xkcd\.com|heise\.de|readthedocs\.(:?org|io)|askubuntu\.com|xpra\.org|docker\.com|linuxcontainers\.org|ecma-international\.org|w3\.org|example\.com|fsf\.org|jquery\.com|openingh\.openstreetmap\.de)#https\1\2#g;'
-	$(REPO_SOURCE_FILES) | xargs --null sed -i 's#http://overpass-api\.de#https://overpass-api.de#g;'
-	$(REPO_SOURCE_FILES) | xargs --null sed --regexp-extended --in-place 's#http://(\w+\.wikipedia\.org)#https://\1#g;'
-	test -f index.html && git checkout index.html
-	# ack 'http://'
 ## }}}
 
 ## software testing {{{
@@ -236,7 +225,7 @@ release-versionbump: package.json bower.json CHANGELOG.rst
 	sh -c 'git commit --all --message "Release version $$(jq --raw-output '.version' '$<')"'
 
 .PHONY: release-prepare
-release-prepare: package.json taginfo.json check-holidays update-dependency-versions doctoc check qa-source-code qa-https-everywhere
+release-prepare: package.json taginfo.json check-holidays update-dependency-versions doctoc check
 
 .PHONY: release-local
 release-local: package.json release-versionbump check-package.json
