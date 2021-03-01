@@ -24,6 +24,10 @@
             "description": "Helps to write, auto correct, debug and validate this tag."
         },
         {
+            "key": "opening_hours:covid19",
+            "description": "Helps to write, auto correct, debug and validate this tag."
+        },
+        {
             "key": "happy_hours",
             "description": "Helps to write, auto correct, debug and validate this tag."
         },
