@@ -76,7 +76,7 @@ if (!(argv['public-holidays'] || argv['school-holidays'] || argv['all-locations'
 let nominatim_by_loc = {};
 for (let nominatim_file of glob.sync("src/holidays/nominatim_cache/*.yaml")) {
     let country_state = nominatim_file.match(/^.*\/([^/]*)\.yaml$/)[1];
-    nominatim_by_loc[country_state] = yaml.safeLoad(fs.readFileSync(nominatim_file));
+    nominatim_by_loc[country_state] = yaml.load(fs.readFileSync(nominatim_file));
 }
 
 /* }}} */
