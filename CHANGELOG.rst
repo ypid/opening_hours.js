@@ -354,7 +354,7 @@ Added
 Changed
 ~~~~~~~
 
-* Changed license to LGPL-3.0. [ypid_]
+* Changed license to LGPL-3.0-only. [ypid_]
 * Refer to YoHours in the evaluation tool. [ypid_]
 
 * Use HTTPS everywhere (in the documentation and in code comments). [ypid_]
