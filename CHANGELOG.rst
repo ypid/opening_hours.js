@@ -253,6 +253,7 @@ Changed
 * Update simple HTML usage example for using the library in a website. [KristjanESPERANTO_, ypid_]
 * Replaced moment.js with Date.toLocaleString [simon04]
 * Change directory layout of the project. [napei_, ypid_]
+* Move i18next-client from peerDependencies to dependency.
 
 .. _ES2015 modules: http://exploringjs.com/es6/ch_modules.html
 .. _rollup: http://rollupjs.org/
