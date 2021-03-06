@@ -42,7 +42,6 @@
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "readme": "doctoc README.md --title \"## Table of Contents\"",
-    "install-peers": "npm-install-peers",
     "check-updates": " npm-check-updates --reject colors --upgrade"
   },
   "dependencies": {
@@ -67,7 +66,6 @@
     "js-yaml": "^4.0.0",
     "line-reader": "^0.4.0",
     "npm-check-updates": "^11.1.10",
-    "npm-install-peers": "^1.2.2",
     "optimist": "^0.6.1",
     "package-json-validator": "^0.6.3",
     "pinst": "^2.1.6",
