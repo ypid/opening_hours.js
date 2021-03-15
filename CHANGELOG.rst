@@ -223,7 +223,7 @@ Changed
   * Germany [StephanGeorg_]
 
 * Migrated to use `ES2015 modules`_ and rollup_ for module bundling. [simon04_]
-* Increased NodeJS version requirement to ``12.0.0``. [ypid_]
+* Increased NodeJS version requirement to ``10.0.0``. [ypid_]
 * Update to holiday definition format 2.2.0. Holidays are now maintained in
   YAML files, one for each country. [ypid_]
 * Update to holiday definition format 3.0.0. Use nested key-value pairs
