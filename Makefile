@@ -93,7 +93,6 @@ osm-tag-data-rm: osm-tag-data-taginfo-rm osm-tag-data-overpass-rm
 dependencies-get: package.json
 	git submodule update --init --recursive
 	npm install
-	npm run install-peers
 	pip3 install --user yamllint yq
 
 # colors above v0.6.1 broke the 'bold' option. For what we need this package, v0.6.1 is more than sufficient.
