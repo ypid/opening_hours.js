@@ -279,7 +279,7 @@ function Evaluate (offset, reset) {
               is_equal_to = oh.isEqualTo(new opening_hours(diff_value, nominatim, {
                   'mode': mode,
                   'warnings_severity': 7,
-                  'locale': i18next.language()
+                  'locale': i18next.language
               }));
           } catch (err) {
               $('input#diff_value').css({'background-color' : evaluation_tool_colors.error})
