@@ -5824,7 +5824,7 @@ function opening_hours_test() {
                 expected_intervals[expected_interval][2] = false;
         }
         if (typeof values === 'string')
-            tests.push([name, values, values, from, to, expected_intervals,
+            this.tests.push([name, values, values, from, to, expected_intervals,
                 [ expected_duration, expected_unknown_duration ], expected_weekstable, nominatim_data, oh_mode]);
         else
             for (var value_ind = 0; value_ind < values.length; value_ind++)

@@ -13,34 +13,34 @@ var OpeningHoursTable = {
 
         var delta = Math.floor((nextchange.getTime() - now.getTime()) / 1000 / 60); // delta is minutes
         if (delta < 60)
-            timediff = i18n.t("words.in duration") +' '+ delta + ' ' + this.plural(delta, 'words.time.minute');
+            timediff = i18next.t("words.in duration") +' '+ delta + ' ' + this.plural(delta, 'words.time.minute');
 
         var deltaminutes = delta % 60;
         delta = Math.floor(delta / 60); // delta is now hours
 
         if (delta < 48 && timediff === '')
-            timediff = i18n.t("words.in duration") +' '+ delta + ' ' + this.plural(delta, 'words.time.hour')
-                +' '+ i18n.t('words.time.hours minutes sep') + this.pad(deltaminutes) + ' ' + this.plural(deltaminutes, 'words.time.minute');
+            timediff = i18next.t("words.in duration") +' '+ delta + ' ' + this.plural(delta, 'words.time.hour')
+                +' '+ i18next.t('words.time.hours minutes sep') + this.pad(deltaminutes) + ' ' + this.plural(deltaminutes, 'words.time.minute');
 
         var deltahours = delta % 24;
         delta = Math.floor(delta / 24); // delta is now days
 
         if (delta < 14 && timediff === '')
-            timediff = i18n.t("words.in duration") +' '+ delta + ' ' + this.plural(delta, 'words.time.day')
+            timediff = i18next.t("words.in duration") +' '+ delta + ' ' + this.plural(delta, 'words.time.day')
                 + ' ' + deltahours + ' ' + this.plural(deltahours, 'words.time.hour')
         else if (timediff === '')
-            timediff = i18n.t("words.in duration") +' '+ delta + ' ' + this.plural(delta, 'words.time.day');
+            timediff = i18next.t("words.in duration") +' '+ delta + ' ' + this.plural(delta, 'words.time.day');
 
         var atday = '';
         if (from ? (nextdays < 1) : (nextdays <= 1))
-            atday = i18n.t('words.today');
+            atday = i18next.t('words.today');
         else if (from ? (nextdays < 2) : (nextdays <= 2))
-            atday = i18n.t('words.tomorrow');
+            atday = i18next.t('words.tomorrow');
         else if (from ? (nextdays < 7) : (nextdays <= 7))
-            atday = i18n.t('words.on weekday') + i18n.t('weekdays.word next.' + this.weekdays[nextchange.getDay()])
-                +' '+ nextchange.toLocaleString(i18n.lng(), {weekday: 'long'});
+            atday = i18next.t('words.on weekday') + i18next.t('weekdays.word next.' + this.weekdays[nextchange.getDay()])
+                +' '+ nextchange.toLocaleString(i18next.language, {weekday: 'long'});
 
-        var month_name = nextchange.toLocaleString(i18n.lng(), {month: 'long'});
+        var month_name = nextchange.toLocaleString(i18next.language, {month: 'long'});
         var month_name_match = month_name.match(/\(([^|]+?)\|.*\)/);
         if (month_name_match && typeof month_name_match[1] === 'string') {
             /* The language has multiple words for the month (nominative, subjective).
@@ -64,13 +64,13 @@ var OpeningHoursTable = {
     pad: function (n) { return n < 10 ? '0'+n : n; },
 
     plural: function (n, trans_base) {
-        return i18n.t(trans_base, {count: n}); // Correct i18next plural function call
+        return i18next.t(trans_base, {count: n}); // Correct i18next plural function call
         /*if (n === 1) {
-            return i18n.t(trans_base); // singular form
+            return i18next.t(trans_base); // singular form
         } else if (n < 2) { // FIXME: Is this correct for Russian?
-            return i18n.t(trans_base + ' many');
+            return i18next.t(trans_base + ' many');
         } else {
-            return i18n.t(trans_base + '_plural');
+            return i18next.t(trans_base + '_plural');
         }*/
     },
 
@@ -133,8 +133,8 @@ var OpeningHoursTable = {
                 table[row].times += '<div class="timebar ' + (is_open ? 'open' : (unknown ? 'unknown' : 'closed'))
                     + '" style="width:' + (to-fr) + '%"></div>';
                 if (is_open || unknown) {
-                    var text = i18n.t('words.' + state_string) + ' ' + this.printTime(prevdate)
-                        + ' ' + i18n.t('words.to') + ' ';
+                    var text = i18next.t('words.' + state_string) + ' ' + this.printTime(prevdate)
+                        + ' ' + i18next.t('words.to') + ' ';
                     if (prevdate.getDay() !== curdate.getDay())
                         text += '24:00';
                     else
@@ -153,7 +153,7 @@ var OpeningHoursTable = {
                 table[row].times += '<div class="timebar ' + (is_open ? 'open' : (unknown ? 'unknown' : 'closed'))
                     + '" style="width:100%"></div>';
                 if (is_open)
-                    table[row].text.push(i18n.t('words.open') + ' 00:00 ' + i18n.t('words.to') + ' 24:00');
+                    table[row].text.push(i18next.t('words.open') + ' 00:00 ' + i18next.t('words.to') + ' 24:00');
             }
         }
 
@@ -198,12 +198,12 @@ var OpeningHoursTable = {
         var output = '';
 
         output += '<p class="' + state_string_past + '">'
-            + i18n.t('texts.' + state_string_past+ ' ' + (has_next_change ? 'now' : 'always'));
+            + i18next.t('texts.' + state_string_past+ ' ' + (has_next_change ? 'now' : 'always'));
         if (typeof comment !== 'undefined') {
             if (unknown) {
-                output += i18n.t('texts.depends on', { comment: '"' + comment + '"' });
+                output += i18next.t('texts.depends on', { comment: '"' + comment + '"' });
             } else {
-                output += ', ' + i18n.t('words.comment') + ': "' + comment + '"';
+                output += ', ' + i18next.t('words.comment') + ': "' + comment + '"';
             }
         }
         output += '</p>';
@@ -213,11 +213,11 @@ var OpeningHoursTable = {
             time_diff = (time_diff) / 1000;
             time_diff += 60; // go one second after
             output += '<p class="' + it.getStateString(true) + '">'
-                + i18n.t('texts.will ' + it.getStateString(false), {
+                + i18next.t('texts.will ' + it.getStateString(false), {
                     timestring: this.formatdate(prevdate, it.getDate(), true),
                     href: 'javascript:Evaluate(' + time_diff + ', false, \'' + value + '\')',
                     comment: ((typeof it.getComment() === 'string' || typeof comment === 'string')
-                        ?  ', ' + i18n.t('words.comment') + ': ' + ((typeof it.getComment() === 'string') ? '"' + it.getComment() + '"' : i18n.t('words.undefined'))
+                        ?  ', ' + i18next.t('words.comment') + ': ' + ((typeof it.getComment() === 'string') ? '"' + it.getComment() + '"' : i18next.t('words.undefined'))
                         : ''),
                 }) + '</p>';
         }
@@ -225,9 +225,9 @@ var OpeningHoursTable = {
         output += this.drawTable(it, prevdate, has_next_change);
 
         if (oh.isWeekStable())
-            output += '<p><b>'+ i18n.t('texts.week stable') +'</b></p>';
+            output += '<p><b>'+ i18next.t('texts.week stable') +'</b></p>';
         else
-            output += '<p><b>'+ i18n.t('texts.not week stable') +'</b></p>';
+            output += '<p><b>'+ i18next.t('texts.not week stable') +'</b></p>';
 
         return output;
     },

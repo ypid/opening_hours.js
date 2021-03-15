@@ -18,7 +18,7 @@ function josm(url_param) {
     xhr.open('GET', 'https://localhost:8111/' + url_param, true);      // true makes this call asynchronous
     xhr.onreadystatechange = function () {    // need eventhandler since our call is async
         if ( xhr.status !== 200 ) {
-            alert(i18n.t('texts.JOSM remote conn error'));
+            alert(i18next.t('texts.JOSM remote conn error'));
         }
     };
     xhr.send(null);
@@ -131,7 +131,7 @@ function Evaluate (offset, reset) {
         }
         reverseGeocodeLocation(
             '&lat=' + lat + '&lon=' + lon,
-            mapCountryToLanguage(i18n.lng()),
+            mapCountryToLanguage(i18next.language),
             function(nominatim_data) {
                 nominatim = nominatim_data;
                 document.forms.check.elements['cc'].value    = nominatim.address.country_code;
@@ -167,7 +167,7 @@ function Evaluate (offset, reset) {
     document.forms.check.elements['dd'].value         = u2(date.getDate());
     document.forms.check.elements['HH'].value         = u2(date.getHours());
     document.forms.check.elements['MM'].value         = u2(date.getMinutes());
-    document.forms.check.elements['wday'].value       = date.toLocaleString(i18n.lng(), {weekday: 'short'});
+    document.forms.check.elements['wday'].value       = date.toLocaleString(i18next.language, {weekday: 'short'});
     document.forms.check.elements['week'].value       = 'W'+u2(dateAtWeek(date, 0) + 1);
 
     var show_time_table         = document.getElementById('show_time_table');
@@ -184,12 +184,12 @@ function Evaluate (offset, reset) {
         var oh = new opening_hours(value, nominatim, {
             'mode': mode,
             'warnings_severity': 7,
-            'locale': i18n.lng()
+            'locale': i18next.language
         });
         var it = oh.getIterator(date);
     } catch (err) {
         crashed = err;
-        show_warnings_or_errors.innerHTML = '<p class="error">' + i18n.t('texts.filter.error') + ':<br />'
+        show_warnings_or_errors.innerHTML = '<p class="error">' + i18next.t('texts.filter.error') + ':<br />'
             + '<textarea rows="' + crashed.split('\n').length + 1 + '" style="width: 100%" name="WarnErrors" readonly="readonly">' + crashed
             + '</textarea></p>';
         show_time_table.innerHTML = '';
@@ -197,24 +197,24 @@ function Evaluate (offset, reset) {
     }
 
     show_time_table.innerHTML = '<a href="javascript:josm(\'import?url=' + encodeURIComponent('https://overpass-api.de/api/xapi_meta?*[opening_hours='
-        + document.forms.check.elements['expression'].value + ']') + '\')">' + i18n.t('texts.load all with JOSM') + '</a><br />';
+        + document.forms.check.elements['expression'].value + ']') + '\')">' + i18next.t('texts.load all with JOSM') + '</a><br />';
     if (!crashed) {
         var prettified = oh.prettifyValue({});
         var prettified_value_array = oh.prettifyValue({
-            // conf: { locale: i18n.lng() },
+            // conf: { locale: i18next.language },
             get_internals: true,
         });
-        // var prettified_newline_sep = oh.prettifyValue({ conf: { locale: i18n.lng(), rule_sep_string: '\n', print_semicolon: false } });
-        show_results.innerHTML = '<p><span class="hd">' + i18n.t('words.status') + ':</span>'
+        // var prettified_newline_sep = oh.prettifyValue({ conf: { locale: i18next.language, rule_sep_string: '\n', print_semicolon: false } });
+        show_results.innerHTML = '<p><span class="hd">' + i18next.t('words.status') + ':</span>'
             + '<input class="nostyle" size="10" name="status" readonly="readonly" />'
             + '<input class="nostyle" size="60" name="comment" readonly="readonly" />'
             + '</p>' + '<p><span class="hd">'
-            + i18n.t('texts.MatchingRule') + ':</span>'
+            + i18next.t('texts.MatchingRule') + ':</span>'
             + '<input class="nostyle w100" name="MatchingRule" readonly="readonly" />'
             + '</p>';
         var used_selectors = { };
         var value_explanation =
-            i18n.t('texts.prettified value for displaying') + ':<br />'
+            i18next.t('texts.prettified value for displaying') + ':<br />'
             + '<p class="value_explanation">';
         // console.log(JSON.stringify(prettified_value_array, null, '    '));
         // console.log(JSON.stringify(prettified_value_array, null, '    '));
@@ -231,7 +231,7 @@ function Evaluate (offset, reset) {
                 );
                 value_explanation +=
                     '<span title="'
-                    + i18n.t('texts.rule separator ' + rule_separator) + '"'
+                    + i18next.t('texts.rule separator ' + rule_separator) + '"'
                     + ' class="rule_separator"><a target="_blank" class="specification" href="'
                     + specification_url + '#section:rule_separators'
                     + '">' + rule_separator + '</a></span><br>';
@@ -255,7 +255,7 @@ function Evaluate (offset, reset) {
                         fragment_identifier = 'selector:' + selector_type;
                 }
                 value_explanation += '<span title="'
-                    + i18n.t('words.' + (selector_type.match(/(?:state|comment)/) ? 'modifier' : 'selector'), { name: selector_type }) + '"'
+                    + i18next.t('words.' + (selector_type.match(/(?:state|comment)/) ? 'modifier' : 'selector'), { name: selector_type }) + '"'
                     + ' class="' + selector_type + '"><a target="_blank" class="specification" href="'
                     + specification_url + '#' + fragment_identifier
                     + '">' + selector_value + '</a></span>';
@@ -268,7 +268,7 @@ function Evaluate (offset, reset) {
         }
         value_explanation += '</p></div>';
         if (YoHoursChecker.canRead(value)) {
-            value_explanation = i18n.t('texts.refer to yohours', { href: 'http://github.pavie.info/yohours/?oh=' + value })
+            value_explanation = i18next.t('texts.refer to yohours', { href: 'http://github.pavie.info/yohours/?oh=' + value })
             + '<br>'
             + value_explanation;
         }
@@ -279,7 +279,7 @@ function Evaluate (offset, reset) {
               is_equal_to = oh.isEqualTo(new opening_hours(diff_value, nominatim, {
                   'mode': mode,
                   'warnings_severity': 7,
-                  'locale': i18n.lng()
+                  'locale': i18next.language
               }));
           } catch (err) {
               $('input#diff_value').css({'background-color' : evaluation_tool_colors.error})
@@ -309,36 +309,36 @@ function Evaluate (offset, reset) {
         show_warnings_or_errors.innerHTML = value_explanation;
 
         // if (prettified_newline_sep.split('\n').length > 1)
-            // show_results.innerHTML += '<p>' + i18n.t('texts.prettified value for displaying') + ':<br />'
+            // show_results.innerHTML += '<p>' + i18next.t('texts.prettified value for displaying') + ':<br />'
                 // + '<textarea rows="' + prettified_newline_sep.split('\n').length
                 // + '" style="width: 100%" name="prettifiedValueNewlineSep" readonly="readonly">'
                 // + prettified_newline_sep + '</textarea></p>';
 
 
         document.forms.check.elements['comment'].value = typeof it.getComment() !== 'undefined'
-            ? it.getComment() : i18n.t('words.no') + ' ' + i18n.t('words.comment');
-        document.forms.check.elements['status'].value = (it.getState() ? i18n.t('words.open')
-            : (it.getUnknown() ? i18n.t('words.unknown') : i18n.t('words.closed')));
+            ? it.getComment() : i18next.t('words.no') + ' ' + i18next.t('words.comment');
+        document.forms.check.elements['status'].value = (it.getState() ? i18next.t('words.open')
+            : (it.getUnknown() ? i18next.t('words.unknown') : i18next.t('words.closed')));
         var rule_index    = it.getMatchingRule();
         document.forms.check.elements['MatchingRule'].value = typeof rule_index === 'undefined'
-            ? i18n.t('words.none') : oh.prettifyValue({ 'rule_index': rule_index });
+            ? i18next.t('words.none') : oh.prettifyValue({ 'rule_index': rule_index });
 
         if (prettified !== value) {
-            show_warnings_or_errors.innerHTML = '<p>' + i18n.t('texts.prettified value',
+            show_warnings_or_errors.innerHTML = '<p>' + i18next.t('texts.prettified value',
                 { copyFunc: 'javascript:newValue(\'' + prettified.replace(/"/g, '&quot;') + '\')' }) + ':<br />'
                 + '<input style="width: 100%" onclick="javascript:newValue(\'' + prettified.replace(/"/g, '&quot;') + '\')" id="prettifiedValue" name="prettifiedValue" value="' + prettified.replace(/"/g, '&quot;') + '" /></p>';
         }
 
         var warnings = oh.getWarnings();
         if (warnings.length > 0) {
-            show_warnings_or_errors.innerHTML += '<p class="warning">' + i18n.t('texts.filter.error') + ':<br />'
+            show_warnings_or_errors.innerHTML += '<p class="warning">' + i18next.t('texts.filter.error') + ':<br />'
                 + '<textarea rows="' + (warnings.length + 1)
                 + '" style="width: 100%" name="WarnErrors" readonly="readonly">' + warnings.join('\n')
                 + '</textarea></p>';
         }
 
         if (prettified.length > 255) {
-            show_warnings_or_errors.innerHTML += '<p>' + i18n.t('texts.value to long for osm',
+            show_warnings_or_errors.innerHTML += '<p>' + i18next.t('texts.value to long for osm',
                 { pretLength: prettified.length, valLength: value.length, maxLength: 255 }) + '</p>';
         }
 
@@ -456,7 +456,7 @@ $(document).ready(function () {
 
         var label = document.createElement('label')
         label.htmlFor = 'permalink-include-timestamp';
-        label.appendChild(document.createTextNode(i18n.t('texts.include timestamp?')));
+        label.appendChild(document.createTextNode(i18next.t('texts.include timestamp?')));
 
         permalink.appendChild(label);
         permalink.appendChild(checkbox);
