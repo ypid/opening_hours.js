@@ -10,8 +10,9 @@
         <link rel="stylesheet" href="css/table.css"/>
         <!-- Javascript {{{ -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
-        <script src="opening_hours+deps.min.js"></script>
-        <script src="node_modules/i18next-client/i18next.min.js"></script>
+        <script src="../build/opening_hours+deps.min.js"></script>
+        <script src="../node_modules/i18next/dist/umd/i18next.min.js"></script>
+        <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
         <script src="js/i18n-resources.js"></script>
         <script src="js/opening_hours_table.js"></script>
         <script src="js/helpers.js"></script>
@@ -24,8 +25,8 @@
         <script>
             var YoHoursChecker = new YoHoursChecker();
 
-            if (document.title !== i18n.t('texts.title')) {
-                document.title = i18n.t('texts.title');
+            if (document.title !== i18next.t('texts.title')) {
+                document.title = i18next.t('texts.title');
             }
 
             // default values {{{
@@ -33,7 +34,7 @@
             var default_lon = 9.1844;
             var repo_url = 'https://github.com/opening-hours/opening_hours.js';
             var specification_url = 'https://wiki.openstreetmap.org/wiki/'
-                + (i18n.lng() === 'de' ? 'DE:' : '')
+                + (i18next.language === 'de' ? 'DE:' : '')
                 + 'Key:opening_hours/specification';
             // }}}
         </script>
@@ -42,7 +43,7 @@
     <body><!-- {{{ -->
         <noscript>You don‘t have JavaScript enabled and that is a good thing but this tool makes heavy use of JavaScript so you need to enable it in order to use this tool. If you don’t trust the code that is going to be executed that is good as well. I encourage you to read all the source code on <a href="https://github.com/opening-hours/opening_hours.js">GitHub</a>. Also note that every commit and all releases are GPG signed. You might want to check this out as well :) Stay safe.</noscript>
         <script>
-            document.write('<h1>' + i18n.t('texts.title') + '</h1>');
+            document.write('<h1>' + i18next.t('texts.title') + '</h1>');
             document.write(getUserSelectTranslateHTMLCode());
         </script>
 
@@ -51,11 +52,11 @@
                 <!-- User input {{{ -->
                 <p>
                     <script>
-                        document.write('<span class="hd">' + i18n.t('words.date') + ' ' + i18n.t('words.and') + ' ' + i18n.t('words.time.time') + ':</span>');
+                        document.write('<span class="hd">' + i18next.t('words.date') + ' ' + i18next.t('words.and') + ' ' + i18next.t('words.time.time') + ':</span>');
                         document.write('<input type="number" step="1" class="input__year" id="yyyy" name="yyyy" value="2013" onblur="Evaluate()" />-');
                         document.write('<select id="mm" name="mm" onchange="Evaluate()">');
                         for (var i = 0; i < 12; i++) {
-                            document.write('<option value="monthNumber' + i + '">' + new Date(2018, i, 1).toLocaleString(i18n.lng(), {month: 'short'}) + '</option>');
+                            document.write('<option value="monthNumber' + i + '">' + new Date(2018, i, 1).toLocaleString(i18next.language, {month: 'short'}) + '</option>');
                         }
                         document.write('</select>-');
                         document.write('<input type="number" step="1" min="1" max="31" id="dd" size="3" name="dd" value="02" onblur="Evaluate()"/>');
@@ -81,12 +82,12 @@
                             for (var x = -1; x <= 1; x += 2) {
                                 var step = x * buttons[i][1]
                                 document.write('<button type="button" onclick="Evaluate(' + buttons[i][0] * step
-                                    + ')">' + (step > 0 ? '+' : '') + step + ' ' + i18n.t(buttons[i][2]) + '</button>'
+                                    + ')">' + (step > 0 ? '+' : '') + step + ' ' + i18next.t(buttons[i][2]) + '</button>'
                                     + (x === 1 ? ' ' : ''));
                             }
                         } else {
                             document.write('<button type="button" onclick="Evaluate(0, true'
-                                + ')">' + i18n.t(buttons[i][2]) + '</button>');
+                                + ')">' + i18next.t(buttons[i][2]) + '</button>');
                         }
                     }
                     </script>
@@ -94,20 +95,20 @@
 
                 <p>
                     <script>
-                        document.write('<span class="hd">' + i18n.t('words.position') + ':</span>');
-                        document.write(i18n.t('words.lat') + ': <input type="number" class="input__coordinate" id="lat" value="' + default_lat + '" onblur="Evaluate()" /> ');
-                        document.write(i18n.t('words.lon') + ': <input type="number" class="input__coordinate" id="lon" value="' + default_lon + '" onblur="Evaluate()" /> ');
-                        document.write(i18n.t('words.country') + ': <input size="3" id="cc" readonly="readonly" /> ');
-                        document.write(i18n.t('words.state') + ': <input size="20" id="state" readonly="readonly" /><br />');
-                        // document.write('<button type="button" onclick="setCurrentPosition()">' + i18n.t('texts.get my position') + '</button>');
+                        document.write('<span class="hd">' + i18next.t('words.position') + ':</span>');
+                        document.write(i18next.t('words.lat') + ': <input type="number" class="input__coordinate" id="lat" value="' + default_lat + '" onblur="Evaluate()" /> ');
+                        document.write(i18next.t('words.lon') + ': <input type="number" class="input__coordinate" id="lon" value="' + default_lon + '" onblur="Evaluate()" /> ');
+                        document.write(i18next.t('words.country') + ': <input size="3" id="cc" readonly="readonly" /> ');
+                        document.write(i18next.t('words.state') + ': <input size="20" id="state" readonly="readonly" /><br />');
+                        // document.write('<button type="button" onclick="setCurrentPosition()">' + i18next.t('texts.get my position') + '</button>');
                     </script>
                 </p>
 
                 <p>
                     <script>
-                        document.write('<span class="hd">' + i18n.t('words.mode') + ': </span><select id="mode" name="mode" onchange="Evaluate()" style="max-width:100%;">');
+                        document.write('<span class="hd">' + i18next.t('words.mode') + ': </span><select id="mode" name="mode" onchange="Evaluate()" style="max-width:100%;">');
                         for (var i = 0; i <= 2; i++) {
-                            document.write('<option value="' + i + '">' + i18n.t('texts.mode ' + i) + '</option>');
+                            document.write('<option value="' + i + '">' + i18next.t('texts.mode ' + i) + '</option>');
                         }
                         document.write('</select>');
                     </script>
@@ -118,7 +119,7 @@
                 </div>
                 <p>
                     <script>
-                        document.write('<span class="hd">' + i18n.t('texts.value for') + ' <q>opening_hours</q>:'
+                        document.write('<span class="hd">' + i18next.t('texts.value for') + ' <q>opening_hours</q>:'
                                 + '</span>');
                     </script>
                     <input id="expression"
@@ -129,7 +130,7 @@
                     />
 
                     <script>
-                        document.write('<span class="hd">' + i18n.t('texts.value to compare') + ':</span>');
+                        document.write('<span class="hd">' + i18next.t('texts.value to compare') + ':</span>');
                     </script>
                     <input
                         id="diff_value"
@@ -152,7 +153,7 @@
 
             <hr /><!-- Examples {{{ -->
             <script>document.write('<a href="javascript:toggle(\'user_examples\')"><h2 id="examples">'
-                + i18n.t('words.examples') + ':</h2></a>');
+                + i18next.t('words.examples') + ':</h2></a>');
             </script>
             <div id="user_examples"><!-- {{{ -->
                 <ol>
@@ -201,7 +202,7 @@
                     <li>
                         <a href="#check" onclick="EX(this)">2013,2015,2050-2053,2055/2,2020-2029/3,2060+ Jan 1</a>,
                         <script>
-                            document.write('<a href="' + repo_url + '/tree/master#year-ranges" target="_blank">' + i18n.t('words.docu') + '</a>');
+                            document.write('<a href="' + repo_url + '/tree/master#year-ranges" target="_blank">' + i18next.t('words.docu') + '</a>');
                         </script>
                     </li>
                     <li><a href="#check" onclick="EX(this)">Jan 23-Feb 11,Feb 12 00:00-24:00; PH off</a></li>
@@ -209,12 +210,12 @@
                     <li><a href="#check" onclick="EX(this)">Mo-Fr 08:00-12:00, We 14:00-18:00; Su,PH off</a></li>
                     <li><a href="#check" onclick="EX(this)">00:00-24:00 week 6 Mo-Su Feb; PH off</a>,
                         <script>
-                            document.write('(' + i18n.t('texts.check out error correction, prettify') + ')');
+                            document.write('(' + i18next.t('texts.check out error correction, prettify') + ')');
                         </script>
                     </li>
                     <li><a href="#check" onclick="EX(this)">   monday,    Tu, wE,   TH    12:00 - 20:00  ; 14:00-16:00      Off  ; closed public Holiday</a>,
                         <script>
-                            document.write('(' + i18n.t('texts.check out error correction, prettify') + ')');
+                            document.write('(' + i18next.t('texts.check out error correction, prettify') + ')');
                         </script>
                     </li>
                 </ol>
@@ -224,7 +225,7 @@
                     <li><a href="#check" onclick="EX(this)">PH</a></li>
                     <li><a href="#check" onclick="EX(this)">PH Mo-Fr</a>
                         <script>
-                            document.write('(' + i18n.t('texts.if PH is between Mo and Fr') + ')');
+                            document.write('(' + i18next.t('texts.if PH is between Mo and Fr') + ')');
                         </script>
                     </li>
                     <li><a href="#check" onclick="EX(this)">PH -1 day</a></li>
@@ -232,7 +233,7 @@
                     <li><a href="#check" onclick="EX(this)">SH,PH</a></li>
                     <li><a href="#check" onclick="EX(this)">PH,SH</a>
                         <script>
-                            document.write('(' + i18n.t('texts.SH,PH or PH,SH') + ')');
+                            document.write('(' + i18next.t('texts.SH,PH or PH,SH') + ')');
                         </script>
                     </li>
                     <li><a href="#check" onclick="EX(this)">We[1-3]</a></li>
@@ -248,10 +249,10 @@
             </div><!-- }}} -->
 
         <script>
-            document.write(i18n.t('texts.more information',
+            document.write(i18next.t('texts.more information',
                 { href: 'href="https://wiki.openstreetmap.org/wiki/Key:opening_hours" target="_blank"' }) + '<br />');
 
-            document.write(i18n.t('texts.this website', { url: repo_url, hoster: 'GitHub' }));
+            document.write(i18next.t('texts.this website', { url: repo_url, hoster: 'GitHub' }));
         </script>
         </div><!-- }}} -->
     <iframe style="visibility:hidden;display:none" name='hiddenframe'></iframe>

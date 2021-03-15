@@ -1,13 +1,13 @@
-import i18n from 'i18next-client';
-export default i18n;
+import i18next from 'i18next';
+export default i18next;
 
 import opening_hours_resources from './opening_hours_resources.yaml';
 
-if (!i18n.isInitialized()) {
-    i18n.init({
+if (!i18next.isInitialized) {
+    i18next.init({
         fallbackLng: 'en',
         // lngWhitelist: ['en', 'de'],
-        resStore: opening_hours_resources,
+        resources: opening_hours_resources,
         getAsync: true,
         useCookie: true,
         // debug: true,
@@ -15,7 +15,6 @@ if (!i18n.isInitialized()) {
 } else {
     // compat with an app that already initializes i18n
     for (var lang in opening_hours_resources) {
-        i18n.addResourceBundle(lang, 'opening_hours', opening_hours_resources[lang]['opening_hours'], true);
-
+        i18next.addResourceBundle(lang, 'opening_hours', opening_hours_resources[lang]['opening_hours'], true);
     }
 }

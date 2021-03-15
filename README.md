@@ -325,7 +325,7 @@ function getReadableState(startString, endString, oh, past) {
     7: debug
     ```
 
-    - `locale (type: string, default: i18n.lng() || 'en')`: Defines the locale for errors and warnings.
+    - `locale (type: string, default: i18next.language || 'en')`: Defines the locale for errors and warnings.
 
     - additional_rule_separator (type boolean, default true)`: Allows to disable the "additional_rule_separator not used after time wrapping midnight" check giving rise to the warning "This rule overwrites parts of the previous rule. This happens because normal rules apply to the whole day and overwrite any definition made by previous rules. You can make this rule an additional rule by using a "," instead of the normal ";" to separate the rules. Note that the overwriting can also be desirable in which case you can ignore this warning."
 
@@ -807,7 +807,7 @@ You can contribute in the usual manner as known from git (and GitHub). Just fork
 
 ### Translating the evaluation tool and the map
 
-This project uses <http://i18next.com/> for translation.
+This project uses <https://www.i18next.com/> for translation.
 
 Translations can be made in the file [js/i18n-resources.js][ohlib.js/i18n-resources.js]. Just copy the whole English block, change the language code to the one you are adding and make your translation. You can open the [index.html](/index.html) to see the result of your work. ~~To complete your localization add the translated language name to the other languages~~ (you don’t have to do this anymore. Importing that form somewhere, WIP, see gen_word_error_correction.js). Week and month names are translated by the browser using the `Date.toLocaleString` function.
 
@@ -913,11 +913,11 @@ Edit: This does also work on npmjs in this short version … -->
 [ohlib.library-api]: #library-api
 [ohlib.testing]: #testing
 [ohlib.docs.holiday]: /holidays/README.md
-[ohlib.js/locales/core.js]: /locales/core.js
+[ohlib.js/locales/core.js]: /src/locales/core.js
 [ohlib.opening_hours.js]: /index.js
 [ohlib.test.js]: /test.js
 [ohlib.makefile]: /Makefile
-[ohlib.js/i18n-resources.js]: /js/i18n-resources.js
+[ohlib.js/i18n-resources.js]: /site/js/i18n-resources.js
 [ohlib.npmjs]: https://www.npmjs.org/package/opening_hours
 [ohlib.github]: https://github.com/opening-hours/opening_hours.js
 [hc]: https://gitlab.com/ypid/hc

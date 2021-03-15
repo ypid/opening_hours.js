@@ -7,7 +7,7 @@ import word_error_correction from './locales/word_error_correction.yaml';
 import lang from './locales/lang.yaml';
 
 import SunCalc from 'suncalc';
-import i18n from './locales/core';
+import i18next from './locales/core';
 
 export default function(value, nominatim_object, optional_conf_parm) {
     // Short constants {{{
@@ -64,7 +64,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
         'leave_weekday_sep_one_day_betw': true, // use the separator (either "," or "-" which is used to separate days which follow to each other like Sa,Su or Su-Mo
         'sep_one_day_between': ',',      // separator which should be used
         'zero_pad_month_and_week_numbers': true, // Format week (e.g. `week 01`) and month day numbers (e.g. `Jan 01`) with "%02d".
-        'locale': 'en',                  // use local language (needs i18n.js)
+        'locale': 'en',                  // use local language (needs i18next)
     };
 
     var osm_tag_defaults = {
@@ -105,34 +105,32 @@ export default function(value, nominatim_object, optional_conf_parm) {
      * sprintf support.
      */
     var locale = 'en'; // Default locale
-    if (typeof i18n === 'object') {
-        locale = i18n.lng();
+    if (typeof i18next === 'object') {
+        locale = i18next.language;
     }
 
     var t = function(str, variables) {
         if (
-                typeof i18n === 'object'
-                && typeof i18n.t === 'function'
+                typeof i18next === 'object'
+                && typeof i18next.t === 'function'
                 && typeof locale === 'string'
                 && ['de'].indexOf(locale) !== -1
             ) {
 
-            var global_locale = i18n.lng();
-
-            if (global_locale !== locale) {
-                i18n.setLng(locale);
+            var translatorFunction;
+            if (i18next.language !== locale) {
+                translatorFunction = i18next.getFixedT(locale);
+            } else {
+                translatorFunction = i18next.t;
             }
-            var text = i18n.t('opening_hours:texts.' + str, variables);
-            if (global_locale !== locale) {
-                i18n.setLng(global_locale);
-            }
+            var text = translatorFunction('opening_hours:texts.' + str, variables);
             return text;
         }
         var text = lang[str];
         if (typeof text === 'undefined') {
             text = str;
         }
-        return text.replace(/__([^_]*)__/g, function (match, c) {
+        return text.replace(/{{([^{}]*)}}/g, function (match, c) {
             return typeof variables[c] !== 'undefined'
                 ? variables[c]
                 : match
@@ -1255,9 +1253,11 @@ export default function(value, nominatim_object, optional_conf_parm) {
             var old_prettified_value_length = prettified_value.length;
 
             if (typeof user_conf['locale'] === 'string' && user_conf['locale'] !== 'en') {
-                var global_locale = i18n.lng();
-                if (global_locale !== user_conf['locale']) {
-                    i18n.setLng(user_conf['locale']);
+                var translatorFunction;
+                if (i18next.language !== user_conf['locale']) {
+                    translatorFunction = i18next.getFixedT(user_conf['locale']);
+                } else {
+                    translatorFunction = i18next.t;
                 }
                 for (var i = 0; i < prettified_group_value.length; i++) {
                     var type = prettified_group_value[i][0][2];
@@ -1270,11 +1270,11 @@ export default function(value, nominatim_object, optional_conf_parm) {
                             prettified_group_value[i][1] = prettified_group_value[i][1].replace(new RegExp(month, 'g'), months_local[key]);
                         });
                     } else {
-                        prettified_group_value[i][1] = i18n.t(['opening_hours:pretty.' + prettified_group_value[i][1], prettified_group_value[i][1]]);
+                        var prettifiedValueIsProbablyTranslatable = prettified_group_value[i][1].indexOf(':') === -1;
+                        if (prettifiedValueIsProbablyTranslatable) {
+                            prettified_group_value[i][1] = translatorFunction(['opening_hours:pretty.' + prettified_group_value[i][1], prettified_group_value[i][1]]);
+                        }
                     }
-                }
-                if (global_locale !== locale) {
-                    i18n.setLng(global_locale);
                 }
             }
 

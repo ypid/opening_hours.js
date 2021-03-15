@@ -30,14 +30,14 @@ export default {
         yamlPlugin,
     ],
     external: dependencies ? [] : [
-        'i18next-client',
+        'i18next',
         'suncalc'
     ],
     output: {
         name: 'opening_hours',
         banner: banner,
         globals: dependencies ? {} : {
-            'i18next-client': 'i18n',
+            'i18next': 'i18next',
             'suncalc': 'SunCalc'
         },
         format: 'umd',

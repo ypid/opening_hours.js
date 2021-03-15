@@ -171,7 +171,7 @@ check-diff-%: build/% test/test.js
 	@echo "Testing to reproduce test/test.$(CHECK_LANG).log using $<."
 	@NODE_ICU_DATA=$(NODE_ICU_DATA) $(NODEJS) test/test.js --library-file "$<" --locale $(CHECK_LANG) 1> test/test.$(CHECK_LANG).log 2>&1 || true; \
 	if git diff --quiet --exit-code HEAD -- "test/test.$(CHECK_LANG).log"; then \
-		echo "Test results for $< ($(CHECK_LANG)) are exactly the same as on developemt system. So far, so good ;)"; \
+		echo "Test results for $< ($(CHECK_LANG)) are exactly the same as on development system. So far, so good ;)"; \
 	else \
 		echo "Test results for $< ($(CHECK_LANG)) produced a different output then the output of the current HEAD. Checkout the following diff."; \
 	fi
