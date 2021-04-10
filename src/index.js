@@ -1862,13 +1862,9 @@ export default function(value, nominatim_object, optional_conf_parm) {
                                 rule_infos[nrule] = {};
                             }
                             rule_infos[nrule]['time_wraps_over_midnight'] = true;
-                            rule.wraptime.push(function(minutes_from, minutes_to, timevar_string, timevar_add, has_open_end, point_in_time_period, extended_open_end) { return function(date) {
+                            rule.wraptime.push(function(minutes_to, timevar_string, timevar_add, has_open_end, point_in_time_period, extended_open_end) { return function(date) {
                                 var ourminutes = date.getHours() * 60 + date.getMinutes();
 
-                                if (timevar_string[0]) {
-                                    var date_from = SunCalc.getTimes(date, lat, lon)[timevar_string[0]];
-                                    minutes_from  = date_from.getHours() * 60 + date_from.getMinutes() + timevar_add[0];
-                                }
                                 if (timevar_string[1]) {
                                     var date_to = SunCalc.getTimes(date, lat, lon)[timevar_string[1]];
                                     minutes_to  = date_to.getHours() * 60 + date_to.getMinutes() + timevar_add[1];
@@ -1894,7 +1890,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
                                         return [true, dateAtDayMinutes(date, minutes_to), has_open_end, extended_open_end];
                                 }
                                 return [false, undefined];
-                            }}(minutes_from, minutes_to - minutes_in_day, timevar_string, timevar_add, has_open_end, point_in_time_period, extended_open_end));
+                            }}(minutes_to - minutes_in_day, timevar_string, timevar_add, has_open_end, point_in_time_period, extended_open_end));
                         }
                     } else {
                         rule.time.push(function(minutes_from, minutes_to, timevar_string, timevar_add, has_open_end, is_point_in_time, point_in_time_period) { return function(date) {
