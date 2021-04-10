@@ -208,6 +208,7 @@ check-holidays: scripts/PH_SH_exporter.js
 
 .PHONY: check-yaml
 check-yaml:
+	yamllint --version
 	yamllint --strict .
 
 .PHONY: check-html
