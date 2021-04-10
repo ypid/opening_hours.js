@@ -82,6 +82,7 @@ Contributors
 * [pietervdvn_] - Pieter Vander Vennet
 * [napei_] - Nathaniel Peiffer
 * [fodor0205_]
+* [goodudetheboy_] - Vuong Ho
 
 Thanks very much to all contributors!
 
@@ -143,6 +144,7 @@ Thanks very much to all contributors!
 .. _pietervdvn: https://github.com/pietervdvn
 .. _napei: https://nathaniel.peiffer.com.au/
 .. _fodor0205: https://github.com/fodor0205
+.. _goodudetheboy: https://github.com/goodudetheboy
 
 
 Supporters
@@ -178,6 +180,7 @@ Added
   * Norway [Gazer75_]
   * Spain [jmontane_]
   * Switzerland [mstock_, emilsivro_, simonpoole_, ypid_]
+  * Vietnam [goodudetheboy_]
 
 * School holiday definitions added:
 

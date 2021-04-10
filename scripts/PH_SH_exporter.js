@@ -91,7 +91,12 @@ if (argv['all-locations']) {
         write_config_file(filepath, oh_value, nominatim_file_lookup_string, new Date(argv.from, 0, 1), new Date(argv.to + 1, 0, 1));
     }
 } else {
-    let nominatim_file_lookup_string = argv.country + '_' + argv.state.toString();
+    let nominatim_file_lookup_string;
+    if (typeof argv.state === 'string') {
+        nominatim_file_lookup_string = argv.country + '_' + argv.state;
+    } else {
+        nominatim_file_lookup_string = argv.country;
+    }
     write_config_file(filepath, oh_value, nominatim_file_lookup_string, new Date(argv.from, 0, 1), new Date(argv.to + 1, 0, 1));
 }
 

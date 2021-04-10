@@ -601,6 +601,7 @@ Almost everything from opening_hours definition is supported, as well as some ex
     - [Switzerland][ph-ch]
     - [Ukraine][ph-ua]
     - [United states][ph-us] (Some special cases are [currently not handled](https://github.com/opening-hours/opening_hours.js/issues/69#issuecomment-74103181))
+    - [Vietnam][ph-vn] (Some public holidays cannot currently be calulated by the library and are missing. See https://github.com/opening-hours/opening_hours.js/pull/388)
 
   - **EXT:** Supports limited calculations based on public holidays (e.g. `Sa,PH -1 day open`). The only two possibilities are currently +1 and -1. All other cases are not handled. This seems to be enough because the only thing which is really used is -1.
 
@@ -940,12 +941,13 @@ Edit: This does also work on npmjs in this short version … -->
 [ph-it]: http://www.governo.it/Presidenza/ufficio_cerimoniale/cerimoniale/giornate.html
 [ph-ne]: https://nl.wikipedia.org/wiki/Feestdagen_in_Nederland
 [ph-nl]: https://pl.wikipedia.org/wiki/Dni_wolne_od_pracy_w_Polsce
+[ph-nz]: https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand
 [ph-ro]: https://en.wikipedia.org/wiki/Public_holidays_in_Romania#Official_non-working_holidays
 [ph-ru]: https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B7%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8
 [ph-se]: https://en.wikipedia.org/wiki/Public_holidays_in_Sweden
 [ph-si]: http://www.vlada.si/o_sloveniji/politicni_sistem/prazniki/
 [ph-ua]: https://uk.wikipedia.org/wiki/%D0%A1%D0%B2%D1%8F%D1%82%D0%B0_%D1%82%D0%B0_%D0%BF%D0%B0%D0%BC%27%D1%8F%D1%82%D0%BD%D1%96_%D0%B4%D0%BD%D1%96_%D0%B2_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%96
 [ph-us]: https://en.wikipedia.org/wiki/Public_holidays_in_the_United_States
-[ph-nz]: https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand
+[ph-vn]: https://vi.wikipedia.org/wiki/C%C3%A1c_ng%C3%A0y_l%E1%BB%85_%E1%BB%9F_Vi%E1%BB%87t_Nam
 
 <!-- }}} -->
