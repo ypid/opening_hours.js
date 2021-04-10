@@ -17,16 +17,17 @@ PH:
 # Vietnam uses lunar year calendar for some of its public holidays,
 # so I'll be using school holidays here to accommodate for these since
 # there is no support for these days in PH.
+# TODO: Add support for dates based on lunar year calender to PH and convert the SH definitions that should be PH.
 
 # https://baodantoc.vn/lich-nghi-gio-to-hung-vuong-304-va-015-nam-2021-voi-can-bo-cong-chuc-nguoi-lao-dong-1615365601968.htm
-SH:
-  - name: 'Tết Nguyên Đán'
-    '2021': [2, 10, 2, 16]
-    '2022': [1, 29, 2, 6]
-  - name: 'Giỗ Tổ Hùng Vương'
-    '2020': [4, 10, 4, 11]
-    '2021': [4, 21, 4, 21]
-  - name: 'Ngày Quốc tế lao động'
-    '2021': [5, 1, 5, 3]
-  - name: 'Quốc Khánh'
-    '2021': [9, 2, 9, 5]
+# SH:
+#   - name: 'Tết Nguyên Đán'
+#     '2021': [2, 10, 2, 16]
+#     '2022': [1, 29, 2, 6]
+#   - name: 'Giỗ Tổ Hùng Vương'
+#     '2020': [4, 10, 4, 11]
+#     '2021': [4, 21, 4, 21]
+#   - name: 'Ngày Quốc tế lao động'
+#     '2021': [5, 1, 5, 3]
+#   - name: 'Quốc Khánh'
+#     '2021': [9, 2, 9, 5]
