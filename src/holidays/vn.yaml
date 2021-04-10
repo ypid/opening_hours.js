@@ -15,8 +15,8 @@ PH:
   - {'name': 'Lễ Giáng Sinh', 'fixed_date': [12, 25]}
 
 # Vietnam uses lunar year calendar for some of its public holidays,
-# so I'll be using school holidays here to accomodate for these since
-# there is no support for these days in PH
+# so I'll be using school holidays here to accommodate for these since
+# there is no support for these days in PH.
 
 # https://baodantoc.vn/lich-nghi-gio-to-hung-vuong-304-va-015-nam-2021-voi-can-bo-cong-chuc-nguoi-lao-dong-1615365601968.htm
 SH:
@@ -24,8 +24,8 @@ SH:
     '2021': [2, 10, 2, 16]
     '2022': [1, 29, 2, 6]
   - name: 'Giỗ Tổ Hùng Vương'
-    '2021': [4, 21, 4, 21]
     '2020': [4, 10, 4, 11]
+    '2021': [4, 21, 4, 21]
   - name: 'Ngày Quốc tế lao động'
     '2021': [5, 1, 5, 3]
   - name: 'Quốc Khánh'
