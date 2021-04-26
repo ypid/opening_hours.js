@@ -929,7 +929,7 @@ Edit: This does also work on npmjs in this short version … -->
 [ph-be]: https://de.wikipedia.org/wiki/Feiertage_in_Belgien
 [ph-br]: https://pt.wikipedia.org/wiki/Feriados_no_Brasil
 [ph-ca]: https://en.wikipedia.org/wiki/Public_holidays_in_Canada
-[ph-ch]: https://www.bj.admin.ch/dam/data/bj/publiservice/service/zivilprozessrecht/kant-feiertage.pdf
+[ph-ch]: https://www.bj.admin.ch/dam/bj/de/data/publiservice/service/zivilprozessrecht/kant-feiertage.pdf.download.pdf/kant-feiertage.pdf
 [ph-ci]: https://fr.wikipedia.org/wiki/Jour_f%C3%A9ri%C3%A9#_C%C3%B4te_d%27Ivoire
 [ph-cz]: https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
 [ph-de]: https://de.wikipedia.org/wiki/Feiertage_in_Deutschland
