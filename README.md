@@ -623,7 +623,7 @@ Almost everything from opening_hours definition is supported, as well as some ex
 
 - To evaluate the correct holidays, the country code and the state (could be omitted but this will probably result in less correctness) are required which are included in the JSON returned by [Nominatim] \(see in the [Library API][ohlib.library-api] how to provide it\).
 
-- If your country or state is missing or wrong you can [add it][ohlib.contribute.holidays] or open an [issue][issue-report] (and point to a definition of the holidays).
+- If your country or state is missing or wrong you can [add it][ohlib.contribute.holidays]. Please note that issues for missing or wrong holidays cannot be handled. There are just to many countries for them to be handled by one spare time maintainer. See also [issue #300](https://github.com/opening-hours/opening_hours.js/issues/300).
 
 ### Month ranges
 
@@ -909,7 +909,7 @@ Edit: This does also work on npmjs in this short version … -->
 [ohlib.time-ranges]: #time-ranges
 [ohlib.states]: #states
 [ohlib.holidays]: #holidays
-[ohlib.contribute.holidays]: #holidays-1
+[ohlib.contribute.holidays]: /src/holidays/
 [ohlib.evaluation-tool]: #evaluation-tool
 [ohlib.library-api]: #library-api
 [ohlib.testing]: #testing
