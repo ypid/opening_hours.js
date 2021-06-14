@@ -19,7 +19,7 @@ export default opening_hours
 
 export declare class opening_hours_iterator {
   getDate(): Date
-  setDate(date: Date)
+  setDate(date: Date) : void
   getState(date?: Date): boolean
   getUnknown(date?: Date): boolean
   getStateString(date?: Date, past?: boolean) : 'open' | 'unknown' | 'closed' | 'close'
@@ -33,22 +33,22 @@ export interface nominatim_object {
   lon: number,
   address: {
     country_code: string,
-    state: string
+    state: string,
   }
 }
 
 export interface argument_hash {
-  rule_index: 'number' | undefined
-  zero_pad_hour: boolean
+  rule_index: 'number' | undefined,
+  zero_pad_hour: boolean,
   one_zero_if_hour_zero: boolean,
   leave_off_closed: boolean,
   keyword_for_off_closed: string,
   rule_sep_string: string,
   print_semicolon: boolean,
   leave_weekday_sep_one_day_betw: boolean,
-  sep_one_day_between: string
+  sep_one_day_between: string,
   zero_pad_month_and_week_numbers: boolean,
-  locale: string
+  locale: string,
 }
 
 export declare enum mode {
@@ -65,11 +65,11 @@ export declare enum warnings_severity {
 }
 
 export interface optional_conf {
-  mode: mode
+  mode: mode,
   tag_key: string | undefined,
   map_value: boolean | undefined,
-  warnings_severity: warnings_severity | undefined
-  locale: string | undefined
+  warnings_severity: warnings_severity | undefined,
+  locale: string | undefined,
 }
 
 export type optional_conf_param = number | optional_conf
