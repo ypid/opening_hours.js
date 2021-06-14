@@ -29,6 +29,7 @@
   "directories": {
     "doc": "./docs/"
   },
+  "typings": "./types/index.d.ts",
   "scripts": {
     "build": "make build",
     "test-quick": "make check",
