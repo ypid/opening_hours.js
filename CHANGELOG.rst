@@ -83,6 +83,8 @@ Contributors
 * [napei_] - Nathaniel Peiffer
 * [fodor0205_]
 * [goodudetheboy_] - Vuong Ho
+* [MerlinPerrotLegler_] - Merlin Perrot
+
 
 Thanks very much to all contributors!
 
@@ -145,6 +147,7 @@ Thanks very much to all contributors!
 .. _napei: https://nathaniel.peiffer.com.au/
 .. _fodor0205: https://github.com/fodor0205
 .. _goodudetheboy: https://github.com/goodudetheboy
+.. _MerlinPerrotLegler: https://github.com/MerlinPerrotLegler
 
 
 Supporters
@@ -164,6 +167,11 @@ master_ - unreleased
 .. _master: https://github.com/opening-hours/opening_hours.js/compare/v3.6.0...master
 
 `v3.7.0 milestone <https://github.com/opening-hours/opening_hours.js/issues?q=milestone%3Av3.7.0+is%3Aclosed>`__
+
+Added
+~~~~~
+
+* Typing for typescript [MerlinPerrotLegler_]
 
 v3.6.0_ - 2021-04-24
 --------------------
