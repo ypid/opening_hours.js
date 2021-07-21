@@ -1,6 +1,8 @@
 {
   "name": "opening_hours",
   "main": "build/opening_hours.js",
+  "typings": "./types/index.d.ts",
+  "types": "./types/index.d.ts",
   "description": "Library to parse and process opening_hours tag from OpenStreetMap data",
   "version": "3.6.0",
   "homepage": "https://github.com/opening-hours/opening_hours.js",
@@ -30,7 +32,6 @@
   "directories": {
     "doc": "./docs/"
   },
-  "typings": "./types/index.d.ts",
   "scripts": {
     "build": "make build",
     "test-quick": "make check",
