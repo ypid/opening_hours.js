@@ -166,6 +166,8 @@ master_ - unreleased
 
 .. _master: https://github.com/opening-hours/opening_hours.js/compare/v3.7.0...master
 
+`v3.8.0 milestone <https://github.com/opening-hours/opening_hours.js/issues?q=milestone%3Av3.8.0+is%3Aclosed>`__
+
 v3.7.0_ - 2021-07-24
 --------------------
 
