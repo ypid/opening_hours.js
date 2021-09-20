@@ -111,7 +111,9 @@ function write_config_file(filepath, oh_value, nominatim_file_lookup_string, fro
     try {
         oh = new opening_hours(oh_value, nominatim_data);
     } catch (err) {
-        console.error('Something went wrong. Please file a issue at https://github.com/opening-hours/opening_hours.js/issues');
+        var error_message = 'Error creating new opening_hours(\'' + oh_value + '\', ' + JSON.stringify(nominatim_data) + '): ';
+        error_message += 'Error: ' + err + '. Please file a issue at https://github.com/opening-hours/opening_hours.js/issues';
+        console.error(error_message);
         process.exit(0);
     }
 
