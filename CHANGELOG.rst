@@ -168,6 +168,13 @@ master_ - unreleased
 
 `v3.8.0 milestone <https://github.com/opening-hours/opening_hours.js/issues?q=milestone%3Av3.8.0+is%3Aclosed>`__
 
+Changed
+~~~~~~~
+
+* School holiday definitions updated:
+
+  * Romania
+
 v3.7.0_ - 2021-07-24
 --------------------
 
