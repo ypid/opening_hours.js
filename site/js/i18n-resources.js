@@ -14,6 +14,7 @@ var resources = { // English is fallback language.
                 "nl": "Dutch language",
                 "hu": "Hungarian",
                 "es": "Spanish",
+                "vi": "Vietnamese",
                 "choose": "Choose Language",
             },
 
@@ -155,6 +156,7 @@ var resources = { // English is fallback language.
                 "uk": "Ucraniano",
                 "nl": "Neerlandés",
                 "hu": "Húngaro",
+                "vi": "Vietnamita",
                 "choose": "Elige idioma",
             },
 
@@ -295,6 +297,7 @@ var resources = { // English is fallback language.
                 "it": "Italiaans",
                 "uk": "Oekraïens",
                 "nl": "Nederlands",
+                "vi": "Vietnamees",
                 "choose": "Kies taal",
             },
 
@@ -431,6 +434,7 @@ var resources = { // English is fallback language.
                 "pt": "Portugais",
                 "it": "Italien",
                 "uk": "Ukrainien",
+                "vi": "Vietnamien",
                 "choose": "Choisissez la langue",
             },
 
@@ -554,6 +558,7 @@ var resources = { // English is fallback language.
                 "pt": "Portugiesisch",
                 "it": "Italienisch",
                 "uk": "Ukrainisch",
+                "vi": "Vietnamesisch",
                 "choose": "Wähle eine Sprache",
             },
 
@@ -692,6 +697,7 @@ var resources = { // English is fallback language.
                 "pt": "португальский",
                 "it": "итальянский",
                 "uk": "украинский",
+                "vi": "вьетнамский",
                 "choose": "Выберите язык",
             },
 
@@ -774,6 +780,7 @@ var resources = { // English is fallback language.
                 "it": "Italiano",
                 "pt": "Português",
                 "uk": "Ucraniano",
+                "vi": "Vietnamita",
                 "choose": "Escolha a sua linguagem",
             },
 
@@ -898,6 +905,7 @@ var resources = { // English is fallback language.
                 "it": "Italiano",
                 "pt": "Portoghese",
                 "uk": "Ucraino",
+                "vi": "Vietnamita",
                 "choose": "Scegli lingua",
             },
 
@@ -1022,6 +1030,7 @@ var resources = { // English is fallback language.
                 "pt": "португальська",
                 "it": "италійська",
                 "uk": "українська",
+                "vi": "в’єтнамська",
                 "choose": "Виберіть мову",
             },
 
@@ -1148,6 +1157,7 @@ var resources = { // English is fallback language.
                 "uk": "Ukrán",
                 "nl": "Holland",
                 "hu": "Magyar",
+                "vi": "Vietnami",
                 "choose": "Nyelv kiválasztása",
             },
 
