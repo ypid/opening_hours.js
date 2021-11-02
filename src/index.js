@@ -237,7 +237,7 @@ export default function(value, nominatim_object, optional_conf_parm) {
     }
 
     if (typeof oh_mode === 'undefined') {
-        if (typeof oh_key === 'string') {
+        if (typeof oh_key === 'string' && osm_tag_defaults[oh_regex_key] !== undefined) {
             if (typeof osm_tag_defaults[oh_regex_key]['mode'] === 'number') {
                 oh_mode = osm_tag_defaults[oh_regex_key]['mode'];
             } else {
