@@ -133,8 +133,9 @@ var OpeningHoursTable = {
                 table[row].times += '<div class="timebar ' + (is_open ? 'open' : (unknown ? 'unknown' : 'closed'))
                     + '" style="width:' + (to-fr) + '%"></div>';
                 if (is_open || unknown) {
-                    var text = i18next.t('words.' + state_string) + ' ' + this.printTime(prevdate)
-                        + ' ' + i18next.t('words.to') + ' ';
+                    var text = i18next.t('words.' + state_string) + ' ' +
+                        i18next.t('words.from') + ' ' + this.printTime(prevdate) +
+                        ' ' + i18next.t('words.to') + ' ';
                     if (prevdate.getDay() !== curdate.getDay())
                         text += '24:00';
                     else
