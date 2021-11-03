@@ -36,9 +36,17 @@ var OpeningHoursTable = {
             atday = i18next.t('words.today');
         else if (from ? (nextdays < 2) : (nextdays <= 2))
             atday = i18next.t('words.tomorrow');
-        else if (from ? (nextdays < 7) : (nextdays <= 7))
-            atday = i18next.t('words.on weekday') + i18next.t('weekdays.word next.' + this.weekdays[nextchange.getDay()])
-                +' '+ nextchange.toLocaleString(i18next.language, {weekday: 'long'});
+        else if (from ? (nextdays < 7) : (nextdays <= 7)) {
+            if (i18next.exists('weekdays.days next week.' + this.weekdays[nextchange.getDay()])) {
+                atday = i18next.t('weekdays.days next week.' + this.weekdays[nextchange.getDay()], {
+                    day: nextchange.toLocaleString(i18next.language, {weekday: 'long'})
+                });
+            } else {
+                atday = i18next.t('weekdays.day next week', {
+                    day: nextchange.toLocaleString(i18next.language, {weekday: 'long'})
+                });
+            }
+        }
 
         var month_name = nextchange.toLocaleString(i18next.language, {month: 'long'});
         var month_name_match = month_name.match(/\(([^|]+?)\|.*\)/);

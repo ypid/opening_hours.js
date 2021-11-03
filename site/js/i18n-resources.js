@@ -19,15 +19,7 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "su": "next",
-                    "mo": "next",
-                    "tu": "next",
-                    "we": "next",
-                    "th": "next",
-                    "fr": "next",
-                    "sa": "next",
-                }
+                "day next week": "next {{day}}"
             },
             "texts": {
                 "filter": {
@@ -108,8 +100,6 @@ var resources = { // English is fallback language.
                 "comment": "comment",
                 "today": "today",
                 "tomorrow": "tomorrow",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "in",
                 "region": "region",
                 "position": "position",
@@ -161,15 +151,7 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "su": "siguiente",
-                    "mo": "siguiente",
-                    "tu": "siguiente",
-                    "we": "siguiente",
-                    "th": "siguiente",
-                    "fr": "siguiente",
-                    "sa": "siguiente",
-                }
+                "day next week": "el próximo {{day}}"
             },
             "texts": {
                 "filter": {
@@ -250,8 +232,6 @@ var resources = { // English is fallback language.
                 "comment": "comentario",
                 "today": "hoy",
                 "tomorrow": "mañana",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": "en",
                 "in duration": "en",
                 "region": "región",
                 "position": "posición",
@@ -302,15 +282,7 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "su": "volgende",
-                    "mo": "volgende",
-                    "tu": "volgende",
-                    "we": "volgende",
-                    "th": "volgende",
-                    "fr": "volgende",
-                    "sa": "volgende",
-                }
+                "day next week": "volgende {{day}}"
             },
             "texts": {
                 "filter": {
@@ -389,8 +361,6 @@ var resources = { // English is fallback language.
                 "comment": "commentaar",
                 "today": "vandaag",
                 "tomorrow": "morgen",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "in",
                 "region": "regio",
                 "position": "positie",
@@ -439,15 +409,7 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "mo": "prochain",
-                    "tu": "prochain",
-                    "we": "prochain",
-                    "th": "prochain",
-                    "fr": "prochain",
-                    "sa": "prochain",
-                    "su": "prochain",
-                }
+                "day next week": "{{day}} prochain"
             },
             "texts": {
                 "filter": {
@@ -516,8 +478,6 @@ var resources = { // English is fallback language.
                 "comment": "commentaire",
                 "today": "aujourd'hui",
                 "tomorrow": "demain",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "dans",
                 "region": "région",
                 "position": "emplacement",
@@ -563,15 +523,7 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": {
-                    "su": "nächsten",
-                    "mo": "nächsten",
-                    "tu": "nächsten",
-                    "we": "nächsten",
-                    "th": "nächsten",
-                    "fr": "nächsten",
-                    "sa": "nächsten",
-                }
+                "day next week": "nächsten {{day}}"
             },
             "texts": {
                 "filter": {
@@ -652,8 +604,6 @@ var resources = { // English is fallback language.
                 "comment": "Kommentar",
                 "today": "heute",
                 "tomorrow": "morgen",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "region": "Region",
                 "position": "Position",
                 "lat": "Breitengrad",
@@ -702,14 +652,14 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": {
-                    "su": "ближайшее",
-                    "mo": "ближайший",
-                    "tu": "ближайший",
-                    "we": "ближайшую",
-                    "th": "ближайший",
-                    "fr": "ближайшую",
-                    "sa": "ближайшую",
+                "days next week": {
+                    "su": "в ближайшее {{day}}",
+                    "mo": "в ближайший {{day}}",
+                    "tu": "в ближайший {{day}}",
+                    "we": "в ближайшую {{day}}",
+                    "th": "в ближайший {{day}}",
+                    "fr": "в ближайшую {{day}}",
+                    "sa": "в ближайшую {{day}}",
                 },
             },
             "texts": {
@@ -740,7 +690,6 @@ var resources = { // English is fallback language.
                 "comment": "комментариев",
                 "today": "сегодня",
                 "tomorrow": "завтра",
-                "on weekday": "в ", // optionally in other languages
                 "in duration": "через",
                 "region": "регион",
                 "position": "положение",
@@ -786,14 +735,14 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": { // palavra "próximo" antes de um dia da semana
-                    "su": "próximo",
-                    "mo": "próxima",
-                    "tu": "próxima",
-                    "we": "próxima",
-                    "th": "próxima",
-                    "fr": "próxima",
-                    "sa": "próximo",
+                "days next week": { // palavra "próximo" antes de um dia da semana
+                    "su": "próximo {{day}}",
+                    "mo": "próxima {{day}}",
+                    "tu": "próxima {{day}}",
+                    "we": "próxima {{day}}",
+                    "th": "próxima {{day}}",
+                    "fr": "próxima {{day}}",
+                    "sa": "próximo {{day}}",
                 }
             },
             "texts": {
@@ -864,8 +813,6 @@ var resources = { // English is fallback language.
                 "comment": "comentário",
                 "today": "hoje",
                 "tomorrow": "amanhã",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ", // revisar esta
                 "in duration": "em",
                 "region": "Região",
                 "position": "Posição",
@@ -911,14 +858,14 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": { // The italian language use other words for next for sunday.
-                    "mo": "il prossimo",
-                    "tu": "il prossimo",
-                    "we": "il prossimo",
-                    "th": "il prossimo",
-                    "fr": "il prossimo",
-                    "sa": "il prossimo",
-                    "su": "la prossima",
+                "days next week": { // The italian language use other words for next for sunday.
+                    "mo": "il prossimo {{day}}",
+                    "tu": "il prossimo {{day}}",
+                    "we": "il prossimo {{day}}",
+                    "th": "il prossimo {{day}}",
+                    "fr": "il prossimo {{day}}",
+                    "sa": "il prossimo {{day}}",
+                    "su": "la prossima {{day}}",
                 }
             },
             "texts": {
@@ -989,8 +936,6 @@ var resources = { // English is fallback language.
                 "comment": "commento",
                 "today": "oggi",
                 "tomorrow": "domani",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "tra",
                 "region": "regione",
                 "position": "posizione",
@@ -1036,14 +981,14 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": {
-                    "su": "наступну",
-                    "mo": "наступний",
-                    "tu": "наступний",
-                    "we": "наступну",
-                    "th": "наступний",
-                    "fr": "наступну",
-                    "sa": "наступну",
+                "days next week": {
+                    "su": "у наступну {{day}}",
+                    "mo": "у наступний {{day}}",
+                    "tu": "у наступний {{day}}",
+                    "we": "у наступну {{day}}",
+                    "th": "у наступний {{day}}",
+                    "fr": "у наступну {{day}}",
+                    "sa": "у наступну {{day}}",
                 },
             },
             "texts": {
@@ -1108,7 +1053,6 @@ var resources = { // English is fallback language.
                 "comment": "коментарів",
                 "today": "сьогодні",
                 "tomorrow": "завтра",
-                "on weekday": "у ", // optionally in other languages
                 "in duration": "через",
                 "region": "регіон",
                 "position": "положення",
@@ -1163,15 +1107,7 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "su": "következő",
-                    "mo": "következő",
-                    "tu": "következő",
-                    "we": "következő",
-                    "th": "következő",
-                    "fr": "következő",
-                    "sa": "következő",
-                }
+                "day next week": "következő {{day}}"
             },
             "texts": {
                 "filter": {
@@ -1252,8 +1188,6 @@ var resources = { // English is fallback language.
                 "comment": "megjegyzés",
                 "today": "ma",
                 "tomorrow": "holnap",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "ennyi idő múlva:",
                 "region": "régió",
                 "position": "Pozíció",
@@ -1305,16 +1239,7 @@ var resources = { // English is fallback language.
             },
 
             "weekdays": {
-                "word next": {
-                    // FIXME: This is prepended to the day, as in English, instead of appended, as in Vietnamese.
-                    "su": "tuần sau vào",
-                    "mo": "tuần sau vào",
-                    "tu": "tuần sau vào",
-                    "we": "tuần sau vào",
-                    "th": "tuần sau vào",
-                    "fr": "tuần sau vào",
-                    "sa": "tuần sau vào",
-                }
+                "day next week": "vào {{day}} tuần sau"
             },
             "texts": {
                 "filter": {
@@ -1395,7 +1320,6 @@ var resources = { // English is fallback language.
                 "comment": "ghi chú",
                 "today": "hôm nay",
                 "tomorrow": "ngày mai",
-                "on weekday": " ",
                 "in duration": "còn",
                 "region": "khu vực",
                 "position": "địa điểm",
