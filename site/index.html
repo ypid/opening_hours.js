@@ -253,6 +253,7 @@
                 { href: 'https://wiki.openstreetmap.org/wiki/Key:opening_hours' }) + '<br />');
 
             document.write(i18next.t('texts.this website', { url: repo_url, hoster: 'GitHub' }));
+            document.body.parentElement.lang = i18next.language;
         </script>
         </div><!-- }}} -->
     <iframe style="visibility:hidden;display:none" name='hiddenframe'></iframe>
