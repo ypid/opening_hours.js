@@ -14,19 +14,12 @@ var resources = { // English is fallback language.
                 "nl": "Dutch language",
                 "hu": "Hungarian",
                 "es": "Spanish",
+                "vi": "Vietnamese",
                 "choose": "Choose Language",
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "su": "next",
-                    "mo": "next",
-                    "tu": "next",
-                    "we": "next",
-                    "th": "next",
-                    "fr": "next",
-                    "sa": "next",
-                }
+                "day next week": "next {{day}}"
             },
             "texts": {
                 "filter": {
@@ -94,11 +87,11 @@ var resources = { // English is fallback language.
                 "yellow": "yellow",
                 "red": "red",
                 "violet": "violet",
+                "from": "from",
                 "to": "to",
                 "and": "and",
                 "no": "no",
                 "undefined": "undefined",
-                "his": "his",
                 "docu": "documentation",
                 "of course": "of course",
                 "open": "open",
@@ -107,8 +100,6 @@ var resources = { // English is fallback language.
                 "comment": "comment",
                 "today": "today",
                 "tomorrow": "tomorrow",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "in",
                 "region": "region",
                 "position": "position",
@@ -155,19 +146,12 @@ var resources = { // English is fallback language.
                 "uk": "Ucraniano",
                 "nl": "Neerlandés",
                 "hu": "Húngaro",
+                "vi": "Vietnamita",
                 "choose": "Elige idioma",
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "su": "siguiente",
-                    "mo": "siguiente",
-                    "tu": "siguiente",
-                    "we": "siguiente",
-                    "th": "siguiente",
-                    "fr": "siguiente",
-                    "sa": "siguiente",
-                }
+                "day next week": "el próximo {{day}}"
             },
             "texts": {
                 "filter": {
@@ -235,11 +219,11 @@ var resources = { // English is fallback language.
                 "yellow": "amarillo",
                 "red": "rojo",
                 "violet": "violeta",
-                "to": "hacia",
+                "from": "de",
+                "to": "a",
                 "and": "y",
                 "no": "no",
                 "undefined": "indefinido",
-                "his": "su",
                 "docu": "documentación",
                 "of course": "por supuesto",
                 "open": "abierto",
@@ -248,8 +232,6 @@ var resources = { // English is fallback language.
                 "comment": "comentario",
                 "today": "hoy",
                 "tomorrow": "mañana",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": "en",
                 "in duration": "en",
                 "region": "región",
                 "position": "posición",
@@ -295,19 +277,12 @@ var resources = { // English is fallback language.
                 "it": "Italiaans",
                 "uk": "Oekraïens",
                 "nl": "Nederlands",
+                "vi": "Vietnamees",
                 "choose": "Kies taal",
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "su": "volgende",
-                    "mo": "volgende",
-                    "tu": "volgende",
-                    "we": "volgende",
-                    "th": "volgende",
-                    "fr": "volgende",
-                    "sa": "volgende",
-                }
+                "day next week": "volgende {{day}}"
             },
             "texts": {
                 "filter": {
@@ -374,10 +349,10 @@ var resources = { // English is fallback language.
                 "yellow": "geel",
                 "red": "rood",
                 "violet": "violet",
+                "from": "",
                 "to": "tot",
                 "and": "en",
                 "no": "nee",
-                "his": "zijn",
                 "docu": "documentatie",
                 "of course": "natuurlijk",
                 "open": "open",
@@ -386,8 +361,6 @@ var resources = { // English is fallback language.
                 "comment": "commentaar",
                 "today": "vandaag",
                 "tomorrow": "morgen",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "in",
                 "region": "regio",
                 "position": "positie",
@@ -431,19 +404,12 @@ var resources = { // English is fallback language.
                 "pt": "Portugais",
                 "it": "Italien",
                 "uk": "Ukrainien",
+                "vi": "Vietnamien",
                 "choose": "Choisissez la langue",
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "mo": "prochain",
-                    "tu": "prochain",
-                    "we": "prochain",
-                    "th": "prochain",
-                    "fr": "prochain",
-                    "sa": "prochain",
-                    "su": "prochain",
-                }
+                "day next week": "{{day}} prochain"
             },
             "texts": {
                 "filter": {
@@ -500,10 +466,10 @@ var resources = { // English is fallback language.
                 "yellow": "jaune",
                 "red": "rouge",
                 "violet": "violet",
+                "from": "",
                 "to": "à",
                 "and": "et",
                 "no": "pas de",
-                "his": "son",
                 "docu": "documentation",
                 "of course": "bien sûr",
                 "open": "ouvert",
@@ -512,8 +478,6 @@ var resources = { // English is fallback language.
                 "comment": "commentaire",
                 "today": "aujourd'hui",
                 "tomorrow": "demain",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "dans",
                 "region": "région",
                 "position": "emplacement",
@@ -554,19 +518,12 @@ var resources = { // English is fallback language.
                 "pt": "Portugiesisch",
                 "it": "Italienisch",
                 "uk": "Ukrainisch",
+                "vi": "Vietnamesisch",
                 "choose": "Wähle eine Sprache",
             },
 
             "weekdays": {
-                "word next": {
-                    "su": "nächsten",
-                    "mo": "nächsten",
-                    "tu": "nächsten",
-                    "we": "nächsten",
-                    "th": "nächsten",
-                    "fr": "nächsten",
-                    "sa": "nächsten",
-                }
+                "day next week": "nächsten {{day}}"
             },
             "texts": {
                 "filter": {
@@ -634,11 +591,11 @@ var resources = { // English is fallback language.
                 "yellow": "Gelb",
                 "red": "Rot",
                 "violet": "Violett",
+                "from": "von",
                 "to": "bis",
                 "and": "und",
                 "no": "kein",
                 "undefined": "undefiniert",
-                "his": "seine",
                 "docu": "Dokumentation",
                 "of course": "natürlich",
                 "open": "geöffnet",
@@ -647,8 +604,6 @@ var resources = { // English is fallback language.
                 "comment": "Kommentar",
                 "today": "heute",
                 "tomorrow": "morgen",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "region": "Region",
                 "position": "Position",
                 "lat": "Breitengrad",
@@ -692,18 +647,19 @@ var resources = { // English is fallback language.
                 "pt": "португальский",
                 "it": "итальянский",
                 "uk": "украинский",
+                "vi": "вьетнамский",
                 "choose": "Выберите язык",
             },
 
             "weekdays": {
-                "word next": {
-                    "su": "ближайшее",
-                    "mo": "ближайший",
-                    "tu": "ближайший",
-                    "we": "ближайшую",
-                    "th": "ближайший",
-                    "fr": "ближайшую",
-                    "sa": "ближайшую",
+                "days next week": {
+                    "su": "в ближайшее {{day}}",
+                    "mo": "в ближайший {{day}}",
+                    "tu": "в ближайший {{day}}",
+                    "we": "в ближайшую {{day}}",
+                    "th": "в ближайший {{day}}",
+                    "fr": "в ближайшую {{day}}",
+                    "sa": "в ближайшую {{day}}",
                 },
             },
             "texts": {
@@ -724,6 +680,7 @@ var resources = { // English is fallback language.
                 "yellow": "жёлтый",
                 "red": "красный",
                 "violet": "фиолетовый",
+                "from": "",
                 "to": "до",
                 "and": "и",
                 "no": "Нет",
@@ -733,7 +690,6 @@ var resources = { // English is fallback language.
                 "comment": "комментариев",
                 "today": "сегодня",
                 "tomorrow": "завтра",
-                "on weekday": "в ", // optionally in other languages
                 "in duration": "через",
                 "region": "регион",
                 "position": "положение",
@@ -774,18 +730,19 @@ var resources = { // English is fallback language.
                 "it": "Italiano",
                 "pt": "Português",
                 "uk": "Ucraniano",
+                "vi": "Vietnamita",
                 "choose": "Escolha a sua linguagem",
             },
 
             "weekdays": {
-                "word next": { // palavra "próximo" antes de um dia da semana
-                    "su": "próximo",
-                    "mo": "próxima",
-                    "tu": "próxima",
-                    "we": "próxima",
-                    "th": "próxima",
-                    "fr": "próxima",
-                    "sa": "próximo",
+                "days next week": { // palavra "próximo" antes de um dia da semana
+                    "su": "próximo {{day}}",
+                    "mo": "próxima {{day}}",
+                    "tu": "próxima {{day}}",
+                    "we": "próxima {{day}}",
+                    "th": "próxima {{day}}",
+                    "fr": "próxima {{day}}",
+                    "sa": "próximo {{day}}",
                 }
             },
             "texts": {
@@ -844,10 +801,10 @@ var resources = { // English is fallback language.
                 "yellow": "amarelo",
                 "red": "vermelho",
                 "violet": "violeta",
+                "from": "",
                 "to": "até",
                 "and": "e",
                 "no": "sem",
-                "his": "dele",
                 "docu": "documentação",
                 "of course": "é claro",
                 "open": "Aberto de",
@@ -856,8 +813,6 @@ var resources = { // English is fallback language.
                 "comment": "comentário",
                 "today": "hoje",
                 "tomorrow": "amanhã",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ", // revisar esta
                 "in duration": "em",
                 "region": "Região",
                 "position": "Posição",
@@ -898,18 +853,19 @@ var resources = { // English is fallback language.
                 "it": "Italiano",
                 "pt": "Portoghese",
                 "uk": "Ucraino",
+                "vi": "Vietnamita",
                 "choose": "Scegli lingua",
             },
 
             "weekdays": {
-                "word next": { // The italian language use other words for next for sunday.
-                    "mo": "il prossimo",
-                    "tu": "il prossimo",
-                    "we": "il prossimo",
-                    "th": "il prossimo",
-                    "fr": "il prossimo",
-                    "sa": "il prossimo",
-                    "su": "la prossima",
+                "days next week": { // The italian language use other words for next for sunday.
+                    "mo": "il prossimo {{day}}",
+                    "tu": "il prossimo {{day}}",
+                    "we": "il prossimo {{day}}",
+                    "th": "il prossimo {{day}}",
+                    "fr": "il prossimo {{day}}",
+                    "sa": "il prossimo {{day}}",
+                    "su": "la prossima {{day}}",
                 }
             },
             "texts": {
@@ -968,10 +924,10 @@ var resources = { // English is fallback language.
                 "yellow": "giallo",
                 "red": "rosso",
                 "violet": "viola",
+                "from": "",
                 "to": "a",
                 "and": "e",
                 "no": "no",
-                "his": "suo",
                 "docu": "documentazione",
                 "of course": "certamente",
                 "open": "aperto",
@@ -980,8 +936,6 @@ var resources = { // English is fallback language.
                 "comment": "commento",
                 "today": "oggi",
                 "tomorrow": "domani",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "tra",
                 "region": "regione",
                 "position": "posizione",
@@ -1022,18 +976,19 @@ var resources = { // English is fallback language.
                 "pt": "португальська",
                 "it": "италійська",
                 "uk": "українська",
+                "vi": "в’єтнамська",
                 "choose": "Виберіть мову",
             },
 
             "weekdays": {
-                "word next": {
-                    "su": "наступну",
-                    "mo": "наступний",
-                    "tu": "наступний",
-                    "we": "наступну",
-                    "th": "наступний",
-                    "fr": "наступну",
-                    "sa": "наступну",
+                "days next week": {
+                    "su": "у наступну {{day}}",
+                    "mo": "у наступний {{day}}",
+                    "tu": "у наступний {{day}}",
+                    "we": "у наступну {{day}}",
+                    "th": "у наступний {{day}}",
+                    "fr": "у наступну {{day}}",
+                    "sa": "у наступну {{day}}",
                 },
             },
             "texts": {
@@ -1088,6 +1043,7 @@ var resources = { // English is fallback language.
                 "evaluation tool": 'інструмент розрахунку',
             },
             "words": {
+                "from": "",
                 "to": "до",
                 "and": "і",
                 "no": "Нема",
@@ -1097,7 +1053,6 @@ var resources = { // English is fallback language.
                 "comment": "коментарів",
                 "today": "сьогодні",
                 "tomorrow": "завтра",
-                "on weekday": "у ", // optionally in other languages
                 "in duration": "через",
                 "region": "регіон",
                 "position": "положення",
@@ -1128,7 +1083,6 @@ var resources = { // English is fallback language.
                 "yellow": "жовтий",
                 "red": "червоний",
                 "violet": "фіолетовий",
-                "his": "його",
                 "docu": "документація",
                 "of course": "звісно",
             },
@@ -1148,19 +1102,12 @@ var resources = { // English is fallback language.
                 "uk": "Ukrán",
                 "nl": "Holland",
                 "hu": "Magyar",
+                "vi": "Vietnami",
                 "choose": "Nyelv kiválasztása",
             },
 
             "weekdays": {
-                "word next": { // The Russian language seems to use other words for next for some weekdays.
-                    "su": "következő",
-                    "mo": "következő",
-                    "tu": "következő",
-                    "we": "következő",
-                    "th": "következő",
-                    "fr": "következő",
-                    "sa": "következő",
-                }
+                "day next week": "következő {{day}}"
             },
             "texts": {
                 "filter": {
@@ -1228,11 +1175,11 @@ var resources = { // English is fallback language.
                 "yellow": "sárga",
                 "red": "piros",
                 "violet": "lila",
-                "to": "eddig:",
+                "from": "",
+                "to": "eddig",
                 "and": "és",
                 "no": "nincs",
                 "undefined": "meghatározatlan",
-                "his": "ő",
                 "docu": "dokumentáció",
                 "of course": "természetesen",
                 "open": "nyitva",
@@ -1241,8 +1188,6 @@ var resources = { // English is fallback language.
                 "comment": "megjegyzés",
                 "today": "ma",
                 "tomorrow": "holnap",
-                // "on weekday": "on", // not needed in this context
-                "on weekday": " ",
                 "in duration": "ennyi idő múlva:",
                 "region": "régió",
                 "position": "Pozíció",
@@ -1270,6 +1215,139 @@ var resources = { // English is fallback language.
                     "hours minutes sep": "és ",
                     "now": "most",
                     "time": "idő",
+                },
+            },
+        },
+    }, // }}}
+
+    // Vietnamese (vi) localization {{{
+    vi: {
+        translation: {
+            "lang": {
+                "en": "Anh",
+                "fr": "Pháp",
+                "de": "Đức",
+                "ru": "Nga",
+                "pt": "Bồ Đào Nha",
+                "it": "Ý",
+                "uk": "Ukraina",
+                "nl": "Hà Lan",
+                "hu": "Hungary",
+                "es": "Tây Ban Nha",
+                "vi": "Việt",
+                "choose": "Chọn Ngôn ngữ",
+            },
+
+            "weekdays": {
+                "day next week": "vào {{day}} tuần sau"
+            },
+            "texts": {
+                "filter": {
+                    "none": "Không áp dụng bộ lọc nào",
+                    "error": "Thông báo lỗi và cảnh báo",
+                    "warnOnly": "Chỉ cảnh báo",
+                    "errorOnly": "Chỉ lỗi",
+                    "open": "Chỉ các nơi đang mở cửa",
+                    "unknown": "Chỉ các nơi có thể đang mở cửa",
+                    "closed": "Chỉ các nơi đang dóng cửa",
+                    "openOrUnknown": "Chỉ các nơi đang mở cửa hoặc không rõ",
+                },
+                "title": "Công cụ đánh giá opening_hours",
+                "open always": "Luôn mở cửa",
+                "unknown always": "Luôn có thể mở cửa",
+                "closed always": "Luôn đóng cửa trong tương lai (gần đây)",
+                "open now": "Đang mở cửa",
+                "unknown now": "Có thể đang mở cửa",
+                "closed now": "Đang đóng cửa",
+                "will close": "nhưng <a href=\"{{href}}\">sẽ</a> đóng cửa {{timestring}}{{comment}}.",
+                "will unknown": "nhưng có thể <a href=\"{{href}}\">sẽ</a> mở cửa {{timestring}}{{comment}}.",
+                "will open": "nhưng <a href=\"{{href}}\">sẽ</a> mở cửa {{timestring}}{{comment}}.",
+                "depends on": ", tùy theo {{comment}}.",
+                "week stable": "Thời biểu nhất định theo tuần lễ.",
+                "not week stable": "Chú ý! Thời biểu này có thể thay đổi tùy theo tuần lễ.",
+                "value for": "giá trị",
+                "value to compare": "giá trị để so sánh",
+                "MatchingRule": "Quy tắc được áp dụng",
+                "prettified value": 'Giá trị opening_hours làm đẹp (có thể an toàn sử dụng giá trị này trong OSM sau khi <a href="{{copyFunc}}">khắc phục</a> các cảnh báo)',
+                "prettified value for displaying": "Giá trị opening_hours làm đẹp để hiển thị (có nhiều dòng, đừng sử dụng giá trị này trong OSM)",
+                "more information": "Để biết thêm thông tin, xem <a href=\"{{href}}\" target=\"_blank\">wiki OSM</a>.",
+                "this website": "Trang Web này và thư viện JavaScript đánh giá giờ mở cửa do <a href=\"{{url}}\" target=\"_blank\">{{hoster}}</a> phục vụ.",
+                "if PH is between Mo and Fr": "Chỉ khi ngày nghỉ lễ công cộng là ngày thường (thứ 2–thứ 5)",
+                "check out error correction, prettify": "kiểm tra gợi ý sửa lỗi và hàm làm đẹp cho giá trị opening_hours",
+                "SH,PH or PH,SH": "Thứ tự này hơi khác với giá trị bên trên. Các tên ngày nghỉ lễ dành cho học sinh và sinh viên sẽ ghi đè các tên ngày nghỉ lễ công cộng trong lời ghi chú.",
+                "config POIs": "thiết lập các địa điểm quan tâm",
+                "reload map": "tải lại bản đồ",
+                "heading map": "Bản đồ có lớp ghim ứng với các thẻ opening_hours trong OpenStreetMap",
+                "map is showing": 'Bản đồ hiển thị các đối tượng có thẻ <a rel="external" href="{{wikiUrl}}">opening_hours</a> như điểm tròn tô màu:',
+                "error": "Không thể phân tích giá trị",
+                "warning": "Các cảnh báo khi phân tích sẽ xuất hiện như {{sign}} màu xanh trong hình tượng trạng thái.",
+                "map filter": "Có thể áp dụng một số bộ lọc để phát hiện và khắc phục các lỗi (BĐCL) hoặc chỉ hiển thị các nơi đang mở cửa hoặc đóng cửa:",
+                "data source": 'Dữ liệu lớp phủ bắt nguồn từ {{OSMStartaTag}} và được truy vấn dùng {{APIaTag}}. Bản đồ là {{OSMaTag}}.',
+                "mode 0": 'Chỉ cho phép thời khoảng (các thẻ opening_hours, lit)',
+                "mode 1": 'Chỉ cho phép thời điểm',
+                "mode 2": 'Cho phép cả thời khoảng lẫn thời điểm (các thẻ service_times, collection_times)',
+                "value to long for osm": 'Giá trị quá dài đối với OSM. Cơ sở dữ liệu OpenStreetMap chỉ hỗ trợ các giá trị dài cho tới {{maxLength}} ký tự. Giá trị làm đẹp có {{pretLength}} ký tự, trong khi giá trị được nhập có {{valLength}} ký tự',
+                "low zoom level": 'Các địa điểm quan tâm sẽ bắt đầu xuất hiện ở mức thu phóng ${next} trở lên. Bạn đang xem mức thu phóng ${actual}.',
+                "all n entries": 'Tổng số {{total}} mục:',
+                "the first entries": '{{number}} mục đầu tiên trên tổng số {{total}} mục:',
+                "load all with JOSM": 'tải toàn bộ trong JOSM',
+                "evaluation tool": 'công cụ đánh giá',
+                "rule separator ;": 'ký tự phân tách quy tắc (quy tắc sau sẽ là quy tắc bình thường)',
+                "rule separator  ||": 'ký tự phân tách quy tắc (quy tắc sau sẽ là quy tắc dự trữ ứng với các thời gian bên ngoài các quy tắc trước)',
+                "rule separator ,": 'ký tự phân tách quy tắc (quy tắc sau sẽ là quy tắc bổ sung để kéo dài các quy tắc trước mà không ghi đè các quy tắc trước, khác với quy tắc bình thường)',
+                "JOSM remote conn error": 'Không thể kết nối với JOSM. Xin vui lòng kiểm tra rằng JOSM đang chạy và được thiết lập để điều khiển từ xa qua cổng mặc định 8111 của TCP.',
+                "refer to yohours": 'YoHours cũng có thể phân tích giá trị này, đây là một trình soạn thảo cú pháp opening_hours đơn giản. Nếu bạn không cần các cú pháp nâng cao, <a href=\"{{href}}\">hãy thử YoHours</a>.',
+                "include timestamp?": 'bao gồm dấu thời gian?',
+            },
+            "words": {
+                "modifier": "bộ thay đổi {{name}}",
+                "selector": "bộ chọn {{name}}",
+                "mode": "chế độ đánh giá",
+                "green": "xanh",
+                "yellow": "vàng",
+                "red": "đỏ",
+                "violet": "tím",
+                "from": "từ",
+                "to": "đến",
+                "and": "và",
+                "no": "không",
+                "undefined": "không định rõ",
+                "docu": "tài liệu",
+                "of course": "dĩ nhiên",
+                "open": "mở cửa",
+                "unknown": "không rõ",
+                "closed": "đóng cửa",
+                "comment": "ghi chú",
+                "today": "hôm nay",
+                "tomorrow": "ngày mai",
+                "in duration": "còn",
+                "region": "khu vực",
+                "position": "địa điểm",
+                "lat": "vĩ độ",
+                "lon": "kinh độ",
+                "country": "quốc gia",
+                "state": "tỉnh/tiểu bang",
+                "status": "trạng thái",
+                "examples": "Ví dụ",
+                "none": "không có",
+                "date": "ngày",
+                "time": {
+                    "minute": "phút",
+                    "minute_plural": "phút",
+                    "minute many": "phút",
+                    "hour": "giờ",
+                    "hour_plural": "giờ",
+                    "hour many": "giờ",
+                    "day": "ngày",
+                    "day_plural": "ngày",
+                    "day many": "ngày",
+                    "week": "tuần",
+                    "year": "năm",
+                    "year_plural": "năm",
+                    "years many": "năm",
+                    "hours minutes sep": " ",
+                    "now": "bây giờ",
+                    "time": "giờ",
                 },
             },
         },
