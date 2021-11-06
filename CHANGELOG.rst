@@ -175,6 +175,10 @@ Changed
 
   * Romania
 
+* Localizations added:
+
+  * Vietnamese
+
 v3.7.0_ - 2021-07-24
 --------------------
 
