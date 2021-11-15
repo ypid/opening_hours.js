@@ -577,7 +577,7 @@ Corse:
       '2019': [7, 7, 9, 2]
       '2020': [7, 5, 8, 31]
       '2021': [7, 8, 8, 30]  # reprise des cours officielle pas encore définie
-      '2022': [7, 8, 8, 31]  # 2022 ending date not available on 15/11/2021
+      '2022': [7, 8, 8, 31]  # 2022 ending date not available on 2021-11-15
     - name: Vacances de la Toussaint
       '2018': [10, 24, 11, 4]
       '2019': [10, 20, 11, 3]
@@ -614,7 +614,7 @@ Guadeloupe:
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
       '2021': [7, 6, 8, 30]  # reprise des cours officielle pas encore définie
-      '2022': [7, 7, 8, 31]  # 2022 ending date not available on 15/11/2021
+      '2022': [7, 7, 8, 31]  # 2022 ending date not available on 2021-11-15
     - name: Vacances de la Toussaint
       '2018': [10, 21, 11, 4]
       '2019': [10, 20, 11, 3]
@@ -714,7 +714,7 @@ Guyane:
       '2019': [7, 9, 9, 1]
       '2020': [7, 5, 8, 31]
       '2021': [7, 4, 8, 31]  # reprise des cours officielle pas encore définie
-      '2022': [7, 9, 8, 31]  # 2022 ending date not available on 15/11/2021
+      '2022': [7, 9, 8, 31]  # 2022 ending date not available on 2021-11-15
     - name: Vacances de la Toussaint
       '2018': [10, 21, 11, 4]
       '2019': [10, 20, 11, 3]
@@ -753,7 +753,7 @@ Martinique:
       '2019': [7, 7, 9, 1]
       '2020': [7, 5, 8, 31]
       '2021': [7, 7, 8, 30]  # reprise des cours officielle pas encore définie
-      '2022': [7, 7, 8, 31]  # 2022 ending date not available on 15/11/2021
+      '2022': [7, 7, 8, 31]  # 2022 ending date not available on 2021-11-15
     - name: Vacances de la Toussaint
       '2018': [10, 21, 11, 4]
       '2019': [10, 20, 11, 3]
@@ -944,7 +944,7 @@ Saint-Pierre-et-Miquelon:
       '2019': [7, 4, 9, 4]
       '2020': [7, 4, 9, 2]
       '2021': [7, 3, 9, 1]  # reprise des cours officielle pas encore définie
-      '2022': [7, 1, 8, 31]  # 2022 ending date not available on 15/11/2021
+      '2022': [7, 1, 8, 31]  # 2022 ending date not available on 2021-11-15
     - name: Vacances de la Toussaint
       '2018': [10, 27, 11, 4]
       '2019': [10, 26, 11, 5]
