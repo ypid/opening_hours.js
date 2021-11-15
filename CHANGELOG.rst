@@ -174,6 +174,7 @@ Changed
 * School holiday definitions updated:
 
   * Romania
+  * France
 
 * Localizations added:
 
