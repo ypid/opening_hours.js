@@ -25,7 +25,7 @@ declare module 'opening_hours' {
     getWarnings(): string[]
     isEqualTo(
       second_oh_object: opening_hours,
-      start_date: opening_hours
+      start_date?: Date
     ): boolean
     isWeekStable(): boolean
     prettifyValue(argument_hash: argument_hash): string
