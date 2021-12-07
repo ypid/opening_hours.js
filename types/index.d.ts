@@ -18,10 +18,7 @@ declare module 'opening_hours' {
     getOpenIntervals(
       from: Date,
       to: Date
-    ): [
-      [Date, Date, boolean, string | undefined],
-      [Date, Date, boolean, string | undefined]
-    ]
+    ): [Date, Date, boolean, string | undefined][]
     getStatePair(
       date?: Date
     ): [boolean, Date, boolean, string | undefined, number | undefined]
