@@ -18,17 +18,14 @@ declare module 'opening_hours' {
     getOpenIntervals(
       from: Date,
       to: Date
-    ): [
-      [Date, Date, boolean, string | undefined],
-      [Date, Date, boolean, string | undefined]
-    ]
+    ): [Date, Date, boolean, string | undefined][]
     getStatePair(
       date?: Date
     ): [boolean, Date, boolean, string | undefined, number | undefined]
     getWarnings(): string[]
     isEqualTo(
       second_oh_object: opening_hours,
-      start_date: opening_hours
+      start_date?: Date
     ): boolean
     isWeekStable(): boolean
     prettifyValue(argument_hash: argument_hash): string
