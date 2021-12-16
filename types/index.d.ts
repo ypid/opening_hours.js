@@ -28,7 +28,7 @@ declare module 'opening_hours' {
       start_date?: Date
     ): boolean
     isWeekStable(): boolean
-    prettifyValue(argument_hash: argument_hash): string
+    prettifyValue(argument_hash?: argument_hash): string
     getIterator(date?: Date): opening_hours_iterator
   }
   export default opening_hours
