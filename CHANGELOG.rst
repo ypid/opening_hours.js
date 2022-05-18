@@ -84,7 +84,6 @@ Contributors
 * [fodor0205_]
 * [goodudetheboy_] - Vuong Ho
 * [MerlinPerrotLegler_] - Merlin Perrot
-* [Undigon_] - Rodrigo Iván Avila Demitroff
 
 
 Thanks very much to all contributors!
@@ -149,7 +148,6 @@ Thanks very much to all contributors!
 .. _fodor0205: https://github.com/fodor0205
 .. _goodudetheboy: https://github.com/goodudetheboy
 .. _MerlinPerrotLegler: https://github.com/MerlinPerrotLegler
-.. _Undigon: https://avilademitroff.net.ar/
 
 
 Supporters
@@ -168,14 +166,20 @@ master_ - unreleased
 
 .. _master: https://github.com/opening-hours/opening_hours.js/compare/v3.7.0...master
 
-`v3.8.0 milestone <https://github.com/opening-hours/opening_hours.js/issues?q=milestone%3Av3.8.0+is%3Aclosed>`__
+`v3.9.0 milestone <https://github.com/opening-hours/opening_hours.js/issues?q=milestone%3Av3.9.0+is%3Aclosed>`__
+
+
+v3.8.0_ - 2022-05-18
+--------------------
+
+.. _v3.8.0: https://github.com/opening-hours/opening_hours.js/compare/v3.7.0...v3.8.0
 
 Added
 ~~~~~
 
 * Public holiday definitions added:
 
-  * Argentina [Undigon_]
+  * Argentina
 
 * Localizations added:
 
@@ -188,6 +192,12 @@ Changed
 
   * Romania
   * France
+
+Fixed
+~~~~~
+
+* Typing for typescript
+
 
 v3.7.0_ - 2021-07-24
 --------------------
@@ -246,7 +256,7 @@ Added
   * Misused ``.`` character. Example: ``Jan 01,Dec 24.-25.``. [ypid_]
   * Trailing ``,`` after time selector. Example: ``We 12:00-18:00,``. [ypid_]
   * Additional rule which evaluates to closed. Example: ``Mo-Fr 10:00-20:00, We off``. [ypid_]
-  * Value consists of multiple rules each only using a time selector. Example: ``11:30-14:30;17:30-23:00``. [ypid]
+  * Value consists of multiple rules each only using a time selector. Example: ``11:30-14:30;17:30-23:00``. [ypid_]
   * Potentially missing use of ``<additional_rule_separator>`` if the previous
     rule has a time range which wraps over midnight and the current rule
     matches one of the following days of the previous rule.
