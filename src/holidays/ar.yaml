@@ -8,7 +8,7 @@ PH:
   - {'name': 'Año Nuevo', 'fixed_date': [1, 1]}
   - {'name': 'Día Nacional de la Memoria por la Verdad y la Justicia', 'fixed_date': [3, 24]}
   - {'name': 'Día del Veterano y de los Caídos en la Guerra de Malvinas', 'fixed_date': [4, 2]}
-    # Viernes Santo
+  # Viernes Santo
   - {'name': 'Día del Trabajador', 'fixed_date': [5, 1]}
   - {'name': 'Día de la Revolución de Mayo', 'fixed_date': [5, 25]}
   - {'name': 'Paso a la Inmortalidad del General Manuel Belgrano', 'fixed_date': [6, 20]}
