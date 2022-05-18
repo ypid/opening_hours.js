@@ -84,6 +84,7 @@ Contributors
 * [fodor0205_]
 * [goodudetheboy_] - Vuong Ho
 * [MerlinPerrotLegler_] - Merlin Perrot
+* [Undigon_] - Rodrigo Iván Avila Demitroff
 
 
 Thanks very much to all contributors!
@@ -148,6 +149,7 @@ Thanks very much to all contributors!
 .. _fodor0205: https://github.com/fodor0205
 .. _goodudetheboy: https://github.com/goodudetheboy
 .. _MerlinPerrotLegler: https://github.com/MerlinPerrotLegler
+.. _Undigon: https://avilademitroff.net.ar/
 
 
 Supporters
@@ -168,6 +170,17 @@ master_ - unreleased
 
 `v3.8.0 milestone <https://github.com/opening-hours/opening_hours.js/issues?q=milestone%3Av3.8.0+is%3Aclosed>`__
 
+Added
+~~~~~
+
+* Public holiday definitions added:
+
+  * Argentina [Undigon_]
+
+* Localizations added:
+
+  * Vietnamese
+
 Changed
 ~~~~~~~
 
@@ -175,10 +188,6 @@ Changed
 
   * Romania
   * France
-
-* Localizations added:
-
-  * Vietnamese
 
 v3.7.0_ - 2021-07-24
 --------------------
