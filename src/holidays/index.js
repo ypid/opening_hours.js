@@ -1,3 +1,4 @@
+export { default as ar } from "./ar.yaml";
 export { default as at } from "./at.yaml";
 export { default as au } from "./au.yaml";
 export { default as be } from "./be.yaml";
