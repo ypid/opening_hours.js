@@ -10,23 +10,31 @@ name: Continuous Integration
 
 jobs:
   build:
-    runs-on: "ubuntu-20.04"
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
         node-version:
-          # Support policy: We support every Node.js version is still "maintained".
+          # Support policy: We support every Node.js version that is still "maintained".
           # Testing unmaintained versions serves no purpose.
           - "10.x"
+
+          # 12 is in Debian stable but not supported by upstream anymore. Keep it for now.
           - "12.x"
+
           - "14.x"
           - "15.x"
 
+          # TODO: Does not work without updating integration tests? Needs work.
+          # - "16.x"
+          # - "17.x"
+          # - "18.x"
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -37,7 +45,7 @@ jobs:
         id: npm-cache-dir
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         id: npm-cache
         with:
