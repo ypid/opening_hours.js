@@ -934,7 +934,7 @@ Edit: This does also work on npmjs in this short version … -->
 [ph-cz]: https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
 [ph-de]: https://de.wikipedia.org/wiki/Feiertage_in_Deutschland
 [ph-dk]: https://en.wikipedia.org/wiki/Public_holidays_in_Denmark
-[ph-fr]: https://fr.wikipedia.org/wiki/F%EAtes_et_jours_f%E9ri%E9s_en_France
+[ph-fr]: https://fr.wikipedia.org/wiki/F%C3%AAtes_et_jours_f%C3%A9ri%C3%A9s_en_France
 [ph-gb]: https://www.gov.uk/bank-holidays#england-and-wales
 [ph-hu]: https://en.wikipedia.org/wiki/Public_holidays_in_Hungary
 [ph-ie]: https://en.wikipedia.org/wiki/Public_holidays_in_the_Republic_of_Ireland
