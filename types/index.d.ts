@@ -84,7 +84,7 @@ declare module 'opening_hours' {
   }
 
   export interface optional_conf {
-    mode: mode
+    mode: mode | undefined
     tag_key: string | undefined
     map_value: boolean | undefined
     warnings_severity: warnings_severity | undefined
