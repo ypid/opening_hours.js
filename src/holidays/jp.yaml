@@ -18,9 +18,8 @@ PH:  # https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html | https://ja.wikiped
   - {'name': '文化の日', 'fixed_date': [11, 3]}
   - {'name': '勤労感謝の日', 'fixed_date': [11, 23]}
 
-
-#The following holidays are selected based on astronomical observations, so the dates may differ slightly from actual holidays.
-#Also the dates below are calculated automatically.
-# https://www.nao.ac.jp/faq/a0301.html (Japanese) "Is it possible to know the date of the autumnal equinox and autumnal equinox in XX years from now?"
+  # The following holidays are selected based on astronomical observations, so the dates may differ slightly from actual holidays. Also the dates
+  # below are calculated automatically.
+  # https://www.nao.ac.jp/faq/a0301.html (Japanese) "Is it possible to know the date of the autumnal equinox and autumnal equinox in XX years from now?"
   - {'name': '春分の日', 'variable_date': springEquinox}
   - {'name': '秋分の日', 'variable_date': autumnalEquinox}
