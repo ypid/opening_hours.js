@@ -2679,6 +2679,54 @@ export default function(value, nominatim_object, optional_conf_parm) {
         var canadaDay = july_1.getDay() === 0 ? 2 : 1;
         /* }}} */
 
+        /* Calculation of the spring and autumnal equinoxes (for Public holidays in Japan). {{{ */
+        function springEquinoxCalc(year){
+            if(year >= 1900 && year <= 1923){
+                if(year % 4 === 3) return new Date(year, 2, 22)
+                else return new Date(year, 2, 21)
+            } else if(year >= 1924 && year <= 1959){
+                return new Date(year, 2, 21)
+            } else if(year >= 1960 && year <= 1991){
+                if(year % 4 === 0) return new Date(year, 2, 20)
+                else return new Date(year, 2, 21)
+            } else if(year >= 1992 && year <= 2023){
+                if(year % 4 === 0 || year % 4 === 1) return new Date(year, 2, 20)
+                else return new Date(year, 2, 21)
+            } else if(year >= 2024 && year <= 2055){
+                if(year % 4 === 3) return new Date(year, 2, 21)
+                else return new Date(year, 2, 20)
+            } else if(year >= 2056 && year <= 2091){
+                return new Date(year, 2, 20)
+            } else if(year >= 2092 && year <= 2099){
+                if(year % 4 === 0) return new Date(year, 2, 19)
+                else return new Date(year, 2, 20)
+            }
+        }
+
+        function autumnalEquinoxCalc(year){
+            if(year >= 1900 && year <= 1919){
+                if(year % 4 === 0) return new Date(year, 8, 23)
+                else return new Date(year, 8, 24)
+            } else if(year >= 1920 && year <= 1947){
+                if(year % 4 === 0 || year % 4 === 1) return new Date(year, 8, 23)
+                else return new Date(year, 8, 24)
+            } else if(year >= 1948 && year <= 1979){
+                if(year % 4 === 3) return new Date(year, 8, 24)
+                else return new Date(year, 8, 23)
+            } else if(year >= 1980 && year <= 2011){
+                return new Date(year, 8, 23)
+            } else if(year >= 2012 && year <= 2043){
+                if(year % 4 === 0) return new Date(year, 8, 22)
+                else return new Date(year, 8, 23)
+            }  else if(year >= 2044 && year <= 2075){
+                if(year % 4 === 0 || year % 4 === 1) return new Date(year, 8, 22)
+                else return new Date(year, 8, 23)
+            } else if(year >= 2076 && year <= 2099){
+                if(year % 4 === 3) return new Date(year, 8, 23)
+                else return new Date(year, 8, 22)
+            }
+        }
+
         /* Helper functions {{{ */
         function firstWeekdayOfMonth(month, weekday){
             var first = new Date(year, month, 1);
@@ -2766,6 +2814,8 @@ export default function(value, nominatim_object, optional_conf_parm) {
             'nextMo-Sa01May'        : getDateOfNextWeekdayRange(1, 6, new Date(year, 4, 1)),
             'nextMo-Sa07August'     : getDateOfNextWeekdayRange(1, 6, new Date(year, 7, 7)),
             'nextMo-Sa25December'   : getDateOfNextWeekdayRange(1, 6, new Date(year, 11, 25)),
+            'springEquinox'         : springEquinoxCalc(year),
+            'autumnalEquinox'       : autumnalEquinoxCalc(year),
         };
     }
     /* }}} */
