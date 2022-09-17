@@ -180,10 +180,12 @@ Added
 * Public holiday definitions added:
 
   * Argentina
+  * Japanese
 
 * Localizations added:
 
   * Vietnamese
+  * Japanese
 
 Changed
 ~~~~~~~

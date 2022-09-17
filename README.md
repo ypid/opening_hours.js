@@ -577,6 +577,7 @@ Almost everything from opening_hours definition is supported, as well as some ex
 
   - Countries with PH definition:
 
+    - Argentina
     - [Australia][ph-au]
     - [Austria][ph-at] ([footnotes][ph-at] are ignored)
     - [Belgium][ph-be] (See [issue #115](https://github.com/opening-hours/opening_hours.js/issues/115) for details)
@@ -591,6 +592,7 @@ Almost everything from opening_hours definition is supported, as well as some ex
     - [Ireland][ph-ie]
     - [Italy][ph-it] (Without the Saint Patron day, see [comment](https://github.com/opening-hours/opening_hours.js/pull/74#issuecomment-76194891))
     - [Ivory Coast][ph-ci] (Without the four islamic holidays because they can not be calculated and depend on subjective ad-hoc definition)
+    - Japanese
     - [Netherlands][ph-ne]
     - [New Zealand][ph-nz] (Provincial holiday is not handled. See [PR #333](https://github.com/opening-hours/opening_hours.js/pull/333) for details.)
     - [Poland][ph-nl]
