@@ -7,7 +7,7 @@ PH:  # https://en.wikipedia.org/wiki/Public_holidays_in_Croatia
   - {'name': 'Sveta tri kralja', 'fixed_date': [1, 6]}
   - {'name': 'Uskršnji ponedjeljak', 'variable_date': easter, 'offset': 1}
   - {'name': 'Praznik rada', 'fixed_date': [5, 1]}
-  - {'name': 'Tijelovo', 'variable_date': easter, 'offset': 39}
+  - {'name': 'Tijelovo', 'variable_date': easter, 'offset': 60}
   - {'name': 'Dan antifašističke borbe', 'fixed_date': [6, 22]}
   - {'name': 'Dan pobjede i domovinske zahvalnosti', 'fixed_date': [8, 5]}
   - {'name': 'Velika Gospa', 'fixed_date': [8, 15]}
