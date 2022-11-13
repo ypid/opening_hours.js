@@ -237,6 +237,7 @@ release-local: package.json release-versionbump check-package.json
 release-publish:
 	git push --follow-tags
 	npm publish
+	@echo "Manually create release on https://github.com/opening-hours/opening_hours.js/releases"
 	# $(MAKE) $(MAKE_OPTIONS) publish-website-on-all-servers
 
 .PHONY: release
