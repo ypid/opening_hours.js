@@ -1,0 +1,33 @@
+---
+
+_nominatim_url: https://nominatim.openstreetmap.org/reverse?format=json&lon=15.977&lat=45.813&zoom=18&addressdetails=1&accept-language=hr,en
+
+PH:  # https://en.wikipedia.org/wiki/Public_holidays_in_Croatia
+  - {'name': 'Nova godina', 'fixed_date': [1, 1]}
+  - {'name': 'Sveta tri kralja', 'fixed_date': [1, 6]}
+  - {'name': 'Uskršnji ponedjeljak', 'variable_date': easter, 'offset': 1}
+  - {'name': 'Praznik rada', 'fixed_date': [5, 1]}
+  - {'name': 'Tijelovo', 'variable_date': easter, 'offset': 60}
+  - {'name': 'Dan antifašističke borbe', 'fixed_date': [6, 22]}
+  - {'name': 'Dan pobjede i domovinske zahvalnosti', 'fixed_date': [8, 5]}
+  - {'name': 'Velika Gospa', 'fixed_date': [8, 15]}
+  - {'name': 'Svi sveti', 'fixed_date': [11, 1]}
+  - {'name': 'Dan sjećanja na žrtve Domovinskog rata', 'fixed_date': [11, 18]}
+  - {'name': 'Božić', 'fixed_date': [12, 25]}
+  - {'name': 'Sveti Stjepan', 'fixed_date': [12, 26]}
+SH:  # https://mzo.gov.hr/rezultati-pretrazivanja/49?pojam=Odluka+o+po%C4%8Detku+i+zavr%C5%A1etku+nastavne+godine
+  - name: Drugi dio zimskog odmora
+    '2022': [2, 21, 2, 27]
+    '2023': [2, 20, 2, 26]
+  - name: Proljetni odmor
+    '2022': [4, 14, 4, 24]
+    '2023': [4, 6, 4, 16]
+  - name: Ljetni praznici
+    '2022': [6, 23, 9, 3]
+    '2023': [6, 23, 9, 4]
+  - name: Jesenski odmor
+    '2021': [11, 2, 11, 3]
+    '2022': [10, 31, 11, 1]
+  - name: Prvi dio zimskog odmora
+    '2021': [12, 24, 1, 9]
+    '2022': [12, 27, 1, 8]

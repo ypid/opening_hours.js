@@ -578,11 +578,13 @@ Almost everything from opening_hours definition is supported, as well as some ex
   - Countries with PH definition:
 
     - Argentina
+    - Japanese
     - [Australia][ph-au]
     - [Austria][ph-at] ([footnotes][ph-at] are ignored)
     - [Belgium][ph-be] (See [issue #115](https://github.com/opening-hours/opening_hours.js/issues/115) for details)
     - [Brazil][ph-br]
     - [Canada][ph-ca]
+    - [Croatian][ph-hr]
     - [Czech Republic][ph-cz]
     - [Denmark][ph-dk]
     - [England and Wales][ph-gb]
@@ -592,7 +594,6 @@ Almost everything from opening_hours definition is supported, as well as some ex
     - [Ireland][ph-ie]
     - [Italy][ph-it] (Without the Saint Patron day, see [comment](https://github.com/opening-hours/opening_hours.js/pull/74#issuecomment-76194891))
     - [Ivory Coast][ph-ci] (Without the four islamic holidays because they can not be calculated and depend on subjective ad-hoc definition)
-    - Japanese
     - [Netherlands][ph-ne]
     - [New Zealand][ph-nz] (Provincial holiday is not handled. See [PR #333](https://github.com/opening-hours/opening_hours.js/pull/333) for details.)
     - [Poland][ph-nl]
@@ -611,10 +612,11 @@ Almost everything from opening_hours definition is supported, as well as some ex
 
   - Countries with SH definition:
 
-    - Germany, see [hc]
     - Austria
-    - Romania
+    - Croatian
+    - Germany, see [hc]
     - Hungary
+    - Romania
 
 - There can be two cases which need to be separated (this applies for PH and SH):
 
@@ -938,6 +940,7 @@ Edit: This does also work on npmjs in this short version … -->
 [ph-dk]: https://en.wikipedia.org/wiki/Public_holidays_in_Denmark
 [ph-fr]: https://fr.wikipedia.org/wiki/F%C3%AAtes_et_jours_f%C3%A9ri%C3%A9s_en_France
 [ph-gb]: https://www.gov.uk/bank-holidays#england-and-wales
+[ph-hr]: https://en.wikipedia.org/wiki/Public_holidays_in_Croatia
 [ph-hu]: https://en.wikipedia.org/wiki/Public_holidays_in_Hungary
 [ph-ie]: https://en.wikipedia.org/wiki/Public_holidays_in_the_Republic_of_Ireland
 [ph-it]: http://www.governo.it/Presidenza/ufficio_cerimoniale/cerimoniale/giornate.html

@@ -168,6 +168,17 @@ master_ - unreleased
 
 `v3.9.0 milestone <https://github.com/opening-hours/opening_hours.js/issues?q=milestone%3Av3.9.0+is%3Aclosed>`__
 
+Added
+~~~~~
+
+* Public holiday definitions added:
+
+  * Croatian
+
+* School holiday definitions added:
+
+  * Croatian
+
 
 v3.8.0_ - 2022-05-18
 --------------------

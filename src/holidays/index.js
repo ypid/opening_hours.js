@@ -14,6 +14,7 @@ export { default as fi } from "./fi.yaml";
 export { default as fr } from "./fr.yaml";
 export { default as gb } from "./gb.yaml";
 export { default as gr } from "./gr.yaml";
+export { default as hr } from "./hr.yaml";
 export { default as hu } from "./hu.yaml";
 export { default as ie } from "./ie.yaml";
 export { default as it } from "./it.yaml";
