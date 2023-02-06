@@ -178,6 +178,7 @@ Added
 * School holiday definitions added:
 
   * Croatian
+  * France
 
 Fixed
 ~~~~~
